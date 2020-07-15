@@ -16,6 +16,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	runtimeOnly 'com.h2database:h2'
+	compile('org.springframework.boot:spring-boot-starter-mail')
 	compile("org.springframework.ws:spring-ws-core")
 	compile("org.apache.httpcomponents:httpcore:4.4.6")	
 	compile("org.apache.httpcomponents:httpclient:4.5.3")

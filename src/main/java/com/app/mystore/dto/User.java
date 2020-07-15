@@ -16,7 +16,7 @@ public class User {
 	private Date updateDateTime; 
 	private String createUser; 
 	private String updateUser;
-
+	private String token;
 
 	public int getId() {
 		return id;
@@ -91,6 +91,12 @@ public class User {
 	}
 	public void setUpdateUser(String updateUser) {
 		this.updateUser = updateUser;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
 	} 
 
 }

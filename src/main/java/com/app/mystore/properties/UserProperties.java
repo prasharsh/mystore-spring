@@ -45,4 +45,56 @@ public class UserProperties {
 	public void setInsertResetPassword(String insertResetPassword) {
 		this.insertResetPassword = insertResetPassword;
 	}
+	
+	private String registerUser;
+
+	public String getRegisterUser() {
+		return registerUser;
+	}
+
+	public void setRegisterUser(String registerUser) {
+		this.registerUser = registerUser;
+	}
+	
+
+	private String updateUser;
+	
+	public String getUpdateUser() {
+		return updateUser;
+	}
+
+	public void setUpdateUser(String updateUser) {
+		this.updateUser = updateUser;
+	}
+	
+	public String getDetailsByTokenId() {
+		return detailsByTokenId;
+	}
+
+	public void setDetailsByTokenId(String detailsByTokenId) {
+		this.detailsByTokenId = detailsByTokenId;
+	}
+
+	public String getResetPassword() {
+		return resetPassword;
+	}
+
+	public void setResetPassword(String resetPassword) {
+		this.resetPassword = resetPassword;
+	}
+
+	public String getInactivateToken() {
+		return inactivateToken;
+	}
+
+	public void setInactivateToken(String inactivateToken) {
+		this.inactivateToken = inactivateToken;
+	}
+
+	private String detailsByTokenId;
+	
+	private String resetPassword;
+	
+	private String inactivateToken;
+	
 }
