@@ -55,6 +55,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 					userproperties.getGetUser(), namedSqlParams, new UserRowmapper());
 		} catch (DataAccessException e) {
 			System.out.println(e.getMessage());
+			user = null;
 		}
 
 		return user;
