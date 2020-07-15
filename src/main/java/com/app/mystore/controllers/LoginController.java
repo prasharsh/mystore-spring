@@ -1,6 +1,9 @@
 package com.app.mystore.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,8 +26,11 @@ public class LoginController {
 		return "Greetings from Spring Boot!";
 	}
 
-	@RequestMapping(value="/login",method={RequestMethod.POST},
-			consumes="application/json")
+	/*
+	 * @RequestMapping(value="/login",method={RequestMethod.POST},
+	 * consumes="application/json")
+	 */
+	@PostMapping("/login")
 	public @ResponseBody String login (@RequestBody User  loginUser){
 
 
@@ -37,4 +43,16 @@ public class LoginController {
 
 	}
 
+
+	@RequestMapping(value = "/resetPassword/{email}", method = RequestMethod.GET)
+	@ResponseBody
+	public String resetPasswordToken(
+	  @PathVariable("email") String email) {
+		String token = null;
+		token = loginControllerService.getResetToken(email);
+		if(token==null) {
+			token = "Email Id is not registered, please provide an registered email Id";
+		}
+		return "token";
+	}
 }

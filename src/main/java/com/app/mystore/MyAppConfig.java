@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.app.mystore.dao.ResetPasswordDao;
+import com.app.mystore.dao.ResetPasswordDaoImpl;
 import com.app.mystore.dao.UserDao;
 import com.app.mystore.dao.UserDaoImpl;
 import com.app.mystore.service.LoginControllerService;
@@ -28,6 +30,9 @@ public abstract class MyAppConfig {
 		return new UserDaoImpl();
 	}
 
-
+	@Bean
+	public ResetPasswordDao resetPasswordDao(){
+		return new ResetPasswordDaoImpl();
+	}
 
 }

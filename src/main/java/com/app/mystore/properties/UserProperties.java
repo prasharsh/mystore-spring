@@ -26,4 +26,23 @@ public class UserProperties {
 		this.getUser = getUser;
 	}
 
+	private String getUserByUsername;
+
+	public String getGetUserByUsername() {
+		return getUserByUsername;
+	}
+
+	public void setGetUserByUsername(String getUserByUsername) {
+		this.getUserByUsername = getUserByUsername;
+	}
+	
+	private String  insertResetPassword;
+
+	public String getInsertResetPassword() {
+		return insertResetPassword;
+	}
+
+	public void setInsertResetPassword(String insertResetPassword) {
+		this.insertResetPassword = insertResetPassword;
+	}
 }

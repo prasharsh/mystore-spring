@@ -6,19 +6,18 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.DataAccessException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
-import com.app.mystore.dto.User;
+import com.app.mystore.dto.ResetPassword;
 import com.app.mystore.properties.UserProperties;
-import com.app.mystore.rowmapper.UserRowmapper;
+import com.app.mystore.rowmapper.ResetPasswordRowmapper;
 
 @Repository
 @Configuration
-public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
+public class ResetPasswordDaoImpl extends JdbcDaoSupport implements ResetPasswordDao {
 
 	@Autowired
 	private DataSource datasource;
@@ -42,38 +41,20 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 		setDataSource(datasource);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public User loadUserByUsername(User loginUser) throws EmptyResultDataAccessException {
-
-		User user=new User();
-		namedSqlParams=new MapSqlParameterSource();
-		namedSqlParams.addValue("username", loginUser.getUsername());
-		namedSqlParams.addValue("password", loginUser.getPassword());
-		try {
-			user=(User)namedParameterJdbcTemplate.queryForObject(
-					userproperties.getGetUser(), namedSqlParams, new UserRowmapper());
-		} catch (DataAccessException e) {
-			System.out.println(e.getMessage());
-		}
-
-		return user;
-
-	}
-
-	@Override
-	public User resetPasswordToken(String email) {
-		User user = new User();
+	public int insertToken(ResetPassword rp) {
+		int rows =0;
 		namedSqlParams=new MapSqlParameterSource();
 		
-		namedSqlParams.addValue("username", email);		
+		namedSqlParams.addValue("userid", rp.getUserid());
+		namedSqlParams.addValue("token", rp.getToken());
+		ResetPassword resetPassword = new ResetPassword();
 		try {
-			user =(User) namedParameterJdbcTemplate.queryForObject(
-					userproperties.getGetUserByUsername(), namedSqlParams, new UserRowmapper());
-		} catch (DataAccessException e) {
+			rows = namedParameterJdbcTemplate.update(userproperties.getInsertResetPassword(), namedSqlParams);	} catch (DataAccessException e) {
 			System.out.println(e.getMessage());
 		}
-		return user;
+		return rows;
+		
 	}
 
 }

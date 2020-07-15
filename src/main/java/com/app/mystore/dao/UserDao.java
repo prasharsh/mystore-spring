@@ -5,4 +5,7 @@ import com.app.mystore.dto.User;
 public interface UserDao {
 
 	public User loadUserByUsername(User loginUser);
+
+	public User resetPasswordToken(String email);
+
 }
