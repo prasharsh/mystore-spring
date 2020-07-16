@@ -1,6 +1,7 @@
 package com.app.mystore.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.mystore.dto.User;
 import com.app.mystore.service.LoginControllerService;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/myStore")
 public class LoginController {
@@ -32,7 +33,7 @@ public class LoginController {
 	 * consumes="application/json")
 	 */
 	@PostMapping("/login")
-	public @ResponseBody String login(@RequestBody User  loginUser){
+	public String login(@RequestBody User  loginUser){
 
 
 		User user= (User)loginControllerService.login(loginUser);
@@ -45,7 +46,7 @@ public class LoginController {
 	}
 
 	@PostMapping("/register")
-	public @ResponseBody String register(@RequestBody User newUser){
+	public String register(@RequestBody User newUser){
 
 		int record = 0;
 		record =loginControllerService.register(newUser);
@@ -56,9 +57,9 @@ public class LoginController {
 		return "failed";
 
 	}
-	
+
 	@PutMapping("/updateProfile")
-	public @ResponseBody String updateProfile(@RequestBody User updateForUser){
+	public String updateProfile(@RequestBody User updateForUser){
 
 		int record = 0;
 		record =loginControllerService.updateUserProfiles(updateForUser);
@@ -71,7 +72,7 @@ public class LoginController {
 	}
 
 	@PutMapping("/changePassword")
-	public @ResponseBody String changePassword(@RequestBody User updatePasswordForUser){
+	public String changePassword(@RequestBody User updatePasswordForUser){
 
 		int record = 0;
 		record =loginControllerService.updateUserPassword(updatePasswordForUser);
@@ -82,11 +83,9 @@ public class LoginController {
 		return "failed";
 
 	}
-	
 
 
-	@RequestMapping(value = "/resetPassword/{email}", method = RequestMethod.GET)
-	@ResponseBody
+	@GetMapping("/resetPassword/{email}")
 	public String resetPasswordToken(
 			@PathVariable("email") String email) {
 		String token = "";
@@ -96,6 +95,6 @@ public class LoginController {
 		}
 		return token;
 	}
-	
-	
+
+
 }
