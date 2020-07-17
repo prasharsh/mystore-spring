@@ -4,9 +4,6 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
-
-import com.app.mystore.dto.User;
-import com.app.mystore.rowmapper.UserRowmapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.DataAccessException;
@@ -14,7 +11,6 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
-
 import com.app.mystore.dto.JobPost;
 import com.app.mystore.properties.JobPostingProp;
 import com.app.mystore.rowmapper.JobPostingRowMapper;
@@ -111,5 +107,4 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		}
 		return rows;
 	}
-
 }

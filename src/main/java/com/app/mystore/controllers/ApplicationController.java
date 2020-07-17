@@ -43,6 +43,4 @@ public class ApplicationController {
 	public Boolean deleteApplication( @PathVariable int applicationID) {
 		return applicationService.deleteApplication(applicationID);
 	}
-
-
 }

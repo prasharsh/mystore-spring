@@ -1,7 +1,5 @@
 package com.app.mystore.dto;
 
-import java.sql.Date;
-
 public class JobPost {
 
 	private int JobID;

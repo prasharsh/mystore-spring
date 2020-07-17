@@ -1,13 +1,9 @@
 package com.app.mystore.service;
 
 import com.app.mystore.dao.ApplicationDao;
-import com.app.mystore.dao.JobPostDao;
 import com.app.mystore.dto.Application;
-import com.app.mystore.dto.JobPost;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service("ApplicationService")

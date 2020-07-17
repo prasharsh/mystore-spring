@@ -1,9 +1,7 @@
 package com.app.mystore.rowmapper;
 
 import com.app.mystore.dto.Application;
-import com.app.mystore.dto.JobPost;
 import org.springframework.jdbc.core.RowMapper;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -25,6 +23,4 @@ public class ApplicationRowMapper implements RowMapper{
 
 		return application;
 	}
-
-
 }

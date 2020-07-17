@@ -2,9 +2,7 @@ package com.app.mystore.rowmapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import org.springframework.jdbc.core.RowMapper;
-
 import com.app.mystore.dto.JobPost;
 
 public class JobPostingRowMapper implements RowMapper{
@@ -21,6 +19,4 @@ public class JobPostingRowMapper implements RowMapper{
 		jp.setType(rs.getString("Type"));
 		return jp;
 	}
-
-
 }

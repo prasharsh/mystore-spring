@@ -1,11 +1,8 @@
 package com.app.mystore.dao;
 
 import com.app.mystore.dto.Application;
-import com.app.mystore.dto.JobPost;
 import com.app.mystore.properties.ApplicationProp;
-import com.app.mystore.properties.JobPostingProp;
 import com.app.mystore.rowmapper.ApplicationRowMapper;
-import com.app.mystore.rowmapper.JobPostingRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.DataAccessException;
