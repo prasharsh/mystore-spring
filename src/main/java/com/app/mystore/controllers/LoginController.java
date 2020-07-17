@@ -32,16 +32,17 @@ public class LoginController {
 	 * @RequestMapping(value="/login",method={RequestMethod.POST},
 	 * consumes="application/json")
 	 */
-	@PostMapping("/login")
-	public String login(@RequestBody User  loginUser){
+	@PostMapping(path ="/login", consumes = "application/json", produces = "application/json")
+	public User login(@RequestBody User  loginUser){
 
 
 		User user= (User)loginControllerService.login(loginUser);
 
 		if(user!=null) {
-			return "success";
+			
+			return user;
 		}
-		return "failed";
+		return null;
 
 	}
 

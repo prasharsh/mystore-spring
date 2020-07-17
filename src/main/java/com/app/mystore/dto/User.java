@@ -17,7 +17,9 @@ public class User {
 	private String createUser; 
 	private String updateUser;
 	private String token;
-
+	
+	
+	
 	public int getId() {
 		return id;
 	}
