@@ -2,14 +2,14 @@ package com.app.mystore.dto;
 
 import java.sql.Date;
 
-public class JobPosting {
+public class JobPost {
 
-	private int 	JobID ;
-	private String	Position ; 
-	private String	Type  ;
-	private String	Shift  ;
-	private String Requirment  ;
-	private String	Description ;
+	private int JobID;
+	private String Position;
+	private String Type;
+	private String Shift;
+	private String Requirment;
+	private String Description;
 	public int getJobID() {
 		return JobID;
 	}

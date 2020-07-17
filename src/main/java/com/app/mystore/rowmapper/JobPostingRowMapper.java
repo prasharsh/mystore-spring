@@ -5,15 +5,13 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.app.mystore.dto.JobPosting;
-import com.app.mystore.dto.ResetPassword;
-import com.app.mystore.dto.User;
+import com.app.mystore.dto.JobPost;
 
 public class JobPostingRowMapper implements RowMapper{
 
 	@Override
 	public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-		JobPosting jp = new JobPosting();
+		JobPost jp = new JobPost();
 		
 		jp.setJobID(rs.getInt("JobID"));
 		jp.setDescription(rs.getString("Description"));

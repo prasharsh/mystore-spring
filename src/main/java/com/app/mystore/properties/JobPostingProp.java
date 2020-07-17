@@ -15,7 +15,36 @@ public class JobPostingProp {
 	public JobPostingProp() {
 		super();
 	}
-	
+
+	private String fetchAll;
+	private String getByJobID;
+	private String updateJob;
+	private String insertJob;
+
+	public String getInsertJob() {
+		return insertJob;
+	}
+
+	public void setInsertJob(String insertJob) {
+		this.insertJob = insertJob;
+	}
+
+	public String getUpdateJob() {
+		return updateJob;
+	}
+
+	public void setUpdateJob(String updateJob) {
+		this.updateJob = updateJob;
+	}
+
+	public String getGetByJobID() {
+		return getByJobID;
+	}
+
+	public void setGetByJobID(String getByJobID) {
+		this.getByJobID = getByJobID;
+	}
+
 	public String getFetchAll() {
 		return fetchAll;
 	}
@@ -24,6 +53,5 @@ public class JobPostingProp {
 		this.fetchAll = fetchAll;
 	}
 
-	private String fetchAll;
-	
+
 }
