@@ -42,6 +42,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 	@PostConstruct
 	private void initialize(){
 		setDataSource(datasource);
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -73,6 +74,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 		try {
 			user =(User) namedParameterJdbcTemplate.queryForObject(
 					userproperties.getGetUserByUsername(), namedSqlParams, new UserRowmapper());
+
 		} catch (DataAccessException e) {
 			System.out.println(e.getMessage());
 			user = null;

@@ -18,16 +18,36 @@ public class LoginControllerService {
 	@Autowired
 	public UserDao userDao;
 
+	private static LoginControllerService uniqueInstance;
+
+	private LoginControllerService(){}
+
+	public static LoginControllerService instance(){
+		if(null != uniqueInstance){
+			uniqueInstance = new LoginControllerService();
+		}
+		return uniqueInstance;
+	}
+
 	@Autowired
 	public ResetPasswordDao resetPasswordDao;
 	@Autowired
 	public MystoreHelper helper;
+	private User user = null;
 
 	public User login(User loginUser) {		
-
-		return userDao.loadUserByUsername(loginUser);
+		user = userDao.loadUserByUsername(loginUser);
+		return user;
 	}
 
+	public User getauthenciatedUser() throws Exception {
+		if(null != user ){
+			return user;
+		}
+		else {
+			throw new Exception("User requires Authenciation");
+		}
+	}
 
 	public String getResetToken(String email) {
 		String token = "";
