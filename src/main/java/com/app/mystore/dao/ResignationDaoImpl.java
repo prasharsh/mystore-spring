@@ -10,12 +10,14 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.app.mystore.dto.Resignation;
 import com.app.mystore.properties.ResignationProperties;
 import com.app.mystore.rowmapper.ResignationRowmapper;
+import com.app.mystore.rowmapper.ViewAllResignationsRowmapper;
 
 
 @Repository
@@ -44,39 +46,40 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		setDataSource(datasource);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "null" })
 	@Override
-	public int apply(Resignation resign) throws EmptyResultDataAccessException {
+	public int apply(Resignation resign, int empid) throws EmptyResultDataAccessException {
       
 		int row= 0;
 		
 		namedSqlParams=new MapSqlParameterSource();
-		namedSqlParams.addValue("reason", resign.getReason());
-		namedSqlParams.addValue("empid", resign.getEmpid());
-		
-		
+	    namedSqlParams.addValue("empid", empid);
+	    
+	   
 		try {
+			 resign= (Resignation) namedParameterJdbcTemplate.queryForObject(resignationproperties.getResignationDetails(), namedSqlParams, new ResignationRowmapper());
+	   
+		}
+		
+		catch (EmptyResultDataAccessException e) {
+			namedSqlParams.addValue("reason", resign.getReason());
 			row= namedParameterJdbcTemplate.update(resignationproperties.getApply(), namedSqlParams);
-			
-		}
-		catch (DataAccessException e) {
 			System.out.println(e.getMessage());
-			
 		}
-
+	
 		return row;
 
 	}
 
 	@Override
-	public Resignation ResignationDetails(int rid) {
+	public Resignation ResignationDetails(int empid) {
 		Resignation resign = new Resignation();
 		namedSqlParams=new MapSqlParameterSource();
 		
-		namedSqlParams.addValue("rid", rid);		
+		namedSqlParams.addValue("empid", empid);		
 		try {
 			resign =(Resignation) namedParameterJdbcTemplate.queryForObject(
-					resignationproperties.getResignationDetails(), namedSqlParams, new ResignationRowmapper());
+					resignationproperties.getViewBeforeEditResignation(), namedSqlParams, new ViewAllResignationsRowmapper());
 		} catch (DataAccessException e) {
 			resign=null;
 			System.out.println(e.getMessage());
@@ -87,12 +90,12 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 	@SuppressWarnings("unchecked")
 	@Override
 	@Modifying
-	public int DeleteResignation(int rid)
+	public int DeleteResignation(int empid)
 	{
 		Resignation resign = new Resignation();
 		int result=0;
 		namedSqlParams=new MapSqlParameterSource();
-		namedSqlParams.addValue("rid", rid);	
+		namedSqlParams.addValue("empid", empid);	
 try {
 	resign= (Resignation) namedParameterJdbcTemplate.queryForObject(
 			resignationproperties.getResignationDetails(), namedSqlParams, new ResignationRowmapper());

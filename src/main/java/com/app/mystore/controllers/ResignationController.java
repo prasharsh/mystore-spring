@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.mystore.dto.Resignation;
 import com.app.mystore.service.ResignationControllerService;
+import com.google.gson.Gson;
 
 @CrossOrigin
 @RestController
@@ -22,33 +23,44 @@ public class ResignationController {
 	@Autowired
 	private  ResignationControllerService resignationControllerService;
 
-
-	@PostMapping("/apply")
-	public @ResponseBody String apply(@RequestBody Resignation  applyresignation){
-		int  resign = resignationControllerService.apply(applyresignation);
-		if( resign >= 1)
-		return "Successfully Resigned";
+//
+//	@PostMapping("/apply/{empid}")
+	
+	@RequestMapping(value = "/apply/{empid}", method = RequestMethod.POST)
+	public String apply(@RequestBody Resignation  applyresignation, @PathVariable int empid){
+		int  resign = resignationControllerService.apply(applyresignation, empid);
+		
+		Gson gson = new Gson();
+		if( resign == 1)
+		return gson.toJson("Success");
 		else 
-		return "Failed to submit form";
+		return gson.toJson("Fail");
 	}
 	
-	@RequestMapping(value = "/edit/{rid}", method = RequestMethod.GET)
+	@RequestMapping(value = "/edit/{empid}", method = RequestMethod.GET)
 	@ResponseBody
-	public Resignation getresignationdetails( @PathVariable("rid") int rid) {
+	public Resignation getresignationdetails( @PathVariable("empid") int empid) {
 		Resignation resign= new Resignation(); 
-		resign =resignationControllerService.ResignationDetails(rid);
+		resign =resignationControllerService.ResignationDetails(empid);
+		if (resign != null)
 		return resign;
+		else
+		return null;
 	}
+	
 	@Modifying
-	@RequestMapping(value = "/delete/{rid}", method = RequestMethod.DELETE)
+	@CrossOrigin
+	@RequestMapping(value = "/delete/{empid}", method = RequestMethod.DELETE)
 	@ResponseBody
-	public String deleteResignation(@PathVariable("rid") int rid) {
+	public String deleteResignation(@PathVariable("empid") int empid) {
 		int result=0;
-		result = resignationControllerService.DeleteResignation(rid);
+		result = resignationControllerService.DeleteResignation(empid);
+		Gson gson = new Gson();
 		if (result ==1)
-		return "Successfully deleted Resignation";
+			return gson.toJson("Success");
+
 		else	
-		return "Unable to delete";
+			return gson.toJson("Fail");
 		
 	}
 	

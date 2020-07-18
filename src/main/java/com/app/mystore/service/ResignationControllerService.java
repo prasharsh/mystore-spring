@@ -13,25 +13,25 @@ public class ResignationControllerService {
 	@Autowired
 	public ResignationDao resignationDao;
 
-	public int apply(Resignation applyresignation) {
+	public int apply(Resignation applyresignation, int empid) {
 		
 		
-		int row= resignationDao.apply(applyresignation);
-		
+		int row= resignationDao.apply(applyresignation, empid);
+		System.out.print(row);
 		return row;
 	}
-	public Resignation ResignationDetails(int rid)
+	public Resignation ResignationDetails(int empid)
 	{
 		Resignation resign= new Resignation();
-		resign=resignationDao.ResignationDetails(rid);
+		resign=resignationDao.ResignationDetails(empid);
 		
 		return resign;
 	}
 	
-	public int DeleteResignation(int rid)
+	public int DeleteResignation(int empid)
 	{
 		int result=0;
-		result=resignationDao.DeleteResignation(rid) ;
+		result=resignationDao.DeleteResignation(empid) ;
 		return result;
 		
 	}

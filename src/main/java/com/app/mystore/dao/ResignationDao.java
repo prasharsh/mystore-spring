@@ -6,9 +6,9 @@ import com.app.mystore.dto.Resignation;
 public interface ResignationDao {
 	
 	
-	public int apply(Resignation resign);
-	public Resignation ResignationDetails(int rid);
-	public int DeleteResignation(int rid);
+	public int apply(Resignation resign, int empid);
+	public Resignation ResignationDetails(int empid);
+	public int DeleteResignation(int empid);
 	public List<Resignation> GetAllResignation();
 	
 

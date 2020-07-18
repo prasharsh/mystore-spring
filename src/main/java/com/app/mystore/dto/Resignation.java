@@ -6,6 +6,14 @@ public class Resignation {
 	private int rid;
 	private String reason; 
 	private String status;
+	private String name;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public int getEmpid() {
 		return empid;
 	}
@@ -30,6 +38,7 @@ public class Resignation {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
 	
 	
 	

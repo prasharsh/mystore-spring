@@ -17,11 +17,24 @@ public class ResignationProperties {
 	}
 
 	private String apply;
+	private String checkifResignationExits;
 	private String resignationDetails;
 	private String deleteResignation;
 	private String getResignationDetails;
+	private String viewBeforeEditResignation;
 	
-	
+	public String getCheckifResignationExits() {
+		return checkifResignationExits;
+	}
+	public void setCheckifResignationExits(String checkifResignationExits) {
+		this.checkifResignationExits = checkifResignationExits;
+	}
+	public String getViewBeforeEditResignation() {
+		return viewBeforeEditResignation;
+	}
+	public void setViewBeforeEditResignation(String viewBeforeEditResignation) {
+		this.viewBeforeEditResignation = viewBeforeEditResignation;
+	}
 	public String getGetResignationDetails() {
 		return getResignationDetails;
 	}
