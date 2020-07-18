@@ -2,6 +2,7 @@ package com.app.mystore.service;
 
 import java.util.ArrayList;
 
+import com.app.mystore.dao.ScheduleDaoImpl;
 import com.app.mystore.dto.avail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,6 +70,8 @@ public class ScheduleService {
 		availability.setStart(avail.getSunStart());
 		availability.setEnd(avail.getSunEnd());
 		availabilities.add(availability);
+
+
 
 		for(Availability availiability :availabilities){
 			record = dao.saveAvail(availiability);

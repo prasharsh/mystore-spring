@@ -12,6 +12,25 @@ import org.springframework.context.annotation.PropertySource;
 public class AvailProps {
 
 	private String insert;
+	private String delete;
+	private String select;
+	public String getDelete() {
+		return delete;
+	}
+
+	public void setDelete(String delete) {
+		this.delete = delete;
+	}
+
+	public String getSelect() {
+		return select;
+	}
+
+	public void setSelect(String select) {
+		this.select = select;
+	}
+
+
 
 	public String getInsert() {
 		return insert;

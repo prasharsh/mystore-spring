@@ -7,7 +7,5 @@ import com.app.mystore.dto.User;
 public interface ScheduleDao {
 
 	int saveAvail(Availability avail);
-
-
-
+    int deleteUser(String User);
 }
