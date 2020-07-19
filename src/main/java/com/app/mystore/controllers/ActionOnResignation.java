@@ -35,5 +35,13 @@ public class ActionOnResignation
 				return list;
 		
 	}
+	@RequestMapping("/resignation/accept/{empid}")
+	public String acceptResignation(@PathVariable int empid)
+	{
+		String result= resignationControllerService.acceptResignation(empid);
+		return result;
+		
+	}
+	
 };
 

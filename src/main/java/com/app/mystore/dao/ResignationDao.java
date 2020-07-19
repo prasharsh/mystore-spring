@@ -11,8 +11,6 @@ public interface ResignationDao {
 	public int DeleteResignation(int empid);
 	public List<Resignation> GetAllResignation();
 	public String UpdateDetails(Resignation resign, int empid);
-	
-	
-
+	public String acceptResignation(int empid);
 
 }

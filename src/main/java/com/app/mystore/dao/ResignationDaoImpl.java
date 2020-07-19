@@ -139,9 +139,24 @@ catch(DataAccessException e)
 
 		
 	}
+	@Override
+	public String acceptResignation(int empid)
+	{
+		namedSqlParams =new MapSqlParameterSource();
+		namedSqlParams.addValue("empid", empid);
+		int resultManager= namedParameterJdbcTemplate.update(resignationproperties.getAcceptResignation(), namedSqlParams);
+int result = 0;
+		//		int resultEmployee=namedParameterJdbcTemplate.update(resignationproperties.changeResignationStatus(), namedSqlParams);
+		if(result ==1) {
+			return "Success";
+		}
+		else 
+		return "Fail";
+	}
 
 	
 
+	
 	
 
 }
