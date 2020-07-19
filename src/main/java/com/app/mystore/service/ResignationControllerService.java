@@ -42,6 +42,15 @@ public class ResignationControllerService {
 		return allresignations;
 		
 	}
+	public String acceptResignation(int empid) {
+		String result=resignationDao.acceptResignation(empid);
+		
+		return result;
+	}
+	public String UpdateResignation(Resignation editresign, int empid) {
+		String result =resignationDao.UpdateDetails(editresign, empid);
+		return result;
+	};
 	
 
 }

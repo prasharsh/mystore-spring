@@ -19,15 +19,38 @@ public class ResignationProperties {
 	private String apply;
 	private String checkifResignationExits;
 	private String resignationDetails;
+	private String updateResignation;
 	private String deleteResignation;
 	private String getResignationDetails;
-	private String viewBeforeEditResignation;
+	private String viewBeforeEditResignation;	
+	private String acceptResignation;
+	private String changeResignationStatus;
 	
+	public String getChangeResignationStatus() {
+		return changeResignationStatus;
+	}
+	public void setChangeResignationStatus(String changeResignationstatus) {
+		this.changeResignationStatus = changeResignationStatus;
+	}
+	public String getAcceptResignation() {
+		return acceptResignation;
+	}
+	public void setAcceptResignation(String acceptResignation) {
+		this.acceptResignation = acceptResignation;
+	}
 	public String getCheckifResignationExits() {
 		return checkifResignationExits;
 	}
 	public void setCheckifResignationExits(String checkifResignationExits) {
 		this.checkifResignationExits = checkifResignationExits;
+	}
+	
+
+	public String getUpdateResignation() {
+		return updateResignation;
+	}
+	public void setUpdateResignation(String updateResignation) {
+		this.updateResignation = updateResignation;
 	}
 	public String getViewBeforeEditResignation() {
 		return viewBeforeEditResignation;
