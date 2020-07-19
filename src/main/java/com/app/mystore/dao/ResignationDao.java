@@ -10,6 +10,8 @@ public interface ResignationDao {
 	public Resignation ResignationDetails(int empid);
 	public int DeleteResignation(int empid);
 	public List<Resignation> GetAllResignation();
+	public String UpdateDetails(Resignation resign, int empid);
+	
 	
 
 

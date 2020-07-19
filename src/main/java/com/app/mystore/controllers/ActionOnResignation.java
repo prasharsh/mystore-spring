@@ -29,7 +29,6 @@ public class ActionOnResignation
 	@Autowired
 	private  ResignationControllerService resignationControllerService;
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping("/resignation")
 	public List<Resignation> viewResignations(){
 		List <Resignation> list=(List<Resignation>) resignationControllerService.viewResignation();

@@ -47,6 +47,14 @@ public class ResignationController {
 		else
 		return null;
 	}
+	@RequestMapping(value="/update/{empid}", method=RequestMethod.PUT)
+	public String update(@RequestBody Resignation Editresign, @PathVariable int empid)
+	{
+		
+	    String update = resignationControllerService.UpdateResignation(Editresign, empid); 
+		return update;
+		
+	}
 	
 	@Modifying
 	@CrossOrigin

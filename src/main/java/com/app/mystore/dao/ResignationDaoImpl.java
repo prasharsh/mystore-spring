@@ -70,6 +70,20 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		return row;
 
 	}
+	@Override
+	public String UpdateDetails(Resignation  resign, int empid)
+	{
+		namedSqlParams=new MapSqlParameterSource();
+		namedSqlParams.addValue("reason", resign.getReason());
+		namedSqlParams.addValue("rid", resign.getRid());
+		namedSqlParams.addValue("empid", empid);
+		int row = namedParameterJdbcTemplate.update(resignationproperties.getUpdateResignation(), namedSqlParams);
+		if(row==1)
+		return "Success";
+		else 
+		return "Fail";
+		
+	}
 
 	@Override
 	public Resignation ResignationDetails(int empid) {
@@ -119,9 +133,7 @@ catch(DataAccessException e)
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Resignation> GetAllResignation(){
-		Resignation resign = new Resignation();
-		namedSqlParams=new MapSqlParameterSource();
-		List<Resignation> allresignations= namedParameterJdbcTemplate.query(resignationproperties.getGetResignationDetails(), new ResignationRowmapper()) ; 
+		List<Resignation> allresignations= namedParameterJdbcTemplate.query(resignationproperties.getGetResignationDetails(), new ViewAllResignationsRowmapper()) ; 
 		
 		return allresignations;
 

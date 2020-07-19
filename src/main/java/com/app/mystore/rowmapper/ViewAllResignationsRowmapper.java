@@ -17,7 +17,7 @@ public class ViewAllResignationsRowmapper implements RowMapper{
 	resign.setEmpid(rs.getInt("empid"));
 	resign.setStatus(rs.getString("status"));
 	resign.setRid(rs.getInt("rid"));
-	resign.setName(rs.getString("uname"));
+	resign.setName(rs.getString("name"));
 	return resign;
 	}
 
