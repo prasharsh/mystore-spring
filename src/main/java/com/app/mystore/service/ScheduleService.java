@@ -2,19 +2,18 @@ package com.app.mystore.service;
 
 import java.util.ArrayList;
 
-import com.app.mystore.dao.ScheduleDaoImpl;
 import com.app.mystore.dto.avail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.mystore.dao.ScheduleDao;
+import com.app.mystore.dao.AvailibilityDao;
 import com.app.mystore.dto.Availability;
 
 @Service("scheduleService")
 public class ScheduleService {
 
 	@Autowired
-	public ScheduleDao dao;
+	public AvailibilityDao dao;
 
 	public int saveAvail(avail avail) {
 
