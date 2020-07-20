@@ -133,36 +133,72 @@ catch(DataAccessException e)
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Resignation> GetAllResignation(){
-		List<Resignation> allresignations= namedParameterJdbcTemplate.query(resignationproperties.getGetResignationDetails(), new ViewAllResignationsRowmapper()) ; 
+		List<Resignation> allresignations= namedParameterJdbcTemplate.query(resignationproperties.getGetResignationDetails(), new ViewAllResignationsRowmapper()) ;
 		
 		return allresignations;
 
 		
 	}
 	@Override
-	public String acceptResignation(int empid)
+	public String  inactiveEmployee(int empid)
 	{
-		int resultManager = 0;
-		int resultEmployee=0;
+		int result=0;
 		namedSqlParams =new MapSqlParameterSource();
+		
 		namedSqlParams.addValue("empid", empid);
 		try {
-		resultManager= namedParameterJdbcTemplate.update(resignationproperties.getAcceptResignation(), namedSqlParams);
-        
-		resultEmployee=namedParameterJdbcTemplate.update(resignationproperties.getChangeResignationStatus(), namedSqlParams);
-		if(resultManager ==1 && resultEmployee==1) {
-			return "Success";
+		result= namedParameterJdbcTemplate.update(resignationproperties.getAcceptResignation(), namedSqlParams);
 		}
-		else
-				return "Fail";
-		}
-		
+
 		catch(DataAccessException e)
 		{
 			System.out.println(e.getMessage());
-		return "Fail";
 		}
+		if (result==1)
+			return "Success";
+			else 
+			return "Fail";
 	}
+	@Override
+	public String acceptResignation(Resignation resign, int empid) {
+		int result =0;
+		namedSqlParams =new MapSqlParameterSource();
+	    namedSqlParams.addValue("rid", resign.getRid());
+		namedSqlParams.addValue("empid", empid);
+		try {
+		result=namedParameterJdbcTemplate.update(resignationproperties.getChangeResignationStatusAccepted(),namedSqlParams);
+		}
+		catch (DataAccessException e){
+			System.out.println(e.getMessage());	
+		}
+		if (result==1)
+		return "Success";
+		else 
+		return "Fail";
+		
+	}
+	
+	@Override
+	public String rejectResignation(Resignation resign, int empid) {
+		int result =0;
+		namedSqlParams =new MapSqlParameterSource();
+	    namedSqlParams.addValue("rid", resign.getRid());
+		namedSqlParams.addValue("empid", empid);
+		try {
+		result=namedParameterJdbcTemplate.update(resignationproperties.getChangeResignationStatusRejected(),namedSqlParams);
+		}
+		catch (DataAccessException e){
+			System.out.println(e.getMessage());	
+		}
+		if (result==1)
+		return "Success";
+			else 
+		return "Fail";
+		
+		
+	}
+
+
 	
 
 }

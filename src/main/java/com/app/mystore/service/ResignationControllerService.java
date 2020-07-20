@@ -13,18 +13,17 @@ public class ResignationControllerService {
 	@Autowired
 	public ResignationDao resignationDao;
 
-	public int apply(Resignation applyresignation, int empid) {
-		
-		
+	public int apply(Resignation applyresignation, int empid) 
+	{
 		int row= resignationDao.apply(applyresignation, empid);
 		System.out.print(row);
 		return row;
 	}
+	
 	public Resignation ResignationDetails(int empid)
 	{
 		Resignation resign= new Resignation();
 		resign=resignationDao.ResignationDetails(empid);
-		
 		return resign;
 	}
 	
@@ -37,19 +36,30 @@ public class ResignationControllerService {
 	}
 	public List<Resignation> viewResignation()
 	{
-		List<Resignation> allresignations=resignationDao.GetAllResignation();
-			  
-		return allresignations;
-		
+		List<Resignation> allresignations=resignationDao.GetAllResignation();	  
+		return allresignations;	
 	}
-	public String acceptResignation(int empid) {
-		String result=resignationDao.acceptResignation(empid);
-		
+	
+	public String acceptResignation(Resignation resign,int empid) {
+		String result=resignationDao.acceptResignation(resign, empid);
 		return result;
 	}
+	
 	public String UpdateResignation(Resignation editresign, int empid) {
 		String result =resignationDao.UpdateDetails(editresign, empid);
 		return result;
+	}
+	
+	public String rejectResignation(Resignation resign, int empid)
+	{
+      String result=resignationDao.rejectResignation(resign, empid); 
+		return result;
+	}
+
+	public String inactiveEmployee(int empid) 
+	{
+		String result=resignationDao.inactiveEmployee(empid);
+		return null;
 	};
 	
 

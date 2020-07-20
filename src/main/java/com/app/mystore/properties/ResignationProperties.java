@@ -24,13 +24,21 @@ public class ResignationProperties {
 	private String getResignationDetails;
 	private String viewBeforeEditResignation;	
 	private String acceptResignation;
-	private String changeResignationStatus;
+	private String changeResignationStatusAccepted;
+	private String changeResignationStatusRejected;
 	
-	public String getChangeResignationStatus() {
-		return changeResignationStatus;
+	
+	public String getChangeResignationStatusRejected() {
+		return changeResignationStatusRejected;
 	}
-	public void setChangeResignationStatus(String changeResignationstatus) {
-		this.changeResignationStatus = changeResignationStatus;
+	public void setChangeResignationStatusRejected(String changeResignationStatusRejected) {
+		this.changeResignationStatusRejected = changeResignationStatusRejected;
+	}
+	public String getChangeResignationStatusAccepted() {
+		return changeResignationStatusAccepted;
+	}
+	public void setChangeResignationStatusAccepted(String changeResignationStatusAccepted) {
+		this.changeResignationStatusAccepted = changeResignationStatusAccepted;
 	}
 	public String getAcceptResignation() {
 		return acceptResignation;

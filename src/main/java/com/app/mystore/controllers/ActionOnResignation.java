@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.mystore.dto.Resignation;
 import com.app.mystore.service.ResignationControllerService;
+import com.google.gson.Gson;
 
 @CrossOrigin
 @RestController
@@ -35,13 +36,30 @@ public class ActionOnResignation
 				return list;
 		
 	}
-	@RequestMapping("/resignation/accept/{empid}")
-	public String acceptResignation(@PathVariable int empid)
+	@RequestMapping(value="/resignation/inactive/{empid}", method=RequestMethod.PUT)
+	public String inactiveEmployee(@PathVariable int empid)
 	{
-		String result= resignationControllerService.acceptResignation(empid);
+		String result= resignationControllerService.inactiveEmployee(empid);
 		return result;
 		
 	}
+	
+	@RequestMapping(value="/resignation/accept/{empid}", method=RequestMethod.PUT)
+	public String acceptResignation(@RequestBody Resignation resign,@PathVariable int empid)
+	{
+		String result= resignationControllerService.acceptResignation(resign,empid);
+		return result;
+		
+	}
+	
+	@RequestMapping(value="/resignation/reject/{empid}", method=RequestMethod.PUT)
+	public String rejectResignation(@RequestBody Resignation resign, @PathVariable("empid") int empid)
+	{
+		Gson gson =new Gson();
+		String result = resignationControllerService.rejectResignation(resign, empid);
+		return gson.toJson(result);
+	}
+	
 	
 };
 

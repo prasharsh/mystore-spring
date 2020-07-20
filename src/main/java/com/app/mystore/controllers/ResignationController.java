@@ -23,13 +23,11 @@ public class ResignationController {
 	@Autowired
 	private  ResignationControllerService resignationControllerService;
 
-//
-//	@PostMapping("/apply/{empid}")
 	
 	@RequestMapping(value = "/apply/{empid}", method = RequestMethod.POST)
-	public String apply(@RequestBody Resignation  applyresignation, @PathVariable int empid){
+	public String apply(@RequestBody Resignation  applyresignation, @PathVariable int empid)
+	{
 		int  resign = resignationControllerService.apply(applyresignation, empid);
-		
 		Gson gson = new Gson();
 		if( resign == 1)
 		return gson.toJson("Success");
@@ -39,7 +37,8 @@ public class ResignationController {
 	
 	@RequestMapping(value = "/edit/{empid}", method = RequestMethod.GET)
 	@ResponseBody
-	public Resignation getresignationdetails( @PathVariable("empid") int empid) {
+	public Resignation getresignationdetails( @PathVariable("empid") int empid) 
+	{
 		Resignation resign= new Resignation(); 
 		resign =resignationControllerService.ResignationDetails(empid);
 		if (resign != null)
@@ -51,9 +50,10 @@ public class ResignationController {
 	@RequestMapping(value="/update/{empid}", method=RequestMethod.PUT)
 	public String update(@RequestBody Resignation Editresign, @PathVariable("empid") int empid)
 	{
+		Gson gson= new Gson();
 		
 	    String update = resignationControllerService.UpdateResignation(Editresign, empid); 
-		return update;
+		return gson.toJson(update);
 		
 	}
 	
@@ -61,7 +61,8 @@ public class ResignationController {
 	@CrossOrigin
 	@RequestMapping(value = "/delete/{empid}", method = RequestMethod.DELETE)
 	@ResponseBody
-	public String deleteResignation(@PathVariable("empid") int empid) {
+	public String deleteResignation(@PathVariable("empid") int empid) 
+	{
 		int result=0;
 		result = resignationControllerService.DeleteResignation(empid);
 		Gson gson = new Gson();
