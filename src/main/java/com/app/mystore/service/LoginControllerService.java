@@ -1,8 +1,5 @@
 package com.app.mystore.service;
 
-import java.util.Arrays;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,10 +30,18 @@ public class LoginControllerService {
 	public ResetPasswordDao resetPasswordDao;
 	@Autowired
 	public MystoreHelper helper;
-	private User user = null;
 
-	public User login(User loginUser) {		
-		user = userDao.loadUserByUsername(loginUser);
+	User user = null;
+	public User login(User loginUser) throws Exception {
+
+
+		try {
+			user = userDao.loadUserByUsername(loginUser);
+
+		}
+		catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
 		return user;
 	}
 
@@ -49,10 +54,14 @@ public class LoginControllerService {
 		}
 	}
 
-	public String getResetToken(String email) {
+	public String getResetToken(String email) throws Exception {
 		String token = "";
 		User user = null;
-		user = userDao.resetPasswordToken(email);
+		try {
+			user = userDao.resetPasswordToken(email);
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
 		if(user!=null) {
 			token = getAlphaNumericString(8);
 			ResetPassword rp = new ResetPassword();
@@ -66,30 +75,36 @@ public class LoginControllerService {
 		return token;
 	}
 
-	 static String getAlphaNumericString(int n) 
-	    { 
-	  
-	        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	                                    + "0123456789"
-	                                    + "abcdefghijklmnopqrstuvxyz"; 
-	  
-	        StringBuilder sb = new StringBuilder(n); 
-	  
-	        for (int i = 0; i < n; i++) { 
-	            int index 
-	                = (int)(AlphaNumericString.length() 
-	                        * Math.random()); 
-	            sb.append(AlphaNumericString 
-	                          .charAt(index)); 
-	        } 
-	  
-	        return sb.toString(); 
-	    }
+	static String getAlphaNumericString(int n) 
+	{ 
+
+		String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+				+ "0123456789"
+				+ "abcdefghijklmnopqrstuvxyz"; 
+
+		StringBuilder sb = new StringBuilder(n); 
+
+		for (int i = 0; i < n; i++) { 
+			int index 
+			= (int)(AlphaNumericString.length() 
+					* Math.random()); 
+			sb.append(AlphaNumericString 
+					.charAt(index)); 
+		} 
+
+		return sb.toString(); 
+	}
 
 
-	public int register(User newUser) {
-		
-		return userDao.registerUser(newUser);
+	public int register(User newUser) throws Exception {
+		int row =0;
+		try {
+			row = userDao.registerUser(newUser);
+		}
+		catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return row;
 	}
 
 
@@ -98,8 +113,13 @@ public class LoginControllerService {
 	}
 
 
-	public int updateUserPassword(User updatePasswordForUser) {
-		ResetPassword rp =userDao.getUseridByToken(updatePasswordForUser.getToken());
+	public int updateUserPassword(User updatePasswordForUser) throws Exception {
+		ResetPassword rp = null;
+		try {
+			rp =userDao.getUseridByToken(updatePasswordForUser.getToken());
+		}catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
 		if(rp!=null) {
 			updatePasswordForUser.setId(rp.getUserid());
 			int rows = userDao.updateUserPassword(updatePasswordForUser);
@@ -111,6 +131,16 @@ public class LoginControllerService {
 				return 0;
 		}
 		return 0;
+	}
+
+	public User getUserById(String id) throws Exception {
+		User user  = null;
+		try {
+			user = userDao.getUseridById(id);
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return user;
 	} 
-	
+
 }

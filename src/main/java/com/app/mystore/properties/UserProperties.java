@@ -18,6 +18,7 @@ public class UserProperties {
 
 	private String getUser;
 
+
 	public String getGetUser() {
 		return getUser;
 	}
@@ -91,10 +92,19 @@ public class UserProperties {
 		this.inactivateToken = inactivateToken;
 	}
 
+	public String getGetUserById() {
+		return getUserById;
+	}
+
+	public void setGetUserById(String getUserById) {
+		this.getUserById = getUserById;
+	}
+
 	private String detailsByTokenId;
 	
 	private String resetPassword;
 	
 	private String inactivateToken;
 	
+	private String getUserById;
 }

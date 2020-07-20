@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.mystore.dto.User;
 import com.app.mystore.service.LoginControllerService;
+import com.google.gson.Gson;
 
 @CrossOrigin
 @RestController
@@ -23,23 +24,23 @@ public class LoginController {
 	@Autowired
 	private  LoginControllerService loginControllerService;
 
-	@RequestMapping("/")
-	public String index() {
-		return "Greetings from Spring Boot!";
-	}
+	Gson g = new Gson();
 
-	/*
-	 * @RequestMapping(value="/login",method={RequestMethod.POST},
-	 * consumes="application/json")
-	 */
 	@PostMapping(path ="/login", consumes = "application/json", produces = "application/json")
 	public User login(@RequestBody User  loginUser){
+		User user = null;
+		try {
+			user= (User)loginControllerService.login(loginUser);
 
+		}
+		catch (Exception e) {
+			user = new User();
+			user.setMessage(e.getLocalizedMessage());
 
-		User user= (User)loginControllerService.login(loginUser);
+		}
 
 		if(user!=null) {
-			
+
 			return user;
 		}
 		return null;
@@ -50,12 +51,17 @@ public class LoginController {
 	public String register(@RequestBody User newUser){
 
 		int record = 0;
-		record =loginControllerService.register(newUser);
+		try {
+			record =loginControllerService.register(newUser);
+		}catch (Exception e) {
+			return g.toJson(e.getMessage());
+		}
+
 
 		if(record> 0) {
-			return "success";
+			return g.toJson("success");
 		}
-		return "failed";
+		return g.toJson("failed");
 
 	}
 
@@ -76,12 +82,31 @@ public class LoginController {
 	public String changePassword(@RequestBody User updatePasswordForUser){
 
 		int record = 0;
-		record =loginControllerService.updateUserPassword(updatePasswordForUser);
-
+		try {
+			record =loginControllerService.updateUserPassword(updatePasswordForUser);
+		}
+		catch (Exception e) {
+			return g.toJson(e.getMessage());
+		}
 		if(record> 0) {
 			return "success";
 		}
 		return "failed";
+
+	}
+
+	@GetMapping("/fetchUserProfile/{id}")
+	public User fetchUserProfile(
+			@PathVariable("id") String id) {
+		User user = null;
+		try {
+			user =	loginControllerService.getUserById(id);
+		} catch (Exception e) {
+			user = new User();
+			user.setMessage(e.getMessage());
+			return user;
+		}
+		return user;
 
 	}
 
@@ -90,11 +115,16 @@ public class LoginController {
 	public String resetPasswordToken(
 			@PathVariable("email") String email) {
 		String token = "";
-		token = loginControllerService.getResetToken(email);
+		try {
+			token = loginControllerService.getResetToken(email);
+		} catch (Exception e) {
+			return g.toJson(e.getMessage());
+		}
 		if(token==null || "".equals(token)) {
 			token = "Email Id is not registered, please provide an registered email Id";
 		}
-		return token;
+		token="Please check your email for the token sent!!";
+		return g.toJson(token);
 	}
 
 

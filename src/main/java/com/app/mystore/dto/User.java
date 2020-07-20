@@ -17,6 +17,7 @@ public class User {
 	private String createUser; 
 	private String updateUser;
 	private String token;
+	private String message;
 	
 	
 	
@@ -99,6 +100,12 @@ public class User {
 	}
 	public void setToken(String token) {
 		this.token = token;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
 	} 
 
 }
