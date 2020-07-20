@@ -45,7 +45,7 @@ public class ActionOnResignation
 	}
 	
 	@RequestMapping(value="/resignation/accept/{empid}", method=RequestMethod.PUT)
-	public String acceptResignation(@RequestBody Resignation resign,@PathVariable int empid)
+	public String acceptResignation(@RequestBody Resignation resign, @PathVariable int empid)
 	{
 		String result= resignationControllerService.acceptResignation(resign,empid);
 		return result;
