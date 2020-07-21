@@ -34,5 +34,34 @@ public class LeaveProperties {
 		this.fetchall = fetchall;
 	}
 	
+	private String fetchallLeaveHistory;
 
+	public String getFetchallLeaveHistory() {
+		return fetchallLeaveHistory;
+	}
+
+	public void setFetchallLeaveHistory(String fetchallLeaveHistory) {
+		this.fetchallLeaveHistory = fetchallLeaveHistory;
+	}
+	
+	private String checkLeave;
+
+	public String getCheckLeave() {
+		return checkLeave;
+	}
+
+	public void setCheckLeave(String checkLeave) {
+		this.checkLeave = checkLeave;
+	}
+	
+	public String accept;
+
+	public String getAccept() {
+		return accept;
+	}
+
+	public void setAccept(String accept) {
+		this.accept = accept;
+	}
+	
 }

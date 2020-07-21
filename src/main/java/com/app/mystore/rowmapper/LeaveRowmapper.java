@@ -10,8 +10,8 @@ public class LeaveRowmapper implements RowMapper{
 	public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Leave leave =new Leave();
 		leave.setEmpid(rs.getInt("empid"));
-		leave.setStartdate(rs.getDate("startdate"));
-		leave.setEnddate(rs.getDate("enddate"));
+		leave.setStartdate(rs.getString("startdate"));
+		leave.setEnddate(rs.getString("enddate"));
 		leave.setReason(rs.getString("reason"));
 		leave.setName(rs.getString("name"));
 		return leave;	

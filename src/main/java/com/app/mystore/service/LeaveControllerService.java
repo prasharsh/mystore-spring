@@ -13,15 +13,26 @@ public class LeaveControllerService {
 	@Autowired
 	public LeaveDao leaveDao;
 
-	public String applyLeave(Leave leaveDetails) {
+	public String applyLeave(Leave leaveDetails, int empid) {
 		// TODO Auto-generated method stub
-		return leaveDao.enterLeaveData(leaveDetails);
+		return leaveDao.enterLeaveData(leaveDetails, empid);
 	}
 
 	public List<Leave> viewLeaveRequest() {
 		// TODO Auto-generated method stub
 		List<Leave> pendingRequest = leaveDao.pendingLeave();
 		return pendingRequest;
+	}
+
+	public List<Leave> viewLeaveHistory(int empid) {
+		// TODO Auto-generated method stub
+		List<Leave> leaveHistory = leaveDao.leaveHistory(empid);
+		return leaveHistory;
+	}
+
+	public String acceptLeave(Leave leave, int empid) {
+		String result=leaveDao.acceptLeave(leave, empid);
+		return result;
 	}
 	
 	
