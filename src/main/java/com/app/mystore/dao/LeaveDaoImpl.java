@@ -58,7 +58,7 @@ public class LeaveDaoImpl extends JdbcDaoSupport implements LeaveDao{
 		namedSqlParams.addValue("startdate", leaveDetails.getStartdate());
 		namedSqlParams.addValue("enddate", leaveDetails.getEnddate());
 		try {
-		result = (Leave) namedParameterJdbcTemplate.queryForObject(leaveproperties.getCheckLeave(), namedSqlParams, new LeaveHistoryRowmapper());
+		//result = (Leave) namedParameterJdbcTemplate.queryForObject(leaveproperties.getCheckLeave(), namedSqlParams, new LeaveHistoryRowmapper());
 		System.out.println(result);
 		value="Duplicate";
 		

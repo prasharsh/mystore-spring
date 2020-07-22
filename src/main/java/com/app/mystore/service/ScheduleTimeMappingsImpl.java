@@ -10,7 +10,11 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 @Service("GenerateMappings")
 public class ScheduleTimeMappingsImpl implements ScheduleTimeMappings {
@@ -20,7 +24,7 @@ public class ScheduleTimeMappingsImpl implements ScheduleTimeMappings {
     @Override
     public ArrayList<MappedTimings> generateMappings(ArrayList<avail> crewAvailibilityList, ArrayList<ShiftDetails> availiableshifts) {
         ArrayList<MappedTimings> timings = new ArrayList<>();
-        String time1 = "12:00AM";
+       /* String time1 = "12:00AM";
         String time2 = "01:01AM";
         String[] timesplit = time1.split(time1.substring(5,5));
         String trailTime;
@@ -35,43 +39,116 @@ public class ScheduleTimeMappingsImpl implements ScheduleTimeMappings {
             Date date2 = format.parse(time2);
             long difference = date2.getTime() - date1.getTime();
             System.out.println(difference/(1000*60*60));
-        }catch (java.text.ParseException exception){}
+        }catch (java.text.ParseException exception){} */
         ArrayList<InputTimings> inputTimingsList = new ArrayList<>();
+        List<Future<AllocateShift>> jobResults;
+        List<CompareTimings> tasks = new ArrayList<>();
         for(avail availRecord:crewAvailibilityList){
             InputTimings inputTimings = new InputTimings();
-            inputTimings.setCrewStartTimings(availRecord.getMonStart());
+            String Timings = availRecord.getMonStart();
+            String[] splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewStartTimings(Timings);
+            Timings = availRecord.getMonEnd();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
             inputTimings.setCrewEndTimings(availRecord.getMonEnd());
             inputTimings.setDay("Monday");
+            CompareTimings c = new CompareTimings(inputTimings);
+            c.setShiftDetails(availiableshifts);
+            tasks.add(c);
             inputTimingsList.add(inputTimings);
             inputTimings = new InputTimings();
-            inputTimings.setCrewStartTimings(availRecord.getTuesStart());
-            inputTimings.setCrewEndTimings(availRecord.getTuesEnd());
+            Timings = availRecord.getTuesStart();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewStartTimings(Timings);
+            Timings = availRecord.getTuesEnd();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewEndTimings(Timings);
             inputTimings.setDay("Tuesday");
+            c = new CompareTimings(inputTimings);
+            c.setShiftDetails(availiableshifts);
+            tasks.add(c);
             inputTimingsList.add(inputTimings);
             inputTimings = new InputTimings();
-            inputTimings.setCrewStartTimings(availRecord.getWedStart());
-            inputTimings.setCrewEndTimings(availRecord.getWedEnd());
+            Timings = availRecord.getWedStart();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewStartTimings(Timings);
+            Timings = availRecord.getWedEnd();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewEndTimings(Timings);
             inputTimings.setDay("Wednesday");
+            c = new CompareTimings(inputTimings);
+            c.setShiftDetails(availiableshifts);
+            tasks.add(c);
             inputTimingsList.add(inputTimings);
             inputTimings = new InputTimings();
-            inputTimings.setCrewStartTimings(availRecord.getThrusStart());
-            inputTimings.setCrewEndTimings(availRecord.getThrusEnd());
+            Timings = availRecord.getThrusStart();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewStartTimings(Timings);
+            Timings = availRecord.getThrusEnd();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewEndTimings(Timings);
             inputTimings.setDay("Thursday");
+            c = new CompareTimings(inputTimings);
+            c.setShiftDetails(availiableshifts);
+            tasks.add(c);
             inputTimingsList.add(inputTimings);
             inputTimings = new InputTimings();
-            inputTimings.setCrewStartTimings(availRecord.getFriStart());
-            inputTimings.setCrewEndTimings(availRecord.getFriEnd());
+            Timings = availRecord.getFriStart();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewStartTimings(Timings);
+            Timings = availRecord.getFriEnd();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewEndTimings(Timings);
             inputTimings.setDay("Friday");
+            c = new CompareTimings(inputTimings);
+            c.setShiftDetails(availiableshifts);
+            tasks.add(c);
             inputTimingsList.add(inputTimings);
             inputTimings = new InputTimings();
-            inputTimings.setCrewStartTimings(availRecord.getSatStart());
-            inputTimings.setCrewEndTimings(availRecord.getSatEnd());
+            Timings = availRecord.getSatStart();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewStartTimings(Timings);
+            Timings = availRecord.getSatEnd();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewEndTimings(Timings);
             inputTimings.setDay("Saturday");
+            c = new CompareTimings(inputTimings);
+            c.setShiftDetails(availiableshifts);
+            tasks.add(c);
             inputTimings = new InputTimings();
-            inputTimings.setCrewStartTimings(availRecord.getSunStart());
-            inputTimings.setCrewEndTimings(availRecord.getSunEnd());
+            Timings = availRecord.getSunStart();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewStartTimings(Timings);
+            Timings = availRecord.getSunEnd();
+            splitter = Timings.split(Timings.substring(5,5));
+            Timings = splitter[0]+":00"+splitter[1];
+            inputTimings.setCrewEndTimings(Timings);
             inputTimings.setDay("Sunday");
+            c = new CompareTimings(inputTimings);
+            c.setShiftDetails(availiableshifts);
+            tasks.add(c);
             inputTimingsList.add(inputTimings);
+        }
+        try {
+            ExecutorService executor = Executors.newFixedThreadPool(300);
+            jobResults = executor.invokeAll(tasks);
+        }catch (InterruptedException e){
+            System.out.println("JobExecution Failed");
         }
 
         return timings;
@@ -259,5 +336,47 @@ public class ScheduleTimeMappingsImpl implements ScheduleTimeMappings {
 
 
 
+    }
+    public static void main(String[] args){
+        ArrayList<avail> availArrayList = new ArrayList<>();
+        ArrayList<ShiftDetails> shifts = new ArrayList<>();
+        avail a = new avail();
+        a.setUsername("Parth123");
+        a.setMonStart("12:00AM");
+        a.setMonEnd("2:00AM");
+        a.setTuesStart("6:00PM");
+        a.setTuesEnd("12:00AM");
+        a.setWedStart("1:00AM");
+        a.setWedEnd("4:00AM");
+        a.setThrusStart("7:00PM");
+        a.setThrusEnd("12:00AM");
+        a.setFriStart("5:30PM");
+        a.setFriEnd("1:00AM");
+        a.setSatStart("12:00AM");
+        a.setSatEnd("5:00AM");
+        a.setSatStart("1:00AM");
+        a.setSatEnd("7:00AM");
+        availArrayList.add(a);
+        ShiftDetails details = new ShiftDetails();
+        details.setNumber(1);
+        details.setStart("12:00:00AM");
+        details.setEnd("06:00:00AM");
+        shifts.add(details);
+        details = new ShiftDetails();
+        details.setNumber(2);
+        details.setStart("06:00:00AM");
+        details.setEnd("12:00:00PM");
+        shifts.add(details);
+        details = new ShiftDetails();
+        details.setNumber(3);
+        details.setStart("12:00:00PM");
+        details.setEnd("06:00:00AM");
+        shifts.add(details);
+        details = new ShiftDetails();
+        details.setNumber(4);
+        details.setStart("06:00:00PM");
+        details.setEnd("12:00:00AM");
+        shifts.add(details);
+        new ScheduleTimeMappingsImpl().generateMappings(availArrayList,shifts);
     }
 }
