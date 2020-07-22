@@ -19,6 +19,7 @@ public class JobPostingProp {
 	private String getByJobID;
 	private String updateJob;
 	private String insertJob;
+	private String deleteJob;
 
 	public String getInsertJob() {
 		return insertJob;
@@ -50,5 +51,13 @@ public class JobPostingProp {
 
 	public void setFetchAll(String fetchAll) {
 		this.fetchAll = fetchAll;
+	}
+
+	public String getDeleteJob() {
+		return deleteJob;
+	}
+
+	public void setDeleteJob(String deleteJob) {
+		this.deleteJob = deleteJob;
 	}
 }

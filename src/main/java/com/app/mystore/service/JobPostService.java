@@ -41,4 +41,13 @@ public class JobPostService {
 			return false;
 		}
 	}
+	public Boolean deleteJob(int jobID) {
+		int result = dao.deleteJob(jobID);
+		if(result > 0){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 }

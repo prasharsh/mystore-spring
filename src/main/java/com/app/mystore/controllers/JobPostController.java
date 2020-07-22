@@ -35,4 +35,9 @@ public class JobPostController {
 	public Boolean insertJobPost(@RequestBody JobPost newJobPost) {
 		return jobPostService.addJobPost(newJobPost);
 	}
+
+	@DeleteMapping("/deleteJob/{jobID}")
+	public Boolean deleteApplication( @PathVariable int jobID) {
+		return jobPostService.deleteJob(jobID);
+	}
 }

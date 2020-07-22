@@ -9,4 +9,5 @@ public interface JobPostDao {
     JobPost getByJobID(int jobId);
     int updateJobPost(JobPost jobPost);
     int insertJobPost(JobPost newJobPost);
+    int deleteJob(int jobID);
 }

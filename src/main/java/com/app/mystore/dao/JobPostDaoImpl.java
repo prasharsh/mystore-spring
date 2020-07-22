@@ -107,4 +107,19 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		}
 		return rows;
 	}
+
+	@Override
+	public int deleteJob(int jobID) {
+		int rows =0;
+		namedSqlParams=new MapSqlParameterSource();
+		namedSqlParams.addValue("JobID", jobID);
+
+		try {
+			rows = namedParameterJdbcTemplate.update(jobPostingProp.getDeleteJob(), namedSqlParams);
+		}
+		catch (DataAccessException e) {
+			System.out.println(e.getMessage());
+		}
+		return rows;
+	}
 }
