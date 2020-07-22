@@ -1,11 +1,13 @@
 package com.app.mystore.dto;
 
 public class Availability {
-
-	private String userId; 
+	private String userId;
 	private String day  ;
-	private String start ; 
+	private String start ;
 	private String end ;
+
+
+
 	public String getUserId() {
 		return userId;
 	}

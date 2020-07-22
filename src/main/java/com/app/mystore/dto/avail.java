@@ -127,6 +127,44 @@ public class avail {
         this.username = username;
     }
 
+    public void setWeekDays(Availability availability){
+        String day = availability.getDay();
+        System.out.println("weekdays :: Log"+day);
+        switch (day){
+            case "Monday":
+                this.setMonEnd(availability.getEnd());
+                this.setMonStart(availability.getStart());
+                break;
+
+            case "Tuesday":
+                this.setTuesStart(availability.getStart());
+                this.setMonStart(availability.getEnd());
+                break;
+
+            case "Wednesday":
+                this.setWedStart(availability.getStart());
+                this.setWedEnd(availability.getEnd());
+                break;
+
+            case "Thursday":
+                this.setThrusStart(availability.getStart());
+                this.setThrusEnd(availability.getEnd());
+                break;
+            case "Friday":
+                this.setFriStart(availability.getStart());
+                this.setSatEnd(availability.getEnd());
+                break;
+            case "Saturday":
+                this.setSatStart(availability.getStart());
+                this.setSatEnd(availability.getEnd());
+                break;
+            case "Sunday":
+                this.setSunStart(availability.getStart());
+                this.setSunEnd(availability.getEnd());
+                break;
+        }
+    }
+
     String username;
     String monStart, monEnd;
     String tuesStart, tuesEnd;

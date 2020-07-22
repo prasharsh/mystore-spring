@@ -14,9 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 @Configuration
@@ -76,25 +74,48 @@ public class ScheduleDaoImpl extends JdbcDaoSupport implements ScheduleDao {
         namedSqlParams = new MapSqlParameterSource();
         ArrayList<avail> availAllCrews = new ArrayList<>();
         ArrayList<Availability> allAvail = new ArrayList<>();
+        HashMap<String,avail> map = new HashMap<>();
         try {
 
-            List<Map<String, Object>> list =  namedParameterJdbcTemplate.queryForList(scheduleProps.getQueryuniquecrews(),namedSqlParams);
+            List<Map<String, Object>> list = namedParameterJdbcTemplate.queryForList(scheduleProps.getGetAllAvailibility(), namedSqlParams);
 
-            if (list!= null) {
+            if (list != null) {
                 System.out.println(list.size());
 
                 for (Map row : list) {
 
-                    Availability record  = new Availability();
-                    record.setUserId((String)row.get("UserID"));
-                    record.setEnd((String)row.get("END"));
-                    record.setStart((String)row.get("START"));
-                    record.setDay((String)row.get("DAY"));
-                    allAvail.add(record);
+                    Availability record = new Availability();
+                    String userId = (String) row.get("UserID");
+                    avail recordExisted = (avail) map.get(userId);
+                    System.out.println(userId);
+                    record.setUserId((String) row.get("UserID"));
+                    record.setEnd((String) row.get("END"));
+                    record.setStart((String) row.get("START"));
+                    record.setDay((String) row.get("DAY"));
+                    System.out.println((String) row.get("DAY"));
+                    //allAvail.add(record);
+
+                    if (null == recordExisted) {
+                        avail newRecord = new avail();
+                        newRecord.setUsername(userId);
+                        newRecord.setWeekDays(record);
+                        map.put(userId, newRecord);
+                    } else {
+                        recordExisted.setWeekDays(record);
+                        map.put(userId, recordExisted);
+                    }
                 }
             }
-
-
+            System.out.println("Hashmap : " + map);
+            Set<String> keys = map.keySet();
+            for (String key:keys){
+                avail rec = map.get(key);
+                availAllCrews.add(rec);
+            }
+            for (avail a:availAllCrews){
+                System.out.println(a.getUsername());
+                System.out.println(a.getMonEnd());
+            }
         }
 
         catch(DataAccessException e)

@@ -17,6 +17,8 @@ public class ScheduleController {
 
 	@Autowired
 	private AutomateScheduleGenerationImpl automateScheduleGeneration;
+
+
 	@PostMapping("/saveAvail")
 	public String saveAvail(@RequestBody avail avail){
 

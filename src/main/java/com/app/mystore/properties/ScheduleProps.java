@@ -12,6 +12,15 @@ import org.springframework.context.annotation.PropertySource;
 public class ScheduleProps {
     String queryuniquecrews;
 
+    public String getGetAllAvailibility() {
+        return getAllAvailibility;
+    }
+
+    public void setGetAllAvailibility(String getAllAvailibility) {
+        this.getAllAvailibility = getAllAvailibility;
+    }
+
+    String getAllAvailibility;
     public String getQueryuniquecrews() {
         return queryuniquecrews;
     }
