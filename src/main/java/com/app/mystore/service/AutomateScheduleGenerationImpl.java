@@ -25,6 +25,7 @@ public class AutomateScheduleGenerationImpl implements AutomateScheduleGeneratio
     public void encodeAvailibility() {
         ArrayList<ShiftDetails> shiftDetails = scheduleDaoimpl.getShiftDetails();
         ArrayList<avail> crewAvailList = scheduleDaoimpl.getAllAvailibility();
+        System.out.println("size"+crewAvailList.size());
         scheduleTimeMappings.generateMappings(crewAvailList,shiftDetails);
     }
 

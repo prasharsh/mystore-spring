@@ -12,11 +12,9 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 import com.app.mystore.dto.Leave;
-import com.app.mystore.dto.User;
 import com.app.mystore.properties.LeaveProperties;
 import com.app.mystore.rowmapper.LeaveRowmapper;
 import com.app.mystore.rowmapper.LeaveHistoryRowmapper;
-import com.app.mystore.rowmapper.UserRowmapper;
 
 @Repository
 @Configuration
@@ -58,7 +56,7 @@ public class LeaveDaoImpl extends JdbcDaoSupport implements LeaveDao{
 		namedSqlParams.addValue("startdate", leaveDetails.getStartdate());
 		namedSqlParams.addValue("enddate", leaveDetails.getEnddate());
 		try {
-		//result = (Leave) namedParameterJdbcTemplate.queryForObject(leaveproperties.getCheckLeave(), namedSqlParams, new LeaveHistoryRowmapper());
+		result = (Leave) namedParameterJdbcTemplate.queryForObject(leaveproperties.getCheckLeave(), namedSqlParams, new LeaveHistoryRowmapper());
 		System.out.println(result);
 		value="Duplicate";
 		

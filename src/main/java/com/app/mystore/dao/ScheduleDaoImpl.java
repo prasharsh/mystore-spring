@@ -123,7 +123,7 @@ public class ScheduleDaoImpl extends JdbcDaoSupport implements ScheduleDao {
 
             System.out.println(e.getMessage());
         }
-        return null;
+        return availAllCrews;
     }
 
     @Override
