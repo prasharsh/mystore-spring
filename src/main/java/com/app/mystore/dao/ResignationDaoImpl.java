@@ -155,9 +155,9 @@ catch(DataAccessException e)
 			System.out.println(e.getMessage());
 		}
 		if (result==1)
-			return "Success";
+		return "Success";
 			else 
-			return "Fail";
+		return "Fail";
 	}
 	@Override
 	public String acceptResignation(Resignation resign, int empid) {

@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MystoreHelper {
 
-	public void sendEmail(String email, String token) {
+	public void sendEmail(String email, String body, String subject) {
 		System.out.println("inside send email");
 		try {
 			Properties props = new Properties();
@@ -37,25 +37,16 @@ public class MystoreHelper {
 			msg.setFrom(new InternetAddress("mystoreweb.dalhousie@gmail.com", false));
 
 			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-			msg.setSubject("Reset password token");
-			msg.setContent("Please use the token: "+ token+" , to reset the password ", "text/html");
+			msg.setSubject(subject);
+			msg.setContent(body, "text/html");
 			msg.setSentDate(new Date());
 
-			/*		   MimeBodyPart messageBodyPart = new MimeBodyPart();
-		   messageBodyPart.setContent("Tutorials point email", "text/html");
-
-		   Multipart multipart = new MimeMultipart();
-		   multipart.addBodyPart(messageBodyPart);
-		   MimeBodyPart attachPart = new MimeBodyPart();
-
-		   attachPart.attachFile("/var/tmp/image19.png");
-		   multipart.addBodyPart(attachPart);
-		   msg.setContent(multipart);*/
 
 			Transport.send(msg);
 		} catch (MessagingException e) {
 			System.out.println(e.getMessage());
 		}   
 	}
+
 }
 

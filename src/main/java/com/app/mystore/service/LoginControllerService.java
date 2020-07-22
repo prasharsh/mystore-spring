@@ -69,7 +69,8 @@ public class LoginControllerService {
 			rp.setToken(token);
 			int rows = resetPasswordDao.insertToken(rp);
 			System.out.println(rows);
-			helper.sendEmail(user.getUsername(), token);
+			
+			helper.sendEmail(user.getUsername(), "Please use the token: "+ token+" , to reset the password ", "Reset password token");
 		}
 
 		return token;

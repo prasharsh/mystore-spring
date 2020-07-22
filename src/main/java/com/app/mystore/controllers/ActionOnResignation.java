@@ -39,16 +39,18 @@ public class ActionOnResignation
 	@RequestMapping(value="/resignation/inactive/{empid}", method=RequestMethod.PUT)
 	public String inactiveEmployee(@PathVariable int empid)
 	{
+		Gson gson =new Gson();
 		String result= resignationControllerService.inactiveEmployee(empid);
-		return result;
+		return gson.toJson(result);
 		
 	}
 	
 	@RequestMapping(value="/resignation/accept/{empid}", method=RequestMethod.PUT)
 	public String acceptResignation(@RequestBody Resignation resign, @PathVariable int empid)
-	{
+	{   
+		Gson gson =new Gson();
 		String result= resignationControllerService.acceptResignation(resign,empid);
-		return result;
+		return gson.toJson(result);
 		
 	}
 	

@@ -6,13 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.mystore.dao.ResignationDao;
+import com.app.mystore.dao.UserDao;
 import com.app.mystore.dto.Resignation;
+import com.app.mystore.dto.User;
+import com.app.mystore.utils.MystoreHelper;
 
 @Service("ResignationControllerService")
 public class ResignationControllerService {
 	@Autowired
 	public ResignationDao resignationDao;
+	
+	@Autowired
+	public UserDao dao;
 
+	@Autowired
+	MystoreHelper helper;
+	
 	public int apply(Resignation applyresignation, int empid) 
 	{
 		int row= resignationDao.apply(applyresignation, empid);
@@ -42,6 +51,14 @@ public class ResignationControllerService {
 	
 	public String acceptResignation(Resignation resign,int empid) {
 		String result=resignationDao.acceptResignation(resign, empid);
+		User user = null;
+		try {
+			user = dao.getUseridById(empid+"");
+			helper.sendEmail(user.getUsername(), "Your resignation request has been approved, and your account has been inactivated.", "Resignation Accepted");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return result;
 	}
 	
@@ -59,7 +76,7 @@ public class ResignationControllerService {
 	public String inactiveEmployee(int empid) 
 	{
 		String result=resignationDao.inactiveEmployee(empid);
-		return null;
+		return result;
 	};
 	
 

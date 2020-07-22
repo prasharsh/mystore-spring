@@ -189,7 +189,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 					userproperties.getGetUserById(), namedSqlParams, new UserRowmapper());
 
 		} catch (DataAccessException e) {
-
+			e.printStackTrace();
 			throw new Exception("DB Issue, please contact support team");
 
 		}
