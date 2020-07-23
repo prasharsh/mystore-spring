@@ -197,4 +197,21 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 
 	}
 
+	@Override
+	public int updateRole(User user) {
+		int rows =0;
+		namedSqlParams=new MapSqlParameterSource();
+
+		namedSqlParams.addValue("id", user.getId());
+		namedSqlParams.addValue("user_role", "2");
+
+		try {
+			rows = namedParameterJdbcTemplate.update(userproperties.getUpdateRole(), namedSqlParams);
+		}
+		catch (DataAccessException e) {
+			System.out.println(e.getMessage());
+		}
+		return rows;
+	}
+
 }

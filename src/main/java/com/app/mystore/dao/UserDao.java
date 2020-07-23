@@ -21,4 +21,6 @@ public interface UserDao {
 
 	public User getUseridById(String id) throws Exception;
 
+	public int updateRole(User user);
+
 }

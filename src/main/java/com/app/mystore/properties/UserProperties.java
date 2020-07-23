@@ -17,7 +17,15 @@ public class UserProperties {
 	}
 
 	private String getUser;
+	private String updateRole;
 
+	public String getUpdateRole() {
+		return updateRole;
+	}
+
+	public void setUpdateRole(String updateRole) {
+		this.updateRole = updateRole;
+	}
 
 	public String getGetUser() {
 		return getUser;

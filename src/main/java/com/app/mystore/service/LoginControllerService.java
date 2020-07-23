@@ -142,6 +142,24 @@ public class LoginControllerService {
 			throw new Exception(e.getMessage());
 		}
 		return user;
-	} 
+	}
+
+	public int updateRole(int userID) throws Exception {
+		String id = "" + userID;
+		int row =0;
+
+		try {
+			user = userDao.getUseridById(id);
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		try {
+			row = userDao.updateRole(user);
+		}
+		catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return row;
+	}
 
 }

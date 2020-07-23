@@ -127,5 +127,20 @@ public class LoginController {
 		return g.toJson(token);
 	}
 
+	@PutMapping("/updateRole/{userID}")
+	public Boolean updateRole(@PathVariable int userID){
+		int record = 0;
+		try{
+			record =loginControllerService.updateRole(userID);
+		}
+		catch (Exception e) {
+			return false;
+		}
+		if(record> 0) {
+			return true;
+		}
+		return false;
+	}
+
 
 }
