@@ -94,8 +94,9 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		try {
 			resign =(Resignation) namedParameterJdbcTemplate.queryForObject(
 					resignationproperties.getViewBeforeEditResignation(), namedSqlParams, new ViewAllResignationsRowmapper());
-		} catch (DataAccessException e) {
-			resign=null;
+		} 
+		catch (EmptyResultDataAccessException e) {
+			
 			System.out.println(e.getMessage());
 		}
 		return resign;
@@ -112,24 +113,23 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		namedSqlParams.addValue("empid", empid);	
 try {
 	resign= (Resignation) namedParameterJdbcTemplate.queryForObject(
+			
 			resignationproperties.getResignationDetails(), namedSqlParams, new ResignationRowmapper());
-	if (resign!= null)
-			{
+	
+}
+
+catch (EmptyResultDataAccessException e)
+{
+
 	result= namedParameterJdbcTemplate.update(resignationproperties.getDeleteResignation(),namedSqlParams);
 	
-}
-	else 
-		result =0;
-}
-	
-catch(DataAccessException e)
-{
 	
 	System.out.println(e.getMessage());
 }
 		return result;
 		
 	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Resignation> GetAllResignation(){
