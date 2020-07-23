@@ -70,6 +70,18 @@ public class ComplaintsController {
 			return "Failure";
 		}
 	}
+	
+	@PutMapping("/deleteComplaint/{complaintId}")
+	public String deleteComplaint(@PathVariable int complaintId) {
+		try {
+			complaintService.deleteComplaint(complaintId);
+			return "Success";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "Failure";
+		}
+	}
 
 
 }

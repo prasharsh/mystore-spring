@@ -18,6 +18,7 @@ public class User {
 	private String updateUser;
 	private String token;
 	private String message;
+
 	
 	
 	

@@ -213,5 +213,19 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 		}
 		return rows;
 	}
+	
+	@Override
+	public int getManagerId() throws Exception {
+		namedSqlParams=new MapSqlParameterSource();
+		namedSqlParams.addValue("roleId", 1);
+		try {
+			User u= (User) namedParameterJdbcTemplate.query(userproperties.getGetManagerId(), namedSqlParams,new UserRowmapper()).get(0);
+			return u.getId();
+		}
+		catch (DataAccessException e) {
+			e.printStackTrace();
+			throw new Exception();
+		}
+	}
 
 }

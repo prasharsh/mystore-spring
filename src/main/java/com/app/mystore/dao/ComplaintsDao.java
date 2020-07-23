@@ -10,5 +10,6 @@ public interface ComplaintsDao {
 	public List <Complaint> getUserComplaints(int userId)  throws Exception;
 	public void createComplaint(Complaint complaint) throws Exception;
 	public void updateResponse(Complaint complaint) throws Exception;
+	public void delteComplaint(int id) throws Exception;
 
 }

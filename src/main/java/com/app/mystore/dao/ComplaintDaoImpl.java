@@ -122,4 +122,19 @@ public class ComplaintDaoImpl extends JdbcDaoSupport implements ComplaintsDao{
 		}
 	}
 
+	@Override
+	public void delteComplaint(int id) throws Exception {
+		namedSqlParams=new MapSqlParameterSource();
+		namedSqlParams.addValue("id", id);
+		try {
+			namedParameterJdbcTemplate.update(complaintproperties.getDeleteComplaint(), namedSqlParams);
+		}
+		catch (DataAccessException e) {
+
+			throw new Exception("DB Issue, please contact support team");
+
+		}
+		
+	}
+
 }
