@@ -54,7 +54,6 @@ public class ComplaintService {
 		User user=userDao.getUseridById(String.valueOf(complaint.getUserId()));
 		not.setNotification("Complaint Created  by "+user.getFirstName());
 		not.setNotificationType(NotificationTypeEnum.COMPLAINT_NOTIFICATION.getType());
-		System.out.println(userDao.getManagerId());
 		not.setUserId(userDao.getManagerId());
 		notificationService.createNotification(not);
 		
