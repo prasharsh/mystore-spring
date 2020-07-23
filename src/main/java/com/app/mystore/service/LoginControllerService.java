@@ -1,5 +1,7 @@
 package com.app.mystore.service;
 
+import com.app.mystore.dao.ApplicationDaoImpl;
+import com.app.mystore.dto.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ public class LoginControllerService {
 
 	@Autowired
 	public UserDao userDao;
+
+	@Autowired
+	public ApplicationDaoImpl applicationDao;
 
 	private static LoginControllerService uniqueInstance;
 
@@ -159,6 +164,13 @@ public class LoginControllerService {
 		catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
+		Application application = applicationDao.getByUserID(userID);
+		if(application != null){
+			String body = "Hello, We would like to inform you we have accepted your application! Please sign into myStore to view the employee page.";
+			helper.sendEmail(application.getEmail(), body, "Approved application");
+		}
+
+
 		return row;
 	}
 

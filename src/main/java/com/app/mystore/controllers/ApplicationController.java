@@ -29,6 +29,11 @@ public class ApplicationController {
 		return applicationService.fetchByApplicationID(applicationID);
 	}
 
+	@GetMapping("/fetchByUserID/{userID}")
+	public Application fetchByUserID(@PathVariable int userID) {
+		return applicationService.fetchByUserID(userID);
+	}
+
 	@PutMapping("/updateApplication/{applicationID}")
 	public Boolean updateApplication(@RequestBody Application updateApplication, @PathVariable int applicationID) {
 		return applicationService.updateApplication(updateApplication);

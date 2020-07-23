@@ -22,6 +22,11 @@ public class ApplicationService {
         return application;
     }
 
+    public Application fetchByUserID(int userID) {
+        Application application = dao.getByUserID(userID);
+        return application;
+    }
+
     public Boolean updateApplication(Application updateApplication) {
         int result = dao.updateApplication(updateApplication);
         if(result > 0){

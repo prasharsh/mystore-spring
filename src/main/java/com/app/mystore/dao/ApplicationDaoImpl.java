@@ -67,6 +67,19 @@ public class ApplicationDaoImpl extends JdbcDaoSupport implements ApplicationDao
 	}
 
 	@Override
+	public Application getByUserID(int userID) {
+		Application application = null;
+		namedSqlParams=new MapSqlParameterSource();
+		namedSqlParams.addValue("UserID", userID);
+		try {
+			application=(Application)namedParameterJdbcTemplate.queryForObject(applicationProp.getGetByUserID(), namedSqlParams, new ApplicationRowMapper());
+		} catch (DataAccessException e) {
+			System.out.println(e.getMessage());
+		}
+		return application;
+	}
+
+	@Override
 	public int updateApplication(Application updateApplication) {
 		int rows =0;
 		namedSqlParams=new MapSqlParameterSource();
