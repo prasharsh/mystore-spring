@@ -23,4 +23,6 @@ public interface UserDao {
 
 	public int updateRole(User user);
 
+	int getManagerId() throws Exception;
+
 }

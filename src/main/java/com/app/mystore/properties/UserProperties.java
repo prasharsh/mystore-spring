@@ -18,6 +18,7 @@ public class UserProperties {
 
 	private String getUser;
 	private String updateRole;
+	private String getManagerId;
 
 	public String getUpdateRole() {
 		return updateRole;
@@ -115,4 +116,14 @@ public class UserProperties {
 	private String inactivateToken;
 	
 	private String getUserById;
+
+	public String getGetManagerId() {
+		return getManagerId;
+	}
+
+	public void setGetManagerId(String getManagerId) {
+		this.getManagerId = getManagerId;
+	}
+	
+	
 }

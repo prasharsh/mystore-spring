@@ -19,6 +19,7 @@ public class ComplaintProperties {
 	private String getUserComplaints;
 	private String  createComplaint;
 	private String updateResponse;
+	private String deleteComplaint;
 	public String getGetAllComplaints() {
 		return getAllComplaints;
 	}
@@ -43,6 +44,15 @@ public class ComplaintProperties {
 	public void setUpdateResponse(String updateResponse) {
 		this.updateResponse = updateResponse;
 	}
+	public String getDeleteComplaint() {
+		return deleteComplaint;
+	}
+	public void setDeleteComplaint(String deleteComplaint) {
+		this.deleteComplaint = deleteComplaint;
+	}
+	
+	
+	
 	
 	
 }
