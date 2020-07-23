@@ -12,9 +12,11 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 import com.app.mystore.dto.Leave;
+import com.app.mystore.dto.User;
 import com.app.mystore.properties.LeaveProperties;
 import com.app.mystore.rowmapper.LeaveRowmapper;
 import com.app.mystore.rowmapper.LeaveHistoryRowmapper;
+import com.app.mystore.rowmapper.UserRowmapper;
 
 @Repository
 @Configuration
@@ -127,6 +129,26 @@ public class LeaveDaoImpl extends JdbcDaoSupport implements LeaveDao{
 		else 
 		return "Fail";
 		
+	}
+
+	@Override
+	public String rejectLeave(Leave leave, int empid) {
+		// TODO Auto-generated method stub
+		int result =0;
+		namedSqlParams =new MapSqlParameterSource();
+	    namedSqlParams.addValue("startdate", leave.getStartdate());
+	    namedSqlParams.addValue("enddate", leave.getEnddate());
+		namedSqlParams.addValue("empid", empid);
+		try {
+		result=namedParameterJdbcTemplate.update(leaveproperties.getReject(),namedSqlParams);
+		}
+		catch (DataAccessException e){
+			System.out.println(e.getMessage());	
+		}
+		if (result==1)
+		return "Success";
+		else 
+		return "Fail";
 	}
 
 }

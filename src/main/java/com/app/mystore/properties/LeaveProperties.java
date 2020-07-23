@@ -64,4 +64,15 @@ public class LeaveProperties {
 		this.accept = accept;
 	}
 	
+	public String reject;
+
+	public String getReject() {
+		return reject;
+	}
+
+	public void setReject(String reject) {
+		this.reject = reject;
+	}
+	
+	
 }

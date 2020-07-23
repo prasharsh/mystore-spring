@@ -34,6 +34,11 @@ public class LeaveControllerService {
 		String result=leaveDao.acceptLeave(leave, empid);
 		return result;
 	}
+
+	public String rejectLeave(Leave leave, int empid) {
+		String result=leaveDao.rejectLeave(leave, empid);
+		return result;
+	}
 	
 	
 	
