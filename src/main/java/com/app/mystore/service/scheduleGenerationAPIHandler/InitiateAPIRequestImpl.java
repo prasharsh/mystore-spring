@@ -1,3 +1,13 @@
+/*
+ The class file uses the self-customized Nurse Scheduling Algorithm avail by Google for scheduling employees.
+ The Algorithm has been customized and deployed on Google Cloud Run and accessed using the deployed Endpoint.
+ Credit : Google developers
+ Customization Credit : Mr. Parth Panchal
+ Source of Nurse Scheduling Algorithm : https://developers.google.com/optimization/scheduling/employee_scheduling
+ For reason of coomponent reusability and adhere to avoid reinveting the wheel the algorithm provided by google in python has been
+ customized as per problem requirement and deployed on container registry as microservice.
+ The deployed endpoint of algorithm : https://crewschedulingalgo-n7i4rbxkiq-uc.a.run.app on GCP Cloud
+ * */
 package com.app.mystore.service.scheduleGenerationAPIHandler;
 
 import com.google.gson.Gson;
@@ -20,7 +30,7 @@ public class InitiateAPIRequestImpl implements InitiateAPIRequest {
         String collectOuput="";
         try {
 
-            URL url = new URL("http://127.0.0.1:5000/");
+            URL url = new URL("https://crewschedulingalgo-n7i4rbxkiq-uc.a.run.app");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");

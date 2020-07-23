@@ -1,3 +1,4 @@
+
 package com.app.mystore.service.scheduleGenerationAPIHandler;
 
 import com.app.mystore.dto.MappedTimings;
@@ -6,6 +7,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+
+
 @Service("EncodeCrewAvailibility")
 public class EncodeCrewAvailibilityImpl implements EncodeCrewAvailibility {
     private HashMap<String, Integer> normalizeCrews;
