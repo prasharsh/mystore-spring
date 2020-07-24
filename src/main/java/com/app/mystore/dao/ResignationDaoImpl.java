@@ -15,6 +15,7 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.app.mystore.dto.Resignation;
+import com.app.mystore.properties.AnnouncementProperties;
 import com.app.mystore.properties.ResignationProperties;
 import com.app.mystore.rowmapper.ResignationRowmapper;
 import com.app.mystore.rowmapper.ViewAllResignationsRowmapper;
@@ -64,6 +65,7 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		catch (EmptyResultDataAccessException e) {
 			namedSqlParams.addValue("reason", resign.getReason());
 			row= namedParameterJdbcTemplate.update(resignationproperties.getApply(), namedSqlParams);
+			
 			System.out.println(e.getMessage());
 		}
 	
@@ -94,8 +96,9 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		try {
 			resign =(Resignation) namedParameterJdbcTemplate.queryForObject(
 					resignationproperties.getViewBeforeEditResignation(), namedSqlParams, new ViewAllResignationsRowmapper());
-		} catch (DataAccessException e) {
-			resign=null;
+		} 
+		catch (EmptyResultDataAccessException e) {
+			
 			System.out.println(e.getMessage());
 		}
 		return resign;
@@ -111,25 +114,18 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		namedSqlParams=new MapSqlParameterSource();
 		namedSqlParams.addValue("empid", empid);	
 try {
-	resign= (Resignation) namedParameterJdbcTemplate.queryForObject(
-			resignationproperties.getResignationDetails(), namedSqlParams, new ResignationRowmapper());
-	if (resign!= null)
-			{
+	resign= (Resignation) namedParameterJdbcTemplate.queryForObject(resignationproperties.getResignationDetails(), namedSqlParams, new ResignationRowmapper());
 	result= namedParameterJdbcTemplate.update(resignationproperties.getDeleteResignation(),namedSqlParams);
-	
 }
-	else 
-		result =0;
-}
-	
-catch(DataAccessException e)
+
+catch (Exception e)
 {
-	
 	System.out.println(e.getMessage());
 }
 		return result;
 		
 	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Resignation> GetAllResignation(){

@@ -15,7 +15,8 @@ public class LeaveControllerService {
 
 	public String applyLeave(Leave leaveDetails, int empid) {
 		// TODO Auto-generated method stub
-		return leaveDao.enterLeaveData(leaveDetails, empid);
+		String result = leaveDao.enterLeaveData(leaveDetails, empid);
+		return result;
 	}
 
 	public List<Leave> viewLeaveRequest() {
@@ -32,6 +33,16 @@ public class LeaveControllerService {
 
 	public String acceptLeave(Leave leave, int empid) {
 		String result=leaveDao.acceptLeave(leave, empid);
+		return result;
+	}
+
+	public String rejectLeave(Leave leave, int empid) {
+		String result=leaveDao.rejectLeave(leave, empid);
+		return result;
+	}
+
+	public String DeleteResignation(int id) {
+		String result=leaveDao.deleteLeave(id);
 		return result;
 	}
 	

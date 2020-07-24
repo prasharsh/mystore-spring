@@ -13,5 +13,9 @@ public interface LeaveDao {
 	public List<Leave> leaveHistory(int empid);
 
 	public String acceptLeave(Leave leave, int empid);
+
+	public String rejectLeave(Leave leave, int empid);
+
+	public String deleteLeave(int id);
 	
 }

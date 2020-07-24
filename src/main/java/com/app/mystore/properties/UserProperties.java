@@ -17,7 +17,16 @@ public class UserProperties {
 	}
 
 	private String getUser;
+	private String updateRole;
+	private String getManagerId;
 
+	public String getUpdateRole() {
+		return updateRole;
+	}
+
+	public void setUpdateRole(String updateRole) {
+		this.updateRole = updateRole;
+	}
 
 	public String getGetUser() {
 		return getUser;
@@ -107,4 +116,22 @@ public class UserProperties {
 	private String inactivateToken;
 	
 	private String getUserById;
+
+	public String getGetManagerId() {
+		return getManagerId;
+	}
+
+	public void setGetManagerId(String getManagerId) {
+		this.getManagerId = getManagerId;
+	}
+	
+	public String getInactivateAllTokenForUser() {
+		return inactivateAllTokenForUser;
+	}
+
+	public void setInactivateAllTokenForUser(String inactivateAllTokenForUser) {
+		this.inactivateAllTokenForUser = inactivateAllTokenForUser;
+	}
+
+	private String inactivateAllTokenForUser;
 }

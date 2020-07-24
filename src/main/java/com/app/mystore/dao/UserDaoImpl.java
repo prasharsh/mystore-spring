@@ -197,4 +197,49 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 
 	}
 
+	@Override
+	public int updateRole(User user) {
+		int rows =0;
+		namedSqlParams=new MapSqlParameterSource();
+
+		namedSqlParams.addValue("id", user.getId());
+		namedSqlParams.addValue("user_role", "2");
+
+		try {
+			rows = namedParameterJdbcTemplate.update(userproperties.getUpdateRole(), namedSqlParams);
+		}
+		catch (DataAccessException e) {
+			System.out.println(e.getMessage());
+		}
+		return rows;
+	}
+	
+	@Override
+	public int getManagerId() throws Exception {
+		namedSqlParams=new MapSqlParameterSource();
+		namedSqlParams.addValue("roleId", 1);
+		try {
+			User u= (User) namedParameterJdbcTemplate.query(userproperties.getGetManagerId(), namedSqlParams,new UserRowmapper()).get(0);
+			return u.getId();
+		}
+		catch (DataAccessException e) {
+			e.printStackTrace();
+			throw new Exception();
+		}
+	}
+
+	@Override
+	public void InactivateAllResetPasswordTokenForUser(int userId) {
+		namedSqlParams=new MapSqlParameterSource();
+
+		namedSqlParams.addValue("id", userId);
+		try {
+			namedParameterJdbcTemplate.update(userproperties.getInactivateAllTokenForUser(), namedSqlParams);	
+		} 
+		catch (DataAccessException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+
 }

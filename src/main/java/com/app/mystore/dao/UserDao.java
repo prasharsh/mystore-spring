@@ -19,6 +19,13 @@ public interface UserDao {
 
 	public void InactivateResetPasswordToken(int id);
 
+	public void InactivateAllResetPasswordTokenForUser(int userId);
+	
 	public User getUseridById(String id) throws Exception;
+
+	public int updateRole(User user);
+
+	int getManagerId() throws Exception;
+
 
 }

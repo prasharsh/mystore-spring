@@ -29,6 +29,7 @@ public class ApplicationController {
 		return applicationService.fetchByApplicationID(applicationID);
 	}
 
+
 	@PutMapping("/updateApplication/{applicationID}")
 	public Boolean updateApplication(@RequestBody Application updateApplication, @PathVariable int applicationID) {
 		return applicationService.updateApplication(updateApplication);
@@ -42,5 +43,11 @@ public class ApplicationController {
 	@DeleteMapping("/deleteApplication/{applicationID}")
 	public Boolean deleteApplication( @PathVariable int applicationID) {
 		return applicationService.deleteApplication(applicationID);
+	}
+
+	@PutMapping("/acceptApplication/{applicationID}")
+	public Boolean acceptApplication(@PathVariable int applicationID){
+		return applicationService.acceptApplication(applicationID);
+
 	}
 }

@@ -52,5 +52,25 @@ public class LeaveController {
 		return gson.toJson(result);
 		
 	}
+	
+	@RequestMapping(value="/viewLeaveRequest/reject/{empid}", method=RequestMethod.PUT)
+	public String rejectLeave(@RequestBody Leave leave, @PathVariable int empid)
+	{
+		Gson gson =new Gson();
+		String result= leaveControllerService.rejectLeave(leave,empid);
+		return gson.toJson(result);
+		
+	}
+	
+	@RequestMapping(value = "/viewLeaveHistory/delete/{id}", method = RequestMethod.DELETE)
+public String deleteLeave(@PathVariable("id") int id) 
+	{
+		Gson gson =new Gson();
+		String result;
+		result = leaveControllerService.DeleteResignation(id);
+		return gson.toJson(result);
+		
+	}
 
+	
 }

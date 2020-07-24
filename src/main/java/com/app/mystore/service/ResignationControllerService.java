@@ -5,8 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.mystore.dao.AnnouncementsDao;
+import com.app.mystore.dao.NotificationsDao;
 import com.app.mystore.dao.ResignationDao;
 import com.app.mystore.dao.UserDao;
+import com.app.mystore.dto.Notification;
 import com.app.mystore.dto.Resignation;
 import com.app.mystore.dto.User;
 import com.app.mystore.utils.MystoreHelper;
@@ -18,6 +21,9 @@ public class ResignationControllerService {
 	
 	@Autowired
 	public UserDao dao;
+	
+	@Autowired
+	public NotificationService ns;
 
 	@Autowired
 	MystoreHelper helper;
@@ -25,7 +31,23 @@ public class ResignationControllerService {
 	public int apply(Resignation applyresignation, int empid) 
 	{
 		int row= resignationDao.apply(applyresignation, empid);
-		System.out.print(row);
+		if (row==1)
+		{ 
+			
+		Notification notification= new Notification();
+		
+		try {
+			User user = dao.getUseridById(empid+"");
+			notification.setUserId(dao.getManagerId());
+			notification.setNotification(user.getFirstName()+" "+user.getLastName()+" has resigned");
+			notification.setNotificationType("Resignation Notification");
+			ns.createNotification(notification);
+			
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		}
 		return row;
 	}
 	
@@ -69,7 +91,20 @@ public class ResignationControllerService {
 	
 	public String rejectResignation(Resignation resign, int empid)
 	{
-      String result=resignationDao.rejectResignation(resign, empid); 
+      String result=resignationDao.rejectResignation(resign, empid);
+      Notification notification=new Notification();
+      try  
+      {
+      User user = dao.getUseridById(empid+"");
+		notification.setUserId(empid);
+		notification.setNotification("Your resignation was rejected, contact the manager for further details");
+		notification.setNotificationType("Resignation Notification");
+		ns.createNotification(notification);
+      }
+      catch (Exception e)
+      {
+    	e.getMessage();
+      }
 		return result;
 	}
 

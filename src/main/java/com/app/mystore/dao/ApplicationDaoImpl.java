@@ -66,6 +66,7 @@ public class ApplicationDaoImpl extends JdbcDaoSupport implements ApplicationDao
 		return application;
 	}
 
+
 	@Override
 	public int updateApplication(Application updateApplication) {
 		int rows =0;

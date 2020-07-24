@@ -16,6 +16,7 @@ public class ApplicationProp {
     private String updateApplication;
     private String insertApplication;
     private String deleteApplication;
+    private String getByUserID;
 
     public String getFetchAll() {
         return fetchAll;
@@ -55,5 +56,13 @@ public class ApplicationProp {
 
     public void setDeleteApplication(String deleteApplication) {
         this.deleteApplication = deleteApplication;
+    }
+
+    public String getGetByUserID() {
+        return getByUserID;
+    }
+
+    public void setGetByUserID(String getByUserID) {
+        this.getByUserID = getByUserID;
     }
 }
