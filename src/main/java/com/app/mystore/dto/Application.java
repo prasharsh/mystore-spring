@@ -1,5 +1,9 @@
 package com.app.mystore.dto;
-
+/**
+ * Author: Mitchell Moore
+ * B00647455
+ * Application object to store all application attributes.
+ */
 public class Application {
     private int applicationID;
     private int jobID;

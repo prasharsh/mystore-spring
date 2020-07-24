@@ -11,6 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
+/**
+ * Author: Mitchell Moore
+ * B00647455
+ * ApplicationService connects the controller to the doa class. It also creates notifications and
+ * generates and sends emails to users.
+ */
 @Service("ApplicationService")
 public class ApplicationService {
 
@@ -29,17 +35,32 @@ public class ApplicationService {
     @Autowired
     public LoginControllerService loginControllerService;
 
+    /**
+     * fetchAll connects controller fetchAll request to dao. To get all Applications.
+     * @return List of Applications
+     */
     public List<Application> fetchAll() {
         List<Application> applications = dao.fetchAll();
         return applications;
     }
 
+    /**
+     * fetchByApplicationID connects controller fetchByApplicationID request to dao. To get specific
+     * applicaiton with applicationID.
+     * @param applicationID
+     * @return Application object
+     */
     public Application fetchByApplicationID(int applicationID) {
         Application application = dao.getByApplicationID(applicationID);
         return application;
     }
 
-
+    /**
+     * updateApplication connects controller updateApplication request to dao. Converts the number of rows
+     * changed to a boolean.
+     * @param updateApplication
+     * @return Boolean true => update success, false => update failed
+     */
     public Boolean updateApplication(Application updateApplication) {
         int result = dao.updateApplication(updateApplication);
         if(result > 0){
@@ -50,6 +71,13 @@ public class ApplicationService {
         }
     }
 
+    /**
+     * addApplication connects controller insertApplication request to dao to create a new applicaiton
+     * in the database. Converts the number of rows changed to a boolean. It also creates a new notification
+     * to be sent to the manager that a new application has been created for one of their job posts.
+     * @param newApplication
+     * @return Boolean true => create Application success, false => create Application failed
+     */
     public Boolean addApplication(Application newApplication) {
         int result = dao.insertApplication(newApplication);
         if(result > 0){
@@ -80,6 +108,13 @@ public class ApplicationService {
         }
     }
 
+    /**
+     * deleteApplication connects controller deleteApplication request to dao to delete a applicaiton
+     * in the database. Converts the number of rows changed to a boolean. It also creates a new notification
+     * to be sent to the applicant to tell them their application has been denied.
+     * @param applicationID
+     * @return
+     */
     public Boolean deleteApplication(int applicationID) {
         Application application = dao.getByApplicationID(applicationID);
         if (application != null) {
@@ -106,6 +141,13 @@ public class ApplicationService {
         return false;
     }
 
+    /**
+     * acceptApplication sends an email to the applicant with a job offer. It also connects with the updateRole
+     * in the loginControllerService to upgrade the user from guest to employee. It then deletes the application
+     * from the database. It also sends a notification to the applicant welcoming them to the company.
+     * @param applicationID
+     * @return Boolean true => operations successful, false => operations failed.
+     */
     public Boolean acceptApplication(int applicationID) {
         Application application = dao.getByApplicationID(applicationID);
         int row =0;
@@ -142,5 +184,4 @@ public class ApplicationService {
             return false;
         }
     }
-
 }

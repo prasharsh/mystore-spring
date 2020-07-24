@@ -6,7 +6,11 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/**
+ * Author: Mitchell Moore
+ * B00647455
+ * InterviewRowMapper is used to map the values returned from the database to create a new Interview object
+ */
 public class InterviewRowMapper implements RowMapper {
 
     @Override

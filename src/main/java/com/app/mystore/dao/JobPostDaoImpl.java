@@ -14,7 +14,13 @@ import org.springframework.stereotype.Repository;
 import com.app.mystore.dto.JobPost;
 import com.app.mystore.properties.JobPostingProp;
 import com.app.mystore.rowmapper.JobPostingRowMapper;
-
+/**
+ * Author: Mitchell Moore
+ * B00647455
+ * JobPostDaoImpl is the implementation of the JobPostDao interface.
+ * It provides the database operations for JobPost. JobPostDaoImpl is responsible
+ * to communicate with the database for JobPosts CRUD operations.
+ */
 @Repository
 @Configuration
 public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
@@ -41,6 +47,10 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		setDataSource(datasource);
 	}
 
+	/**
+	 * fetchAll returns all the JobPosts in the database
+	 * @return List of JobPosts
+	 */
 	@Override
 	public List<JobPost> fetchAll() {
 		List<JobPost> jobs = null;
@@ -53,6 +63,11 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		return jobs;
 	}
 
+	/**
+	 * getByJobID finds the JobPost in the database with jobId.
+	 * @param jobId
+	 * @return JobPost object
+	 */
 	@Override
 	public JobPost getByJobID(int jobId) {
 		JobPost jobPost = null;
@@ -67,6 +82,13 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		return jobPost;
 	}
 
+	/**
+	 * insertJobPost creates a new JobPost in the database.
+	 * @param newJobPost
+	 * @return an int as the number of rows changed.
+	 * 0 => no rows changed = failed.
+	 * >0 => rows changed = success
+	 */
 	@Override
 	public int insertJobPost(JobPost newJobPost) {
 		int rows =0;
@@ -87,6 +109,14 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		return rows;
 	}
 
+	/**
+	 * updateJobPost updates a JobPost in the database with the values from the JobPost from it's
+	 * parameter.
+	 * @param jobPost
+	 * @return an int as the number of rows changed.
+	 * 0 => no rows changed = failed.
+	 * >0 => rows changed = success
+	 */
 	@Override
 	public int updateJobPost(JobPost jobPost) {
 		int rows =0;
@@ -108,6 +138,13 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		return rows;
 	}
 
+	/**
+	 * deleteJob deletes a job post in the database with jobId
+	 * @param jobID
+	 * @return @return an int as the number of rows changed.
+	 * 0 => no rows changed = failed.
+	 * >0 => rows changed = success
+	 */
 	@Override
 	public int deleteJob(int jobID) {
 		int rows =0;

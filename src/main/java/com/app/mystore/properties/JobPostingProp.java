@@ -4,7 +4,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-
+/**
+ * Author: Mitchell Moore
+ * B00647455
+ * JobPostingProp is used to get the SQL queries stored in the job_sql.properties file.
+ */
 @Configuration
 @PropertySource("classpath:sql/job_sql.properties")
 @EnableConfigurationProperties

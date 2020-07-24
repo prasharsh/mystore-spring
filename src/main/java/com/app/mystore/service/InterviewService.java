@@ -9,7 +9,11 @@ import com.app.mystore.dto.JobPost;
 import com.app.mystore.utils.MystoreHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+/**
+ * Author: Mitchell Moore
+ * B00647455
+ * InterviewService connects the controller to the doa class. It also generates and sends emails to users.
+ */
 @Service("InterviewService")
 public class InterviewService {
     @Autowired
@@ -21,11 +25,22 @@ public class InterviewService {
     @Autowired
     public MystoreHelper helper;
 
+    /**
+     * fetchByInterviewID connects interview controller to interview dao.
+     * @param interviewID
+     * @return Interview object
+     */
     public Interview fetchByInterviewID(int interviewID) {
         Interview interview = dao.getByInterviewID(interviewID);
         return interview;
     }
 
+    /**
+     * addInterview connects interview controller to interview dao to create a new interview. It also
+     * sends an email to the applicant with the interview details.
+     * @param interview
+     * @return Boolean true => operations successful, false => operations failed.
+     */
     public Boolean addInterview(Interview interview) {
         Application application = applicationDao.getByApplicationID(interview.getApplicationID());
         if (application != null) {

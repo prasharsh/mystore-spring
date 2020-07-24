@@ -1,5 +1,9 @@
 package com.app.mystore.dto;
-
+/**
+ * Author: Mitchell Moore
+ * B00647455
+ * Interview object to store all interview attributes
+ */
 public class Interview {
     private int interviewID;
     private int applicationID;

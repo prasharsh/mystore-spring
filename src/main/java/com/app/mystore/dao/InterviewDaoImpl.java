@@ -16,7 +16,13 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
-
+/**
+ * Author: Mitchell Moore
+ * B00647455
+ * InterviewDaoImpl is the implementation of the InterviewDao interface.
+ * It provides the database operations for Interviews. InterviewDaoImpl is responsible
+ * to communicate with the database for Interviews create and read operations.
+ */
 @Repository
 @Configuration
 public class InterviewDaoImpl  extends JdbcDaoSupport implements InterviewDao{
@@ -43,6 +49,11 @@ public class InterviewDaoImpl  extends JdbcDaoSupport implements InterviewDao{
         setDataSource(datasource);
     }
 
+    /**
+     * getByInterviewID get an Interview from the database with interviewId.
+     * @param interviewId
+     * @return Interview object
+     */
     @Override
     public Interview getByInterviewID(int interviewId) {
         Interview interview = null;
@@ -57,6 +68,13 @@ public class InterviewDaoImpl  extends JdbcDaoSupport implements InterviewDao{
         return interview;
     }
 
+    /**
+     * insertInterview creates a new interview row in the database
+     * @param interview
+     * @return an int as the number of rows changed.
+     * 0 => no rows changed = failed.
+     * >0 => rows changed = success
+     */
     @Override
     public int insertInterview(Interview interview) {
         int rows =0;

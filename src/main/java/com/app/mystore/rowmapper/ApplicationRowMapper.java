@@ -4,7 +4,11 @@ import com.app.mystore.dto.Application;
 import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/**
+ * Author: Mitchell Moore
+ * B00647455
+ * ApplicationRowMapper is used to map the values returned from the database to create a new Application object
+ */
 public class ApplicationRowMapper implements RowMapper{
 
 	@Override
