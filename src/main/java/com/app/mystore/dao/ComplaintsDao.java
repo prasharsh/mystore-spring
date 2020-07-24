@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.app.mystore.dto.Complaint;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * ComplaintsDao is an interface for all the DB operations required
+ * for the  Complaints
+ */
 public interface ComplaintsDao {
 	
 	public List<Complaint> getAllComplaints() throws Exception;

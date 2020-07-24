@@ -2,6 +2,11 @@ package com.app.mystore.dto;
 
 import java.sql.Date;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * Notification object to store all Notification attributes.
+ */
 public class Notification {
 
 	private int id;

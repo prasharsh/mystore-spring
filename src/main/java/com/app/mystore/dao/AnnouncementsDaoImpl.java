@@ -18,6 +18,13 @@ import com.app.mystore.dto.Announcement;
 import com.app.mystore.properties.AnnouncementProperties;
 import com.app.mystore.rowmapper.AnnouncementRowMapper;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * AnnouncementsDaoImpl is the implementation of the AnnouncementsDao interface.
+ * It provides the database operations for Announcements. AnnouncementsDaoImpl is responsible
+ * to communicate with the database for Announcement CRUD operations.
+ */
 @Repository
 @Configuration
 public class AnnouncementsDaoImpl extends JdbcDaoSupport implements AnnouncementsDao{

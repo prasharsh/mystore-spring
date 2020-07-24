@@ -7,6 +7,11 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.app.mystore.dto.Complaint;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * ComplaintRowMapper is used to map the values returned from the database to create a new Complaint object
+ */
 public class ComplaintRowMapper implements RowMapper {
 
 	@Override

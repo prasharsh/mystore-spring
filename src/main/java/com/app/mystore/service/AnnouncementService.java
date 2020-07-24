@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import com.app.mystore.dao.AnnouncementsDao;
 import com.app.mystore.dto.Announcement;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * AnnouncementService connects the controller to the doa class.
+ */
 @Service("announcementService")
 public class AnnouncementService {
 	

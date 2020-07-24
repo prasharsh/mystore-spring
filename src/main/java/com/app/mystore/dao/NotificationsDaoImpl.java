@@ -18,6 +18,13 @@ import com.app.mystore.properties.NotificationProperties;
 import com.app.mystore.rowmapper.AnnouncementRowMapper;
 import com.app.mystore.rowmapper.NotificationRowMapper;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * NotificationsDaoImpl is the implementation of the NotificationsDao interface.
+ * It provides the database operations for Notifications. NotificationsDaoImpl is responsible
+ * to communicate with the database for Notification CRUD operations.
+ */
 @Repository
 @Configuration
 public class NotificationsDaoImpl extends JdbcDaoSupport implements NotificationsDao {
