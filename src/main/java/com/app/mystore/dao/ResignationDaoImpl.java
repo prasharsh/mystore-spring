@@ -112,18 +112,12 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		namedSqlParams=new MapSqlParameterSource();
 		namedSqlParams.addValue("empid", empid);	
 try {
-	resign= (Resignation) namedParameterJdbcTemplate.queryForObject(
-			
-			resignationproperties.getResignationDetails(), namedSqlParams, new ResignationRowmapper());
-	
+	resign= (Resignation) namedParameterJdbcTemplate.queryForObject(resignationproperties.getResignationDetails(), namedSqlParams, new ResignationRowmapper());
+	result= namedParameterJdbcTemplate.update(resignationproperties.getDeleteResignation(),namedSqlParams);
 }
 
-catch (EmptyResultDataAccessException e)
+catch (Exception e)
 {
-
-	result= namedParameterJdbcTemplate.update(resignationproperties.getDeleteResignation(),namedSqlParams);
-	
-	
 	System.out.println(e.getMessage());
 }
 		return result;
