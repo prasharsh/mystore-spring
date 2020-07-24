@@ -91,7 +91,20 @@ public class ResignationControllerService {
 	
 	public String rejectResignation(Resignation resign, int empid)
 	{
-      String result=resignationDao.rejectResignation(resign, empid); 
+      String result=resignationDao.rejectResignation(resign, empid);
+      Notification notification=new Notification();
+      try  
+      {
+      User user = dao.getUseridById(empid+"");
+		notification.setUserId(empid);
+		notification.setNotification("Your resignation was rejected, contact the manager for further details");
+		notification.setNotificationType("Resignation Notification");
+		ns.createNotification(notification);
+      }
+      catch (Exception e)
+      {
+    	e.getMessage();
+      }
 		return result;
 	}
 
