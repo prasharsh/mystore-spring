@@ -74,5 +74,15 @@ public class LeaveProperties {
 		this.reject = reject;
 	}
 	
+	public String delete;
+
+	public String getDelete() {
+		return delete;
+	}
+
+	public void setDelete(String delete) {
+		this.delete = delete;
+	}
+	
 	
 }

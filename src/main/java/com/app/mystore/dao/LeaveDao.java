@@ -15,5 +15,7 @@ public interface LeaveDao {
 	public String acceptLeave(Leave leave, int empid);
 
 	public String rejectLeave(Leave leave, int empid);
+
+	public String deleteLeave(int id);
 	
 }

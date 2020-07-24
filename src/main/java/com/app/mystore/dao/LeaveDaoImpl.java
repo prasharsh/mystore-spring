@@ -151,4 +151,22 @@ public class LeaveDaoImpl extends JdbcDaoSupport implements LeaveDao{
 		return "Fail";
 	}
 
+	@Override
+	public String deleteLeave(int id) {
+		// TODO Auto-generated method stub
+		int result =0;
+		namedSqlParams =new MapSqlParameterSource();
+		namedSqlParams.addValue("id", id);
+		try {
+		result=namedParameterJdbcTemplate.update(leaveproperties.getDelete(),namedSqlParams);
+		}
+		catch (DataAccessException e){
+			System.out.println(e.getMessage());	
+		}
+		if (result==1)
+		return "Success";
+		else 
+		return "Fail";
+	}
+
 }

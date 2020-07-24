@@ -61,5 +61,16 @@ public class LeaveController {
 		return gson.toJson(result);
 		
 	}
+	
+	@RequestMapping(value = "/viewLeaveHistory/delete/{id}", method = RequestMethod.DELETE)
+public String deleteLeave(@PathVariable("id") int id) 
+	{
+		Gson gson =new Gson();
+		String result;
+		result = leaveControllerService.DeleteResignation(id);
+		return gson.toJson(result);
+		
+	}
 
+	
 }
