@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce01876c-894a-4bd7-bceb-a0e18ce493e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/controllers/ScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/controllers/ScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/AvailProps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/AvailProps.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="ProjectId" id="1emJwgfFruiUNzHIXcWJyKg6QNV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/sql" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.app.mystore.service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/sql" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MystoreApplication">
+    <configuration name="MystoreApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.mystore.MystoreApplication" />
+      <module name="mystore.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.mystore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScheduleTimeMappingsImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.mystore.service.ScheduleTimeMappingsImpl" />
+      <module name="mystore.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.mystore.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScheduleTimeMappingsImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.app.mystore.service.ScheduleTimeMappingsImplTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ScheduleTimeMappingsImplTest.generateMappings" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.app.mystore.service.ScheduleTimeMappingsImplTest.generateMappings&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="mystore-spring [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MystoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mystore.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.app.mystore.MystoreApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MystoreApplication" />
+        <item itemvalue="Gradle.mystore-spring [dependencies]" />
+        <item itemvalue="Application.ScheduleTimeMappingsImpl" />
+        <item itemvalue="Gradle.ScheduleTimeMappingsImplTest" />
+        <item itemvalue="Gradle.ScheduleTimeMappingsImplTest.generateMappings" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce01876c-894a-4bd7-bceb-a0e18ce493e9" name="Default Changelist" comment="" />
+      <created>1594921074701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594921074701</updated>
+      <workItem from="1594921085502" duration="10739000" />
+      <workItem from="1594997342463" duration="11612000" />
+      <workItem from="1595028346905" duration="892000" />
+      <workItem from="1595031788804" duration="3370000" />
+      <workItem from="1595076774477" duration="12466000" />
+      <workItem from="1595097205643" duration="6373000" />
+      <workItem from="1595110246575" duration="10094000" />
+      <workItem from="1595341408797" duration="25731000" />
+      <workItem from="1595426573387" duration="17882000" />
+      <workItem from="1595549524309" duration="356000" />
+      <workItem from="1595559848411" duration="608000" />
+      <workItem from="1595599977501" duration="4493000" />
+    </task>
+    <task id="LOCAL-00001" summary="&quot;+Availibility module&quot;">
+      <created>1595083684863</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595083684863</updated>
+    </task>
+    <task id="LOCAL-00002" summary="&quot;+Availibility update&quot;">
+      <created>1595104028162</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595104028162</updated>
+    </task>
+    <task id="LOCAL-00003" summary="&quot;Schedule Generation metrices&quot;">
+      <created>1595126843373</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595126843373</updated>
+    </task>
+    <task id="LOCAL-00004" summary="&quot;Encoding logic (the crew availability)&quot;">
+      <created>1595390827923</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595390827923</updated>
+    </task>
+    <task id="LOCAL-00005" summary="&quot;+Test case(s)&quot;">
+      <created>1595433806832</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1595433806832</updated>
+    </task>
+    <task id="LOCAL-00006" summary="&quot;Nurse Scheduling Algorithm API (+local testing)&quot;">
+      <created>1595517629918</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595517629919</updated>
+    </task>
+    <task id="LOCAL-00007" summary="&quot;Nurse Scheduling Algorithm API (microservice (Google Cloud Run) testing successful)&quot;">
+      <created>1595519513432</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1595519513432</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;+Availibility module&quot;" />
+    <MESSAGE value="&quot;+Availibility update&quot;" />
+    <MESSAGE value="&quot;Schedule Generation mappings&quot;" />
+    <MESSAGE value="&quot;Schedule Generation metrices&quot;" />
+    <MESSAGE value="&quot;Encoding logic (the crew availability)&quot;" />
+    <MESSAGE value="&quot;+Test case(s)&quot;" />
+    <MESSAGE value="&quot;Nurse Scheduling Algorithm API (+local testing)&quot;" />
+    <MESSAGE value="&quot;Nurse Scheduling Algorithm API (microservice testing successful)&quot;" />
+    <MESSAGE value="&quot;Nurse Scheduling Algorithm API (microservice (Google Cloud Run) testing successful)&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Nurse Scheduling Algorithm API (microservice (Google Cloud Run) testing successful)&quot;" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="533" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1595602803217">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1595602803217" />
+    <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1595380154594" />
+    <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser/0.23.1440.831@0.23.1440.831" timestamp="1595452442416" />
+    <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser/0.23.1440.832@0.23.1440.832" timestamp="1594934295949" />
+    <state x="220" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595113699756">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="220" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.829@0.23.1440.829" timestamp="1595113699756" />
+    <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595436186231">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595436186231" />
+    <state x="458" y="191" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.829@0.23.1440.829" timestamp="1595083841332" />
+    <state x="245" y="18" key="CommitChangelistDialog2" timestamp="1595519512704">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="245" y="18" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595519512704" />
+    <state x="245" y="40" key="CommitChangelistDialog2/0.23.1440.829@0.23.1440.829" timestamp="1595390826758" />
+    <state width="1398" height="278" key="GridCell.Tab.0.bottom" timestamp="1595606114575">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595606114575" />
+    <state width="1398" height="244" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1595446080151" />
+    <state width="1398" height="215" key="GridCell.Tab.0.bottom/0.23.1440.831@0.23.1440.831" timestamp="1594939562344" />
+    <state width="1398" height="215" key="GridCell.Tab.0.bottom/0.23.1440.833@0.23.1440.833" timestamp="1594932915157" />
+    <state width="1398" height="278" key="GridCell.Tab.0.center" timestamp="1595606114573">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="278" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595606114573" />
+    <state width="1398" height="244" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1595446080149" />
+    <state width="1398" height="215" key="GridCell.Tab.0.center/0.23.1440.831@0.23.1440.831" timestamp="1594939562343" />
+    <state width="1398" height="215" key="GridCell.Tab.0.center/0.23.1440.833@0.23.1440.833" timestamp="1594932915156" />
+    <state width="1398" height="278" key="GridCell.Tab.0.left" timestamp="1595606114572">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="278" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595606114572" />
+    <state width="1398" height="244" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1595446080148" />
+    <state width="1398" height="215" key="GridCell.Tab.0.left/0.23.1440.831@0.23.1440.831" timestamp="1594939562343" />
+    <state width="1398" height="215" key="GridCell.Tab.0.left/0.23.1440.833@0.23.1440.833" timestamp="1594932915155" />
+    <state width="1398" height="278" key="GridCell.Tab.0.right" timestamp="1595606114574">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="278" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595606114574" />
+    <state width="1398" height="244" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1595446080151" />
+    <state width="1398" height="215" key="GridCell.Tab.0.right/0.23.1440.831@0.23.1440.831" timestamp="1594939562344" />
+    <state width="1398" height="215" key="GridCell.Tab.0.right/0.23.1440.833@0.23.1440.833" timestamp="1594932915157" />
+    <state width="1398" height="244" key="GridCell.Tab.1.bottom" timestamp="1595519384145">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="244" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595519384145" />
+    <state width="1398" height="244" key="GridCell.Tab.1.bottom/0.23.1440.829@0.23.1440.829" timestamp="1595446080156" />
+    <state width="1398" height="215" key="GridCell.Tab.1.bottom/0.23.1440.831@0.23.1440.831" timestamp="1594939562346" />
+    <state width="1398" height="215" key="GridCell.Tab.1.bottom/0.23.1440.833@0.23.1440.833" timestamp="1594932915160" />
+    <state width="1398" height="244" key="GridCell.Tab.1.center" timestamp="1595519384143">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="244" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1595519384143" />
+    <state width="1398" height="244" key="GridCell.Tab.1.center/0.23.1440.829@0.23.1440.829" timestamp="1595446080153" />
+    <state width="1398" height="215" key="GridCell.Tab.1.center/0.23.1440.831@0.23.1440.831" timestamp="1594939562345" />
+    <state width="1398" height="215" key="GridCell.Tab.1.center/0.23.1440.833@0.23.1440.833" timestamp="1594932915159" />
+    <state width="1398" height="244" key="GridCell.Tab.1.left" timestamp="1595519384142">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="244" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1595519384142" />
+    <state width="1398" height="244" key="GridCell.Tab.1.left/0.23.1440.829@0.23.1440.829" timestamp="1595446080152" />
+    <state width="1398" height="215" key="GridCell.Tab.1.left/0.23.1440.831@0.23.1440.831" timestamp="1594939562345" />
+    <state width="1398" height="215" key="GridCell.Tab.1.left/0.23.1440.833@0.23.1440.833" timestamp="1594932915159" />
+    <state width="1398" height="244" key="GridCell.Tab.1.right" timestamp="1595519384144">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="244" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1595519384144" />
+    <state width="1398" height="244" key="GridCell.Tab.1.right/0.23.1440.829@0.23.1440.829" timestamp="1595446080155" />
+    <state width="1398" height="215" key="GridCell.Tab.1.right/0.23.1440.831@0.23.1440.831" timestamp="1594939562345" />
+    <state width="1398" height="215" key="GridCell.Tab.1.right/0.23.1440.833@0.23.1440.833" timestamp="1594932915160" />
+    <state x="229" y="76" key="SettingsEditor" timestamp="1595028759049">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="229" y="76" key="SettingsEditor/0.23.1440.829@0.23.1440.829" timestamp="1595028759049" />
+    <state x="320" y="167" key="Vcs.Push.Dialog.v2" timestamp="1595519526056">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="167" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1595519526056" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1595390845676" />
+    <state x="399" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1595601271392">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="399" y="270" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1595601271392" />
+    <state x="399" y="270" key="com.intellij.ide.util.TipDialog/0.23.1440.829@0.23.1440.829" timestamp="1595110247995" />
+    <state x="399" y="271" key="com.intellij.ide.util.TipDialog/0.23.1440.831@0.23.1440.831" timestamp="1594921114231" />
+    <state x="509" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595519422261">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="509" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1595519422261" />
+    <state x="509" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.829@0.23.1440.829" timestamp="1595390890493" />
+    <state x="509" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.831@0.23.1440.831" timestamp="1594921177196" />
+    <state x="509" y="363" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.833@0.23.1440.833" timestamp="1594932041633" />
+    <state x="480" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1595428379400">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="480" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1440.900@0.0.1440.900" timestamp="1595428379400" />
+    <state x="480" y="187" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.829@0.23.1440.829" timestamp="1595113419531" />
+    <state x="385" y="176" width="670" height="676" key="search.everywhere.popup" timestamp="1595110649648">
+      <screen x="0" y="23" width="1440" height="829" />
+    </state>
+    <state x="385" y="176" width="670" height="676" key="search.everywhere.popup/0.23.1440.829@0.23.1440.829" timestamp="1595110649648" />
+  </component>
+</project>
