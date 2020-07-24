@@ -47,10 +47,6 @@ public class ApplicationDaoImpl extends JdbcDaoSupport implements ApplicationDao
 		setDataSource(datasource);
 	}
 
-	/**
-	 * fetchAll returns all the applications from the database.
-	 * @return List of Applications
-	 */
 	@Override
 	public List<Application> fetchAll() {
 		List<Application> applications = null;
@@ -63,11 +59,6 @@ public class ApplicationDaoImpl extends JdbcDaoSupport implements ApplicationDao
 		return applications;
 	}
 
-	/**
-	 * getByApplicationID returns the application with the applicationID from the database.
-	 * @param applicationID
-	 * @return Application object
-	 */
 	@Override
 	public Application getByApplicationID(int applicationID) {
 		Application application = null;
@@ -82,12 +73,6 @@ public class ApplicationDaoImpl extends JdbcDaoSupport implements ApplicationDao
 	}
 
 
-	/**
-	 * updateApplication updates an application in the database with the values from passed to it in its parameters
-	 * @param updateApplication
-	 * @return int number of rows changed. 0 => no applicaiton updated is a fail. Greater than 0 indicates an application was updated
-	 *
-	 */
 	@Override
 	public int updateApplication(Application updateApplication) {
 		int rows =0;
@@ -109,14 +94,6 @@ public class ApplicationDaoImpl extends JdbcDaoSupport implements ApplicationDao
 		return rows;
 	}
 
-	/**
-	 * insertApplication creates a new applcaiton in the database with values from the Application passed as
-	 * a parameter.
-	 * @param newApplication
-	 * @return an int as the number of rows changed.
-	 * 0 => no rows changed = failed.
-	 * >0 => rows changed = success
-	 */
 	@Override
 	public int insertApplication(Application newApplication) {
 		int rows =0;
@@ -139,13 +116,6 @@ public class ApplicationDaoImpl extends JdbcDaoSupport implements ApplicationDao
 		return rows;
 	}
 
-	/**
-	 * deleteApplication deletes an application in the database with applicationID.
-	 * @param applicationID
-	 * @return an int as the number of rows changed.
-	 * 	0 => no rows changed = failed.
-	 * 	>0 => rows changed = success
-	 */
 	@Override
 	public int deleteApplication(int applicationID) {
 		int rows =0;

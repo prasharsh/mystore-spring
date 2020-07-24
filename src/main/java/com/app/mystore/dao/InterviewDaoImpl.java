@@ -49,11 +49,6 @@ public class InterviewDaoImpl  extends JdbcDaoSupport implements InterviewDao{
         setDataSource(datasource);
     }
 
-    /**
-     * getByInterviewID get an Interview from the database with interviewId.
-     * @param interviewId
-     * @return Interview object
-     */
     @Override
     public Interview getByInterviewID(int interviewId) {
         Interview interview = null;
@@ -68,13 +63,6 @@ public class InterviewDaoImpl  extends JdbcDaoSupport implements InterviewDao{
         return interview;
     }
 
-    /**
-     * insertInterview creates a new interview row in the database
-     * @param interview
-     * @return an int as the number of rows changed.
-     * 0 => no rows changed = failed.
-     * >0 => rows changed = success
-     */
     @Override
     public int insertInterview(Interview interview) {
         int rows =0;

@@ -35,21 +35,11 @@ public class ApplicationService {
     @Autowired
     public LoginControllerService loginControllerService;
 
-    /**
-     * fetchAll connects controller fetchAll request to dao. To get all Applications.
-     * @return List of Applications
-     */
     public List<Application> fetchAll() {
         List<Application> applications = dao.fetchAll();
         return applications;
     }
 
-    /**
-     * fetchByApplicationID connects controller fetchByApplicationID request to dao. To get specific
-     * applicaiton with applicationID.
-     * @param applicationID
-     * @return Application object
-     */
     public Application fetchByApplicationID(int applicationID) {
         Application application = dao.getByApplicationID(applicationID);
         return application;
@@ -72,8 +62,7 @@ public class ApplicationService {
     }
 
     /**
-     * addApplication connects controller insertApplication request to dao to create a new applicaiton
-     * in the database. Converts the number of rows changed to a boolean. It also creates a new notification
+     * addApplication converts the number of rows changed to a boolean. It also creates a new notification
      * to be sent to the manager that a new application has been created for one of their job posts.
      * @param newApplication
      * @return Boolean true => create Application success, false => create Application failed
@@ -109,8 +98,7 @@ public class ApplicationService {
     }
 
     /**
-     * deleteApplication connects controller deleteApplication request to dao to delete a applicaiton
-     * in the database. Converts the number of rows changed to a boolean. It also creates a new notification
+     * deleteApplication converts the number of rows changed to a boolean. It also creates a new notification
      * to be sent to the applicant to tell them their application has been denied.
      * @param applicationID
      * @return

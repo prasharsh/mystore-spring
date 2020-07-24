@@ -20,24 +20,11 @@ public class InterviewController {
     @Autowired
     private InterviewService interviewService;
 
-    /**
-     * fetchByInterviewID takes an interviewID for a given interview and
-     * returns an interview.
-     * @param interviewID
-     * @return an Interview object
-     */
     @GetMapping("/fetchByInterviewID/{interviewID}")
     public Interview fetchByInterviewID(@PathVariable int interviewID) {
         return interviewService.fetchByInterviewID(interviewID);
     }
 
-    /**
-     * insertInterview takes an Interview object in the request body. This
-     * is connected to the applicaiton managemnt page when a manager creates an
-     * interview with an applicant.
-     * @param interview
-     * @return a Boolean true => create interview successful, false => create interview failed
-     */
     @PostMapping("/insertInterview")
     public Boolean insertInterview(@RequestBody Interview interview) {
         return interviewService.addInterview(interview);

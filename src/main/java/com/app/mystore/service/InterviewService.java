@@ -25,19 +25,13 @@ public class InterviewService {
     @Autowired
     public MystoreHelper helper;
 
-    /**
-     * fetchByInterviewID connects interview controller to interview dao.
-     * @param interviewID
-     * @return Interview object
-     */
     public Interview fetchByInterviewID(int interviewID) {
         Interview interview = dao.getByInterviewID(interviewID);
         return interview;
     }
 
     /**
-     * addInterview connects interview controller to interview dao to create a new interview. It also
-     * sends an email to the applicant with the interview details.
+     * addInterview sends an email to the applicant with the interview details.
      * @param interview
      * @return Boolean true => operations successful, false => operations failed.
      */

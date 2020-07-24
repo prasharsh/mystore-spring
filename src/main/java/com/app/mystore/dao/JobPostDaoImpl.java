@@ -63,11 +63,6 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		return jobs;
 	}
 
-	/**
-	 * getByJobID finds the JobPost in the database with jobId.
-	 * @param jobId
-	 * @return JobPost object
-	 */
 	@Override
 	public JobPost getByJobID(int jobId) {
 		JobPost jobPost = null;
@@ -82,13 +77,6 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		return jobPost;
 	}
 
-	/**
-	 * insertJobPost creates a new JobPost in the database.
-	 * @param newJobPost
-	 * @return an int as the number of rows changed.
-	 * 0 => no rows changed = failed.
-	 * >0 => rows changed = success
-	 */
 	@Override
 	public int insertJobPost(JobPost newJobPost) {
 		int rows =0;
@@ -109,14 +97,6 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		return rows;
 	}
 
-	/**
-	 * updateJobPost updates a JobPost in the database with the values from the JobPost from it's
-	 * parameter.
-	 * @param jobPost
-	 * @return an int as the number of rows changed.
-	 * 0 => no rows changed = failed.
-	 * >0 => rows changed = success
-	 */
 	@Override
 	public int updateJobPost(JobPost jobPost) {
 		int rows =0;
@@ -138,13 +118,6 @@ public class JobPostDaoImpl extends JdbcDaoSupport implements JobPostDao {
 		return rows;
 	}
 
-	/**
-	 * deleteJob deletes a job post in the database with jobId
-	 * @param jobID
-	 * @return @return an int as the number of rows changed.
-	 * 0 => no rows changed = failed.
-	 * >0 => rows changed = success
-	 */
 	@Override
 	public int deleteJob(int jobID) {
 		int rows =0;
