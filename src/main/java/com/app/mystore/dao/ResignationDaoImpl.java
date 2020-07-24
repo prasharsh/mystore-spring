@@ -15,6 +15,7 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import com.app.mystore.dto.Resignation;
+import com.app.mystore.properties.AnnouncementProperties;
 import com.app.mystore.properties.ResignationProperties;
 import com.app.mystore.rowmapper.ResignationRowmapper;
 import com.app.mystore.rowmapper.ViewAllResignationsRowmapper;
@@ -64,6 +65,7 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		catch (EmptyResultDataAccessException e) {
 			namedSqlParams.addValue("reason", resign.getReason());
 			row= namedParameterJdbcTemplate.update(resignationproperties.getApply(), namedSqlParams);
+			
 			System.out.println(e.getMessage());
 		}
 	

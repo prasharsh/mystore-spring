@@ -182,8 +182,6 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 	public User getUseridById(String id) throws Exception {
 		User user = new User();
 		namedSqlParams=new MapSqlParameterSource();
-		System.out.println(id);
-
 
 		namedSqlParams.addValue("id", id);		
 		try {
@@ -211,7 +209,6 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 			rows = namedParameterJdbcTemplate.update(userproperties.getUpdateRole(), namedSqlParams);
 		}
 		catch (DataAccessException e) {
-			System.out.println("e.getMessage()");
 			System.out.println(e.getMessage());
 		}
 		return rows;
@@ -229,6 +226,20 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 			e.printStackTrace();
 			throw new Exception();
 		}
+	}
+
+	@Override
+	public void InactivateAllResetPasswordTokenForUser(int userId) {
+		namedSqlParams=new MapSqlParameterSource();
+
+		namedSqlParams.addValue("id", userId);
+		try {
+			namedParameterJdbcTemplate.update(userproperties.getInactivateAllTokenForUser(), namedSqlParams);	
+		} 
+		catch (DataAccessException e) {
+			System.out.println(e.getMessage());
+		}
+		
 	}
 
 }

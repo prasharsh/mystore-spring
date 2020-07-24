@@ -125,5 +125,13 @@ public class UserProperties {
 		this.getManagerId = getManagerId;
 	}
 	
-	
+	public String getInactivateAllTokenForUser() {
+		return inactivateAllTokenForUser;
+	}
+
+	public void setInactivateAllTokenForUser(String inactivateAllTokenForUser) {
+		this.inactivateAllTokenForUser = inactivateAllTokenForUser;
+	}
+
+	private String inactivateAllTokenForUser;
 }
