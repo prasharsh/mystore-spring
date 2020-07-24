@@ -152,26 +152,24 @@ public class LoginControllerService {
 	public int updateRole(int userID) throws Exception {
 		String id = "" + userID;
 		int row =0;
-
 		try {
 			user = userDao.getUseridById(id);
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			throw new Exception(e.getMessage());
 		}
-		try {
-			row = userDao.updateRole(user);
+		if(user.getUserRole().equals("3")){
+			try {
+				row = userDao.updateRole(user);
+			}
+			catch (Exception e) {
+				System.out.println(e.getMessage());
+				throw new Exception(e.getMessage());
+			}
 		}
-		catch (Exception e) {
-			throw new Exception(e.getMessage());
+		else{
+			return 1;
 		}
-		Application application = applicationDao.getByUserID(userID);
-		if(application != null){
-			String body = "Hello, We would like to inform you we have accepted your application! Please sign into myStore to view the employee page.";
-			helper.sendEmail(application.getEmail(), body, "Approved application");
-		}
-
-
 		return row;
 	}
-
 }

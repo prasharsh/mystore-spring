@@ -27,20 +27,17 @@ public class InterviewService {
     }
 
     public Boolean addInterview(Interview interview) {
-        if(interview.getNotify().equals("true")){
-            Application application = applicationDao.getByApplicationID(interview.getApplicationID());
-            if(application != null){
-                String body = "Hello,\n\n Thank you for your interest for working at myStore. We would like to set up an interview via: "+ interview.getType()+" , on " + interview.getDate() + " , at " + interview.getTime();
-                helper.sendEmail(application.getEmail(), body, "Interview for myStore");
+        Application application = applicationDao.getByApplicationID(interview.getApplicationID());
+        if (application != null) {
+            int result = dao.insertInterview(interview);
+            if (result > 0) {
+                if (interview.getNotify().equals("true")) {
+                    String body = "Hello,\n\n Thank you for your interest for working at myStore. We would like to set up an interview via: " + interview.getType() + " , on " + interview.getDate() + " , at " + interview.getTime();
+                    helper.sendEmail(application.getEmail(), body, "Interview for myStore");
+                }
+                return true;
             }
         }
-        int result = dao.insertInterview(interview);
-        if(result > 0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return false;
     }
-
 }
