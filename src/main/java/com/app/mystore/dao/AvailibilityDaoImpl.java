@@ -49,8 +49,9 @@ public class AvailibilityDaoImpl extends JdbcDaoSupport implements AvailibilityD
 	@Override
 	public int saveAvail(Availability avail) {
 
+
 		if (rows==0){
-			deleteUser(avail.getUserId());
+			this.deleteUser(avail.getUserId());
 		}
 
 		namedSqlParams=new MapSqlParameterSource();
@@ -75,12 +76,9 @@ public class AvailibilityDaoImpl extends JdbcDaoSupport implements AvailibilityD
 
 
 	@Override
-	@Modifying
-	public int deleteUser(String UserId)
-	{
-		ScheduleGenerationRowmapper scheduleGenerationRowmapper = new ScheduleGenerationRowmapper();
+	public int deleteUser(String UserId) {
+
 		int result=0;
-		Availability availability = null;
 		namedSqlParams=new MapSqlParameterSource();
 		namedSqlParams.addValue("userid", UserId);
 		try {
@@ -92,7 +90,7 @@ public class AvailibilityDaoImpl extends JdbcDaoSupport implements AvailibilityD
 			{
 
 				result= namedParameterJdbcTemplate.update(availProps.getDelete(),namedSqlParams);
-
+				System.out.println("Delete method called");
 			}
 			else
 				result =0;
