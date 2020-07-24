@@ -2,6 +2,11 @@ package com.app.mystore.dto;
 
 import java.sql.Date;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * Complaint object to store all Complaint attributes.
+ */
 public class Complaint {
 
 	private int id;

@@ -2,6 +2,7 @@ package com.app.mystore.controllers;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.mystore.dto.Complaint;
 import com.app.mystore.service.ComplaintService;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * ComplaintsController  is the controller to handle
+ * all the requests to the /api/complaints resources.
+ * Contains all the endpoints of Complaints for CRUD operations
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api/complaints")

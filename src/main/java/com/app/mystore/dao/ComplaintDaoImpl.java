@@ -20,6 +20,13 @@ import com.app.mystore.properties.ComplaintProperties;
 import com.app.mystore.properties.UserProperties;
 import com.app.mystore.rowmapper.ComplaintRowMapper;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * ComplaintDaoImpl is the implementation of the ComplaintsDao interface.
+ * It provides the database operations for Complaints. ComplaintDaoImpl is responsible
+ * to communicate with the database for Complaint CRUD operations.
+ */
 @Repository
 @Configuration
 public class ComplaintDaoImpl extends JdbcDaoSupport implements ComplaintsDao{

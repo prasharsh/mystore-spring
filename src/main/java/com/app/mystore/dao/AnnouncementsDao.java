@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.app.mystore.dto.Announcement;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * AnnouncementsDao is an interface for all the DB operations required
+ * for the  Announcements
+ */
 public interface AnnouncementsDao {
 	
 	public List<Announcement> getAllAnnouncements() throws Exception;

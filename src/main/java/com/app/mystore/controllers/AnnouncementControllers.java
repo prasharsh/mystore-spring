@@ -15,6 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.mystore.dto.Announcement;
 import com.app.mystore.service.AnnouncementService;
 
+
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * AnnoncementController  is the controller to handle
+ * all the requests to the /api/announcements resources.
+ * Contains all the endpoints of Announcements for CRUD operations
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api/annoucements")
@@ -28,7 +36,6 @@ public class AnnouncementControllers {
 		try {
 			return announcementService.getAllAnnoucements();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -40,7 +47,6 @@ public class AnnouncementControllers {
 			announcementService.createAnnouncement(announcement);
 			return "Success";
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return "Failure";
 		}

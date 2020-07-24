@@ -15,6 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.mystore.dto.Notification;
 import com.app.mystore.service.NotificationService;
 
+
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * NotificationController  is the controller to handle
+ * all the requests to the /api/notifications resources.
+ * Contains all the endpoints of Notifications for CRUD operations
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api/notifications")

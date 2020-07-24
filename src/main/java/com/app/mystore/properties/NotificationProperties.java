@@ -5,6 +5,11 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * NotificationProperties is used to get the SQL queries stored in the notifications_sql.properties file.
+ */
 @Configuration
 @PropertySource("classpath:sql/notifications_sql.properties")
 @EnableConfigurationProperties

@@ -12,6 +12,11 @@ import com.app.mystore.dto.Notification;
 import com.app.mystore.dto.User;
 import com.app.mystore.enums.NotificationTypeEnum;
 
+/**
+ * Author: Suraj Kandikonda
+ * B00854472
+ * ComplaintService connects the controller to the doa class.
+ */
 @Service("complaintService")
 public class ComplaintService {
 	
