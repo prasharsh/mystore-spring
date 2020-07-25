@@ -29,6 +29,8 @@ dependencies {
 	compile("commons-validator:commons-validator:1.4.1")
 	compile("commons-httpclient:commons-httpclient:3.1")	
 	compile ("mysql:mysql-connector-java")
+	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+
 	compile 'commons-dbcp:commons-dbcp:1.4'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

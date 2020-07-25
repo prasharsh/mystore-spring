@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 @Service("EncodeCrewAvailibility")
 public class EncodeCrewAvailibilityImpl implements EncodeCrewAvailibility {
-    private HashMap<String, Integer> normalizeCrews;
+    private HashMap<Integer, String> normalizeCrews;
     @Override
     public ArrayList<ArrayList<ArrayList<Integer>>> encodeShifts(ArrayList<MappedTimings> timings) {
         ArrayList<Integer> elements;
@@ -21,7 +21,7 @@ public class EncodeCrewAvailibilityImpl implements EncodeCrewAvailibility {
         Integer crewCounter = 0;
         for(MappedTimings mappedTimings:timings){
             row = new ArrayList<>();
-            normalizeCrews.put(mappedTimings.getUserId(),crewCounter);
+            normalizeCrews.put(crewCounter,mappedTimings.getUserId());
             crewCounter++;
             elements = new ArrayList<>(Arrays.asList(0,0,0,0));
             elements.set(Math.toIntExact(mappedTimings.getMonShift()),1);
@@ -50,7 +50,7 @@ public class EncodeCrewAvailibilityImpl implements EncodeCrewAvailibility {
     }
 
     @Override
-    public HashMap<String, Integer> crewMappings() {
+    public HashMap<Integer,String> crewMappings() {
         return normalizeCrews;
     }
 }

@@ -1,5 +1,6 @@
 package com.app.mystore.controllers;
 
+import com.app.mystore.dto.EmployeeSchedule;
 import com.app.mystore.dto.avail;
 import com.app.mystore.service.AutomateScheduleGenerationImpl;
 import com.google.gson.Gson;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.app.mystore.service.ScheduleService;
+
+import java.util.ArrayList;
 
 @CrossOrigin
 @RestController
@@ -35,9 +38,9 @@ public class ScheduleController {
 	}
 
 	@GetMapping("/requestScheduleSuggest")
-	public void generate(){
-		automateScheduleGeneration.returnTotalCrew();
-		automateScheduleGeneration.encodeAvailibility();
+	public ArrayList<EmployeeSchedule> generate(){
+
+		return automateScheduleGeneration.requestScheduleFromAlgorithm();
 	}
 
 }

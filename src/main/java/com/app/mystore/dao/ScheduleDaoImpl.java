@@ -114,7 +114,7 @@ public class ScheduleDaoImpl extends JdbcDaoSupport implements ScheduleDao {
             }
             for (avail a:availAllCrews){
                 System.out.println(a.getUsername());
-                System.out.println(a.getMonEnd());
+                System.out.println(a.getThrusStart());
             }
         }
 
