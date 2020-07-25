@@ -7,5 +7,5 @@ import java.util.HashMap;
 
 public interface EncodeCrewAvailibility {
     ArrayList<ArrayList<ArrayList<Integer>>> encodeShifts(ArrayList<MappedTimings> timings);
-    HashMap<String,Integer> crewMappings();
+    HashMap<Integer,String> crewMappings();
 }

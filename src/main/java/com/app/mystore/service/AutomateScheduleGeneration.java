@@ -1,7 +1,11 @@
 package com.app.mystore.service;
 
+import com.app.mystore.dto.EmployeeSchedule;
+
+import java.util.ArrayList;
+
 public interface AutomateScheduleGeneration {
     void generateMetrices();
-    void encodeAvailibility();
+    ArrayList<EmployeeSchedule> requestScheduleFromAlgorithm();
     int returnTotalCrew();
 }

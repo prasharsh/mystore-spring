@@ -43,7 +43,7 @@ public class ScheduleService {
 		availabilities.add(availability);
 
 		availability = new Availability();
-		availability.setDay("Thrursday");
+		availability.setDay("Thursday");
 		availability.setUserId(avail.getUsername());
 		availability.setStart(avail.getThrusStart());
 		availability.setEnd(avail.getThrusEnd());

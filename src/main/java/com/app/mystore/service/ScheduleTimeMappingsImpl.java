@@ -60,6 +60,7 @@ public class ScheduleTimeMappingsImpl implements ScheduleTimeMappings {
                 mappedTimings.setWedShift(difference);
 
                 String thrusStartTime = a.getThrusStart();
+                System.out.println("Thrus break :::::"+thrusStartTime);
                 thrusStartTime = thrusStartTime.substring(0,5)+":00"+thrusStartTime.substring(5,7);
                 thrusStartTime = timeConversionService.convertto24HourFormat(thrusStartTime);
                 startTimings = format.parse(thrusStartTime);

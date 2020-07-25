@@ -42,14 +42,9 @@ public class InitiateAPIRequestImpl implements InitiateAPIRequest {
             Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
             String prettyJson = prettyGson.toJson(data);
             System.out.println(prettyJson);
-            //String input = "{\"qty\":100,\"name\":\"iPad 4\"}";
+
             String num_nurses = "5";
-            /*String input = "{\n" +
-                    "\t\"num_nurses\":\"2\",\n" +
-                    "\t\"num_shifts\":\"3\",\n" +
-                    "\t\"num_days\":\"2\",\n" +
-                    "    \"shift_requests\":"+prettyJson+
-                    "}"; */
+
             String input = "{\n" +
                     "\t\"num_nurses\":"+String.valueOf(length)+",\n" +
                     "\t\"num_shifts\":\"4\",\n" +
@@ -64,11 +59,6 @@ public class InitiateAPIRequestImpl implements InitiateAPIRequest {
             OutputStream os = conn.getOutputStream();
             os.write(input.getBytes());
             os.flush();
-
-            /*if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + conn.getResponseCode());
-            }*/
 
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
