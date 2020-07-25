@@ -1,3 +1,10 @@
+/**
+ * Author: 	Khanjika Arora
+ * Banner id: B00843319
+ * LeaveHistoryRowmapper maps rows of a ResultSet on a per-row basis 
+ * of leaveHistory method present in LeaveDaoImpl 
+ */
+
 package com.app.mystore.rowmapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;

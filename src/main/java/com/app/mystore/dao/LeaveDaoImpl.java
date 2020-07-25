@@ -83,20 +83,6 @@ public class LeaveDaoImpl extends JdbcDaoSupport implements LeaveDao{
 		
 	}
 		
-		
-		
-//		//to enter leave details in the database
-//		namedSqlParams.addValue("empid", leaveDetails.getEmpid());
-//		namedSqlParams.addValue("reason", leaveDetails.getReason());
-//		result = namedParameterJdbcTemplate.update(leaveproperties.getInsertLeave(), namedSqlParams);
-//		
-//		if(result == 1){
-//			return "Success";
-//		}
-//		else
-//		{
-//			return "Failure";
-//		}
 
 	@Override
 	public List<Leave> pendingLeave() {
