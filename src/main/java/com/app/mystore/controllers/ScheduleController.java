@@ -11,7 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import com.app.mystore.service.ScheduleService;
 
 import java.util.ArrayList;
-
+/*
+* Author : Parth Panchal
+* B00845025
+* ScheduleController routes the service requests such as saving availability,generating schedule,
+* retrieving and saving the published schedule.
+* */
 @CrossOrigin
 @RestController
 @RequestMapping("/api/schedule")

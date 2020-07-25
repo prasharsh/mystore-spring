@@ -1,5 +1,15 @@
 package com.app.mystore.service;
 
+
+/**
+ * Author: Prashant kumar
+ * B00847456
+ * LoginControllerService is the service that handles
+ * all the busniess logic for the login module.
+ * interacts with dao for CRUD operations
+ */
+
+
 import com.app.mystore.dao.ApplicationDaoImpl;
 import com.app.mystore.dto.Application;
 import org.springframework.beans.factory.annotation.Autowired;

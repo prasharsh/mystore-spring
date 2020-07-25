@@ -8,9 +8,13 @@ import java.util.regex.Pattern;
 
 import com.app.mystore.dto.EmployeeSchedule;
 import com.app.mystore.dto.ShiftDetails;
-import com.app.mystore.dto.avail;
 import org.springframework.stereotype.Service;
-
+/*
+* Author : Parth Panchal
+* B00845025
+* DecodeGeneratedScheduleImpl decode the response generated from remote API call and converts it to
+* Human readable format.
+ * */
 @Service("ScheduleDecoder")
 public class DecodeGeneratedScheduleImpl implements DecodeGeneratedSchedule {
 

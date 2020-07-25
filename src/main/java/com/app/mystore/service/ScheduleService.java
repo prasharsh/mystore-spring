@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 import com.app.mystore.dao.AvailibilityDao;
 import com.app.mystore.dto.Availability;
 
+/* Author : Parth Panchal
+   B00845025
+   The service saves the submitted availability into database using AvailibilityDao class.
+* */
 @Service("scheduleService")
 public class ScheduleService {
 

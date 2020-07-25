@@ -12,7 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-
+/**
+ * Author: Panchal Parth
+ * B00845025
+ * AutomateScheduleGenerationImpl faciliates the automatic schedule genration task using serveral other services such as
+ * scheduleTimeMappings
+ * encodeCrewAvailibility
+ *initiateAPIRequest
+ * decodeGeneratedSchedule
+ */
 @Service("AutomatedScheduleGeneration")
 public class AutomateScheduleGenerationImpl implements AutomateScheduleGeneration  {
 
@@ -31,10 +39,7 @@ public class AutomateScheduleGenerationImpl implements AutomateScheduleGeneratio
     @Autowired
     private DecodeGeneratedSchedule decodeGeneratedSchedule;
 
-    @Override
-    public void generateMetrices() {
 
-    }
 
     @Override
     public ArrayList<EmployeeSchedule> requestScheduleFromAlgorithm() {

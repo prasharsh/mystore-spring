@@ -1,5 +1,14 @@
 package com.app.mystore.controllers;
 
+
+/**
+ * Author: Prashant kumar
+ * B00847456
+ * LoginController is the controller to handle
+ * all the requests to the /api/myStore.
+ * Contains all the endpoints of user module for CRUD operations
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

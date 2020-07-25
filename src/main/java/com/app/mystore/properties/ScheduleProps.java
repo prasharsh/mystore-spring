@@ -4,7 +4,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-
+/*
+ * Author : Parth Panchal
+ * B00845025
+ * The ScheduleProps fires the queries  stored in schedule_sql.properties
+ * */
 @Configuration
 @PropertySource("classpath:sql/schedule_sql.properties")
 @EnableConfigurationProperties

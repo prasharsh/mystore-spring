@@ -1,5 +1,9 @@
 package com.app.mystore.dto;
-
+/*
+* Author : Parth Panchal
+* B00845025
+* model to hold the encoded timings corresponding to their shift number temporarily.
+* */
 public class MappedTimings {
     private String userId;
     private long monShift;

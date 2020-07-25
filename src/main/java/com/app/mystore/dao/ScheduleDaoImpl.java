@@ -16,6 +16,13 @@ import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import java.util.*;
 
+/**
+ * Author: Parth Panchal
+ * B00845025
+ * ScheduleDaoImpl retrieves the shift details and all availabilities from database to transform into specific datamodels
+ * avail and ShiftDetails.
+ */
+
 @Repository
 @Configuration
 public class ScheduleDaoImpl extends JdbcDaoSupport implements ScheduleDao {

@@ -16,6 +16,14 @@ import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+/**
+ * Author: Parth Panchal
+ * B00845025
+ * PublishscheduleDaoImpl service stores the scheduled confirm by manger and also retrieve it from database for
+ * viewing the broadcasted schedule on front-end.
+ */
+
 @Repository
 @Configuration
 public class PublishscheduleDaoImpl  extends JdbcDaoSupport implements PublishscheduleDao {

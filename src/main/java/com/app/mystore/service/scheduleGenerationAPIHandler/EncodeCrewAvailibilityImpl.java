@@ -8,7 +8,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-
+/*
+* Author : Parth Panchal
+* B00845025
+* EncodeCrewAvailibilityImpl service encodes or format the crew availability
+* into numerical format which is accepted by Remote Algorithm running on GCP docker container.
+* */
 @Service("EncodeCrewAvailibility")
 public class EncodeCrewAvailibilityImpl implements EncodeCrewAvailibility {
     private HashMap<Integer, String> normalizeCrews;

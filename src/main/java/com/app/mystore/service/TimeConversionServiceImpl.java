@@ -2,11 +2,13 @@ package com.app.mystore.service;
 
 import org.springframework.stereotype.Service;
 /*
-credit : Anant Agarwal
-article author : Rahul singh
-web source : https://www.geeksforgeeks.org/program-convert-time-12-hour-24-hour-format/
-This code has been modified to meet the requirement of the time format conversion.
-Code has been used for educational purposes only encouraging existing component re-usability.
+* modified by : Parth Panchal
+* B00845025
+* credit : Anant Agarwal
+* article author : Rahul Singh
+* web source : https://www.geeksforgeeks.org/program-convert-time-12-hour-24-hour-format/
+* This code has been modified to meet the requirement of the time format conversion.
+* Code has been used for educational purposes only encouraging existing component re-usability.
  */
 @Service("TimeFormatConversionService")
 public class TimeConversionServiceImpl implements TimeConversionService {

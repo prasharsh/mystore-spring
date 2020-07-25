@@ -11,7 +11,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-
+/*
+* Author : Parth Panchal
+* B00845025
+* Encoding the plaintext time into shift number employing avail and ShiftDetails collections for feeding into
+* remote NurseScheduling algorithm.
+* */
 @Service("GenerateMappings")
 public class ScheduleTimeMappingsImpl implements ScheduleTimeMappings {
 

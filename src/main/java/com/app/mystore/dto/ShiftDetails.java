@@ -1,5 +1,9 @@
 package com.app.mystore.dto;
-
+/*
+* Author : Parth Panchal
+* B00845025
+* The model saves the number of shifts permutations obtained from database.
+* */
 public class ShiftDetails {
     private String start,end;
 

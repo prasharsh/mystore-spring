@@ -1,8 +1,10 @@
 package com.app.mystore.dto;
 
-import com.app.mystore.dto.User;
-
-import java.util.ArrayList;
+/*
+* Author : Parth Panchal
+* B00845025
+* The model used to handle object response generated on availiablity submission from front end.
+* */
 
 public class avail {
 

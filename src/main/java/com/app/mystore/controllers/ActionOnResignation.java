@@ -50,6 +50,11 @@ public class ActionOnResignation
 	{   
 		Gson gson =new Gson();
 		String result= resignationControllerService.acceptResignation(resign,empid);
+		if (result == null)
+				{
+			result ="Fail";
+				return gson.toJson(result);
+				}
 		return gson.toJson(result);
 		
 	}
