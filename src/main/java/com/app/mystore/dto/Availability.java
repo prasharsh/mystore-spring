@@ -1,5 +1,11 @@
-package com.app.mystore.dto;
 
+
+package com.app.mystore.dto;
+/*
+* Author : Parth Panchal
+* B00845025
+* Availability model holds the timings in joint formats for encoding purposes.
+*/
 public class Availability {
 	private String userId;
 	private String day  ;
