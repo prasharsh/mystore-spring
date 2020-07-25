@@ -20,6 +20,13 @@ import com.app.mystore.properties.ResignationProperties;
 import com.app.mystore.rowmapper.ResignationRowmapper;
 import com.app.mystore.rowmapper.ViewAllResignationsRowmapper;
 
+/**
+ * Author: Lavanya Nili
+ * B00834718
+ * ResignationDaoImpl  is the DAO implementation that interacts with the database for request/response
+ * Contains the business logic
+ */
+
 
 @Repository
 @Configuration
@@ -47,6 +54,15 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		setDataSource(datasource);
 	}
 
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * apply  is the DAO implementation method that lets the user apply a resignation
+	 * Contains the business logic for POST method and the SQL query to insert 
+	 * SQL returns an integer which states the number of rows effected
+	 * this method return a string stating  success or failure 
+	 */
+
 	@SuppressWarnings({ "unchecked", "null" })
 	@Override
 	public int apply(Resignation resign, int empid) throws EmptyResultDataAccessException {
@@ -72,6 +88,15 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		return row;
 
 	}
+	
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * UpdateDetails  is the DAO implementation method that lets the user update a resignation
+	 * Contains the business logic for PUT method and the SQL query to update the tuple
+	 * SQL Returns an integer which states the number of rows effected
+	 *  this method return a string stating  success or failure 
+	 */
 	@Override
 	public String UpdateDetails(Resignation  resign, int empid)
 	{
@@ -86,7 +111,15 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		return "Fail";
 		
 	}
-
+	
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * ResignationDetails  is the DAO implementation method to get the resignation detials
+	 * Contains the business logic for GET request by id 
+	 * this method return an object of type resignation
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public Resignation ResignationDetails(int empid) {
 		Resignation resign = new Resignation();
@@ -103,6 +136,13 @@ public class ResignationDaoImpl extends JdbcDaoSupport implements ResignationDao
 		}
 		return resign;
 	}
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * DeleteResignation  is the DAO implementation method to delete the resignation 
+	 * Contains the business logic for DELETE request by id 
+	 * this method return an integer 
+	 */
 	
 	@SuppressWarnings("unchecked")
 	@Override
@@ -126,6 +166,13 @@ catch (Exception e)
 		
 	}
 	
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * GetAllResignation  is the DAO implementation method to get all the resignation requests for the manager
+	 * Contains the business logic for get all request 
+	 * this method return a list of resignation objects  
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Resignation> GetAllResignation(){
@@ -135,6 +182,13 @@ catch (Exception e)
 
 		
 	}
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * inactiveEmployee  is the DAO implementation method to inactive a user if the resignation is accepted. 
+	 * Contains the business logic for PUT request 
+	 * this method return a string success or fail  
+	 */
 	@Override
 	public String  inactiveEmployee(int empid)
 	{
@@ -155,6 +209,13 @@ catch (Exception e)
 			else 
 		return "Fail";
 	}
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * acceptResignation  is the DAO implementation for changing the user request status. 
+	 * Contains the business logic for PUT request 
+	 * this method return a string success or fail  
+	 */
 	@Override
 	public String acceptResignation(Resignation resign, int empid) {
 		int result =0;
@@ -173,6 +234,14 @@ catch (Exception e)
 		return "Fail";
 		
 	}
+	
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * rejectResignation  is the DAO implementation for changing the user request status. 
+	 * Contains the business logic for PUT request 
+	 * this method return a string success or fail  
+	 */
 	
 	@Override
 	public String rejectResignation(Resignation resign, int empid) {
