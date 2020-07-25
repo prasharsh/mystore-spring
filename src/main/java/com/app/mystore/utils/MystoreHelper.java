@@ -1,5 +1,13 @@
 package com.app.mystore.utils;
 
+
+/**
+ * Author: Prashant kumar
+ * B00847456
+ * Mystore helper is a common service class
+ * handles notification
+ */
+
 import java.util.Date;
 import java.util.Properties;
 

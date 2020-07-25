@@ -1,5 +1,12 @@
 package com.app.mystore.dto;
 
+
+/**
+ * Author: Prashant kumar
+ * B00847456
+ * ResetPassword is data transafer object
+ * for the reset_password table
+ */
 import java.sql.Date;
 
 public class ResetPassword {

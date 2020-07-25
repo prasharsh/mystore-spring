@@ -47,6 +47,15 @@ public class LoginControllerService {
 	public MystoreHelper helper;
 
 	User user = null;
+	
+	
+/********
+ * B00847456 - Prashant kumar
+ * used to validate user credentials
+ * @param loginUser
+ * @return User
+ * @throws Exception
+ */
 	public User login(User loginUser) throws Exception {
 
 
@@ -60,6 +69,13 @@ public class LoginControllerService {
 		return user;
 	}
 
+	
+/********
+ * B00847456 - Prashant kumar
+ * returns auth. user
+ * @return User
+ * @throws Exception
+ */
 	public User getauthenciatedUser() throws Exception {
 		if(null != user ){
 			return user;
@@ -68,7 +84,14 @@ public class LoginControllerService {
 			throw new Exception("User requires Authenciation");
 		}
 	}
-
+	
+	/*****
+	 * B00847456 - Prashant kumar
+	 * get reset tokens
+	 * @param email
+	 * @return String
+	 * @throws Exception
+	 */
 	public String getResetToken(String email) throws Exception {
 		String token = "";
 		User user = null;
@@ -93,6 +116,12 @@ public class LoginControllerService {
 		return token;
 	}
 
+	/**********
+	 * B00847456 - Prashant kumar
+	 * creates string
+	 * @param n
+	 * @return String
+	 */
 	static String getAlphaNumericString(int n) 
 	{ 
 
@@ -113,7 +142,13 @@ public class LoginControllerService {
 		return sb.toString(); 
 	}
 
-
+	/*********
+	 * B00847456 - Prashant kumar
+	 * registers users on to user_profiles
+	 * @param newUser
+	 * @return int
+	 * @throws Exception
+	 */
 	public int register(User newUser) throws Exception {
 		int row =0;
 		try {
@@ -131,6 +166,13 @@ public class LoginControllerService {
 	}
 
 
+	/********
+	 * B00847456 - Prashant kumar
+	 * resets password
+	 * @param updatePasswordForUser
+	 * @return
+	 * @throws Exception
+	 */
 	public int updateUserPassword(User updatePasswordForUser) throws Exception {
 		ResetPassword rp = null;
 		try {

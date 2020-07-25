@@ -1,5 +1,13 @@
 package com.app.mystore.dto;
 
+
+
+/**
+ * Author: Prashant kumar
+ * B00847456
+ * User is data transafer object
+ * for the user_password table
+ */
 import java.sql.Date;
 
 public class User {
