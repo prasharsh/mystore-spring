@@ -3,6 +3,7 @@ package com.app.mystore.controllers;
 import com.app.mystore.dto.EmployeeSchedule;
 import com.app.mystore.dto.avail;
 import com.app.mystore.service.AutomateScheduleGenerationImpl;
+import com.app.mystore.service.PublishedScheduleServicesImpl;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,8 @@ public class ScheduleController {
 	@Autowired
 	private AutomateScheduleGenerationImpl automateScheduleGeneration;
 
+	@Autowired
+	private PublishedScheduleServicesImpl publishedScheduleServices;
 
 	@PostMapping("/saveAvail")
 	public String saveAvail(@RequestBody avail avail){
@@ -41,6 +44,25 @@ public class ScheduleController {
 	public ArrayList<EmployeeSchedule> generate(){
 
 		return automateScheduleGeneration.requestScheduleFromAlgorithm();
+	}
+
+	@PostMapping("/publishSchedule")
+	public String publishSchedule(@RequestBody ArrayList<EmployeeSchedule> employeeSchedules){
+		System.out.println("Inside Publish schedule + "+employeeSchedules.size());
+		if (employeeSchedules.size() > 0){
+			for(EmployeeSchedule employeeSchedule:employeeSchedules){
+				publishedScheduleServices.saveSchedule(employeeSchedule);
+			}
+			return g.toJson("OK");
+		}
+		return g.toJson("Failed");
+	}
+
+	@GetMapping("/retrievePublishedSchedule")
+	public ArrayList<EmployeeSchedule> retrieveSchedule(){
+		ArrayList<EmployeeSchedule> employeeSchedules = publishedScheduleServices.retrieveSchedule();
+		System.out.println(employeeSchedules.size());
+		return employeeSchedules;
 	}
 
 }
