@@ -1,4 +1,10 @@
 package com.app.mystore.properties;
+/**
+ * Author: Prashant kumar
+ * B00847456
+ * UserProperties is the class that works with the sql property file 
+ * user_sql.properties has the db queries for login module
+ */
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;

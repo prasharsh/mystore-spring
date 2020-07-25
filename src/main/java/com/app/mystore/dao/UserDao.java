@@ -1,5 +1,13 @@
 package com.app.mystore.dao;
 
+
+/**
+ * Author: Prashant kumar
+ * B00847456
+ * UserDao is the interface that works with the impl 
+ * to interact with the data base layer for crud operations
+ */
+
 import com.app.mystore.dto.ResetPassword;
 import com.app.mystore.dto.User;
 

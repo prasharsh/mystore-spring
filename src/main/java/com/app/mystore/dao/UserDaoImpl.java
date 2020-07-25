@@ -1,5 +1,12 @@
 package com.app.mystore.dao;
 
+/**
+ * Author: Prashant kumar
+ * B00847456
+ * UserDaoImpl is the dao implementation 
+ * to interact with the data base layer for crud operations
+ */
+
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
