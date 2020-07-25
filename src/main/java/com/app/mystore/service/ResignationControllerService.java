@@ -72,12 +72,15 @@ public class ResignationControllerService {
 	}
 	
 	public String acceptResignation(Resignation resign,int empid) {
-		String result=resignationDao.acceptResignation(resign, empid);
-		User user = null;
+		String result = null;
 		try {
+			User user = null;
 			user = dao.getUseridById(empid+"");
+			 result=resignationDao.acceptResignation(resign, empid);
 			helper.sendEmail(user.getUsername(), "Your resignation request has been approved, and your account has been inactivated.", "Resignation Accepted");
-		} catch (Exception e) {
+		}
+		
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 		
