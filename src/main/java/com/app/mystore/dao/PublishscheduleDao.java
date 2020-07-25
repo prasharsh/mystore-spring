@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /*
 * Author : Parth Panchal
 * B00845025
-* ublishscheduleDao is an interface confirming the PublishscheduleDao class.
+* PublishscheduleDao is an interface confirming the PublishscheduleDao class.
 * */
 
 public interface PublishscheduleDao {
