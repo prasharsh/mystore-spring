@@ -1,5 +1,11 @@
 package com.app.mystore.dto;
 
+/*
+* Author : Parth Panchal
+* B00845025
+* The model undergoes saving decoded data obtained from remote alogorithm
+* */
+
 public class EmployeeSchedule {
 	private String Name;
 	private String Mon;

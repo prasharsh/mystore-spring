@@ -5,7 +5,16 @@ import com.app.mystore.dto.EmployeeSchedule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+
+
 import java.util.ArrayList;
+/*
+*Author : Parth Panchal
+*B00845025
+* PublishedScheduleServicesImpl service can record the schedule after receiving the confirm
+* request from the manager employing publishscheduleDao.
+* */
 @Service("PublishScheduleService")
 public class PublishedScheduleServicesImpl implements PublishedScheduleServices {
     @Autowired

@@ -18,7 +18,11 @@ import com.app.mystore.properties.AvailProps;
 
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Author: Parth Panchal
+ * B00845025
+ * AvailibilityDaoImpl is a service that stores and update the availabilities submitted by user.
+ */
 @Repository
 @Configuration
 public class AvailibilityDaoImpl extends JdbcDaoSupport implements AvailibilityDao {
