@@ -1,6 +1,12 @@
+/**
+ * Author: Khanjika Arora
+ * Banner id: B00843319
+ * LeaveDaoImpl is the dao implementation 
+ * to interact with the data base layer for crud operations
+ */
+
 package com.app.mystore.dao;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;

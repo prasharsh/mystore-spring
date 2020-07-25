@@ -1,5 +1,12 @@
-package com.app.mystore.dto;
+/**
+ * Author: Khanjika Arora
+ * Banner id: B00843319
+ * Leave is data transfer object
+ * for the leave table
+ */
 
+
+package com.app.mystore.dto;
 import java.sql.Date;
 
 import org.apache.commons.lang3.text.StrTokenizer;

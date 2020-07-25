@@ -1,6 +1,14 @@
+/**
+ * Author: Khanjika Arora
+ * Banner id: B00843319
+ * LeaveControllerService is the service that handles
+ * all the busniess logic for the leave module.
+ * interacts with dao for CRUD operations
+ */
+
+
 package com.app.mystore.service;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.app.mystore.dao.LeaveDao;

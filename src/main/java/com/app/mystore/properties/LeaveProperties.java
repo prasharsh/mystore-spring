@@ -1,3 +1,10 @@
+/**
+ * Author: Khanjika Arora
+ * Banner id: B00843319
+ * LeaveProperties is the class that works with the sql property file 
+ * leave_sql.properties has the db queries for leave module
+ */
+
 package com.app.mystore.properties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

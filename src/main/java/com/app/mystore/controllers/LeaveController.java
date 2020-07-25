@@ -1,3 +1,11 @@
+/**
+ * Author: 	Khanjika Arora
+ * Banner id: B00843319
+ * LeaveController is the controller to handle
+ * all the requests to the /api/myStore/leave.
+ * Contains all the endpoints of leave module for CRUD operations
+ */
+
 package com.app.mystore.controllers;
 import com.app.mystore.dto.Leave;
 import com.app.mystore.dto.Resignation;
