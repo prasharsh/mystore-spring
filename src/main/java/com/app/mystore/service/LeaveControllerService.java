@@ -32,6 +32,7 @@ public class LeaveControllerService {
 	public String applyLeave(Leave leaveDetails, int empid) {
 		// TODO Auto-generated method stub
 		String result = leaveDao.enterLeaveData(leaveDetails, empid);
+		// on successfully applying leave providing notification to the manager
 		if (result== "Success")
 		{ 
 		Notification notification= new Notification();
@@ -64,6 +65,7 @@ public class LeaveControllerService {
 
 	public String acceptLeave(Leave leave, int empid) {
 		String result=leaveDao.acceptLeave(leave, empid);
+		// on successfully acceptance of leave providing notification to the manager
 		if (result== "Success")
 		{ 
 		Notification notification= new Notification();
@@ -84,6 +86,7 @@ public class LeaveControllerService {
 
 	public String rejectLeave(Leave leave, int empid) {
 		String result=leaveDao.rejectLeave(leave, empid);
+		// on successfully rejection of leave providing notification to the manager
 		if (result== "Success")
 		{ 
 		Notification notification= new Notification();
