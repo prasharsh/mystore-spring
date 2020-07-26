@@ -21,6 +21,15 @@ import com.app.mystore.dto.Resignation;
 import com.app.mystore.service.ResignationControllerService;
 import com.google.gson.Gson;
 
+
+/**
+ * Author: Lavanya Nili
+ * B00834718
+ * ActionOnResignation  is the controller to handle action taken on the resignation that is accept and reject
+ * all the requests to the /api/mystore/requests resources.
+ * Contains all the endpoints of the resignation operations handled by the manager
+ */
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/mystore/requests")
@@ -30,12 +39,28 @@ public class ActionOnResignation
 	@Autowired
 	private  ResignationControllerService resignationControllerService;
 	
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * viewResignations is the method to handle viewing all the resignations applied
+	 * It returns a list of resignation  objects
+	 */
+	
 	@RequestMapping("/resignation")
 	public List<Resignation> viewResignations(){
 		List <Resignation> list=(List<Resignation>) resignationControllerService.viewResignation();
 				return list;
 		
 	}
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * inactiveEmployee is the method to handle the user profile after accepting the resignation
+	 * It deactivates the user and sends an email notification
+	 * It returns a json result 
+	 */
+	
+	
 	@RequestMapping(value="/resignation/inactive/{empid}", method=RequestMethod.PUT)
 	public String inactiveEmployee(@PathVariable int empid)
 	{
@@ -45,6 +70,13 @@ public class ActionOnResignation
 		
 	}
 	
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * acceptResignation is the method to handles the action accept 
+	 * It changes the request status applied by the user
+	 * It returns a json result 
+	 */
 	@RequestMapping(value="/resignation/accept/{empid}", method=RequestMethod.PUT)
 	public String acceptResignation(@RequestBody Resignation resign, @PathVariable int empid)
 	{   
@@ -59,6 +91,13 @@ public class ActionOnResignation
 		
 	}
 	
+	/**
+	 * Author: Lavanya Nili
+	 * B00834718
+	 * rejectResignation is the method to handles the action reject 
+	 * It changes the request status applied by the user
+	 * It returns a json result 
+	 */
 	@RequestMapping(value="/resignation/reject/{empid}", method=RequestMethod.PUT)
 	public String rejectResignation(@RequestBody Resignation resign, @PathVariable("empid") int empid)
 	{

@@ -3,6 +3,13 @@ import java.util.List;
 
 import com.app.mystore.dto.Resignation;
 
+/**
+ * Author: Lavanya Nili
+ * B00834718
+ * ResignationDao is the DAO implementation that interacts with the database for request/response
+ * Contains the abstract method for performing the CRUD operations. 
+ */
+
 public interface ResignationDao {
 	
 	

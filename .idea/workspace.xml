@@ -1,37 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c23c9a7-9de0-4dd6-a877-855038a2a232" name="Default Changelist" comment="&quot;Viewing and publishing schedule accomplished&quot;">
+    <list default="true" id="0c23c9a7-9de0-4dd6-a877-855038a2a232" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/remoteAPIFiles/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/remoteAPIFiles/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/remoteAPIFiles/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/controllers/ScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/controllers/ScheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/PublishscheduleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/PublishscheduleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/PublishscheduleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/PublishscheduleDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/ScheduleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/ScheduleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/ScheduleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/ScheduleDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dto/EmployeeSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dto/EmployeeSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dto/MappedTimings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dto/MappedTimings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dto/ShiftDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dto/ShiftDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dto/avail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dto/avail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/AvailProps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/AvailProps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/PublishSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/PublishSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/ScheduleProps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/ScheduleProps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/AutomateScheduleGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/AutomateScheduleGeneration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/AutomateScheduleGenerationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/AutomateScheduleGenerationImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/PublishedScheduleServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/PublishedScheduleServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/PublishedScheduleServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/PublishedScheduleServicesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleDecoderServices/DecodeGeneratedSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleDecoderServices/DecodeGeneratedSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleDecoderServices/DecodeGeneratedScheduleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleDecoderServices/DecodeGeneratedScheduleImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleTimeMappings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleTimeMappings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleTimeMappingsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleTimeMappingsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/TimeConversionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/TimeConversionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/TimeConversionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/TimeConversionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/EncodeCrewAvailibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/EncodeCrewAvailibility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/EncodeCrewAvailibilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/EncodeCrewAvailibilityImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/InitiateAPIRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/InitiateAPIRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/InitiateAPIRequestImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/InitiateAPIRequestImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,11 +89,14 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.app.mystore.service" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.app.mystore.dto" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/app/mystore/remoteAPIFiles" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.app.mystore.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/sql" />
@@ -260,7 +239,7 @@
       <workItem from="1595549524309" duration="356000" />
       <workItem from="1595559848411" duration="608000" />
       <workItem from="1595599977501" duration="4493000" />
-      <workItem from="1595681644817" duration="9954000" />
+      <workItem from="1595681644817" duration="11259000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;+Availibility module&quot;">
       <created>1595083684863</created>
@@ -325,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595687644264</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="&quot;Comments and Credits added&quot;">
+      <created>1595704366107</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1595704366107</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +329,8 @@
     <MESSAGE value="&quot;Nurse Scheduling Algorithm API (microservice (Google Cloud Run) testing successful)&quot;" />
     <MESSAGE value="&quot;Nurse Scheduling Algorithm API output decoded as object for front-end rendering&quot;" />
     <MESSAGE value="&quot;Viewing and publishing schedule accomplished&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Viewing and publishing schedule accomplished&quot;" />
+    <MESSAGE value="&quot;Comments and Credits added&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Comments and Credits added&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="210" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1595648646767">
@@ -372,12 +359,13 @@
     </state>
     <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595436186231" />
     <state x="458" y="191" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.829@0.23.1440.829" timestamp="1595083841332" />
-    <state x="245" y="40" key="CommitChangelistDialog2" timestamp="1595690653195">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state x="245" y="18" key="CommitChangelistDialog2" timestamp="1595710106641">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="245" y="18" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595519512704" />
+    <state x="245" y="18" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595710106641" />
     <state x="245" y="40" key="CommitChangelistDialog2/0.23.1440.829@0.23.1440.829" timestamp="1595390826758" />
     <state x="245" y="40" key="CommitChangelistDialog2/0.23.1440.830@0.23.1440.830" timestamp="1595690653195" />
+    <state x="245" y="40" key="CommitChangelistDialog2/0.23.1440.831@0.23.1440.831" timestamp="1595704365725" />
     <state x="245" y="40" key="CommitChangelistDialog2/0.23.1440.832@0.23.1440.832" timestamp="1595639400701" />
     <state width="1398" height="278" key="GridCell.Tab.0.bottom" timestamp="1595686741296">
       <screen x="0" y="23" width="1440" height="830" />
@@ -471,12 +459,13 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="229" y="76" key="SettingsEditor/0.23.1440.829@0.23.1440.829" timestamp="1595028759049" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1595687661833">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1595704384910">
+      <screen x="0" y="23" width="1440" height="831" />
     </state>
     <state x="320" y="167" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1595519526056" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1595390845676" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.23.1440.830@0.23.1440.830" timestamp="1595687661833" />
+    <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.23.1440.831@0.23.1440.831" timestamp="1595704384910" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.23.1440.832@0.23.1440.832" timestamp="1595639413921" />
     <state x="399" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1595681646867">
       <screen x="0" y="23" width="1440" height="829" />
@@ -484,10 +473,10 @@
     <state x="399" y="270" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1595601271392" />
     <state x="399" y="270" key="com.intellij.ide.util.TipDialog/0.23.1440.829@0.23.1440.829" timestamp="1595681646867" />
     <state x="399" y="271" key="com.intellij.ide.util.TipDialog/0.23.1440.831@0.23.1440.831" timestamp="1594921114231" />
-    <state x="509" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595704291701">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state x="509" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595710112162">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="509" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1595606701473" />
+    <state x="509" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1595710112162" />
     <state x="509" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.829@0.23.1440.829" timestamp="1595390890493" />
     <state x="509" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.830@0.23.1440.830" timestamp="1595687583782" />
     <state x="509" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.831@0.23.1440.831" timestamp="1595704291701" />

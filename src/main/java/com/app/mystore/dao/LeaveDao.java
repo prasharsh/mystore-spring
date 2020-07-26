@@ -1,3 +1,10 @@
+/**
+ * Author: Khanjika Arora
+ * Banner id: B00843319
+ * LeaveDao is the interface that works with the LeaveDaoImpl 
+ * to interact with the data base layer for crud operations
+ */
+
 package com.app.mystore.dao;
 
 import java.util.List;

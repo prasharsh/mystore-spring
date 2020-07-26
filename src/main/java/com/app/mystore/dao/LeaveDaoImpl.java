@@ -1,6 +1,12 @@
+/**
+ * Author: Khanjika Arora
+ * Banner id: B00843319
+ * LeaveDaoImpl is the dao implementation 
+ * to interact with the data base layer for crud operations
+ */
+
 package com.app.mystore.dao;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,20 +83,6 @@ public class LeaveDaoImpl extends JdbcDaoSupport implements LeaveDao{
 		
 	}
 		
-		
-		
-//		//to enter leave details in the database
-//		namedSqlParams.addValue("empid", leaveDetails.getEmpid());
-//		namedSqlParams.addValue("reason", leaveDetails.getReason());
-//		result = namedParameterJdbcTemplate.update(leaveproperties.getInsertLeave(), namedSqlParams);
-//		
-//		if(result == 1){
-//			return "Success";
-//		}
-//		else
-//		{
-//			return "Failure";
-//		}
 
 	@Override
 	public List<Leave> pendingLeave() {

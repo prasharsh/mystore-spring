@@ -35,6 +35,12 @@ public class LoginController {
 
 	Gson g = new Gson();
 
+	
+	/************
+	 * the endpoint is to validate a users credentials
+	 * @param loginUser
+	 * @return User
+	 */
 	@PostMapping(path ="/login", consumes = "application/json", produces = "application/json")
 	public User login(@RequestBody User  loginUser){
 		User user = null;
@@ -56,6 +62,12 @@ public class LoginController {
 
 	}
 
+	
+	/***********
+	 * User for registering a new user
+	 * @param newUser
+	 * @return String
+	 */
 	@PostMapping("/register")
 	public String register(@RequestBody User newUser){
 
@@ -74,6 +86,13 @@ public class LoginController {
 
 	}
 
+	
+	
+	/*******************
+	 * updates the user's profile
+	 * @param updateForUser
+	 * @return String
+	 */
 	@PutMapping("/updateProfile")
 	public String updateProfile(@RequestBody User updateForUser){
 
@@ -87,6 +106,12 @@ public class LoginController {
 
 	}
 
+	
+/**************
+ *  used for changing the password
+ * @param updatePasswordForUser
+ * @return String
+ */
 	@PutMapping("/changePassword")
 	public String changePassword(@RequestBody User updatePasswordForUser){
 
@@ -104,6 +129,11 @@ public class LoginController {
 
 	}
 
+	/*********
+	 * it is used for fetching the user's profile
+	 * @param id
+	 * @return User
+	 */
 	@GetMapping("/fetchUserProfile/{id}")
 	public User fetchUserProfile(
 			@PathVariable("id") String id) {
@@ -120,7 +150,12 @@ public class LoginController {
 	}
 
 
-	@GetMapping("/resetPassword/{email}")
+	/***
+	 * generates the reset password token
+	 * @param email
+	 * @return String
+	 */
+ 	@GetMapping("/resetPassword/{email}")
 	public String resetPasswordToken(
 			@PathVariable("email") String email) {
 		String token = "";
@@ -136,6 +171,12 @@ public class LoginController {
 		return g.toJson(token);
 	}
 
+ 	
+ 	/*******
+ 	 * Used for updating the user role
+ 	 * @param userID
+ 	 * @return Boolean
+ 	 */
 	@PutMapping("/updateRole/{userID}")
 	public Boolean updateRole(@PathVariable int userID){
 		int record = 0;

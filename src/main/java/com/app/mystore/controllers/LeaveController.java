@@ -1,3 +1,11 @@
+/**
+ * Author: 	Khanjika Arora
+ * Banner id: B00843319
+ * LeaveController is the controller to handle
+ * all the requests to the /api/myStore/leave.
+ * Contains all the endpoints of leave module for CRUD operations
+ */
+
 package com.app.mystore.controllers;
 import com.app.mystore.dto.Leave;
 import com.app.mystore.dto.Resignation;
@@ -18,6 +26,12 @@ public class LeaveController {
 	@Autowired
 	private  LeaveControllerService leaveControllerService;
 	
+	
+	/**
+	 * the endpoint allows employee to apply for leave
+	 * @param leaveDetails, empid
+	 * @return leaveAppliedResponse as a json string
+	 */
 	@RequestMapping(value="/apply/{empid}")
 	public String applyLeave (@RequestBody Leave leaveDetails, @PathVariable("empid") int empid){
 		
@@ -29,6 +43,10 @@ public class LeaveController {
 
 	}
 	
+	/**
+	 * the endpoint displays all the pending leave to the manager
+	 * @return list
+	 */
 	@RequestMapping(value = "/viewLeaveRequest", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Leave> viewLeaveRequest(){
@@ -36,6 +54,11 @@ public class LeaveController {
 		return list;
 	}
 	
+	/**
+	 * the endpoint displays list of leave applied by the employee
+	 * @param empid
+	 * @return list
+	 */
 	@RequestMapping(value = "/viewLeaveHistory/{empid}", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Leave> viewLeaveHistory(@PathVariable("empid") int empid){
@@ -44,6 +67,11 @@ public class LeaveController {
 
 	}
 	
+	/**
+	 * the endpoint allows manager to accept an applied leave
+	 * @param leave, empid
+	 * @return result as a json string
+	 */
 	@RequestMapping(value="/viewLeaveRequest/accept/{empid}", method=RequestMethod.PUT)
 	public String acceptLeave(@RequestBody Leave leave, @PathVariable int empid)
 	{
@@ -53,6 +81,11 @@ public class LeaveController {
 		
 	}
 	
+	/**
+	 * the endpoint allows manager to reject an applied leave
+	 * @param leave, empid
+	 * @return result as a json string
+	 */
 	@RequestMapping(value="/viewLeaveRequest/reject/{empid}", method=RequestMethod.PUT)
 	public String rejectLeave(@RequestBody Leave leave, @PathVariable int empid)
 	{
@@ -62,8 +95,13 @@ public class LeaveController {
 		
 	}
 	
+	/**
+	 * the endpoint allows employee to delete an applied leave if it is in pending state
+	 * @param id
+	 * @return result as a json string
+	 */
 	@RequestMapping(value = "/viewLeaveHistory/delete/{id}", method = RequestMethod.DELETE)
-public String deleteLeave(@PathVariable("id") int id) 
+    public String deleteLeave(@PathVariable("id") int id) 
 	{
 		Gson gson =new Gson();
 		String result;
