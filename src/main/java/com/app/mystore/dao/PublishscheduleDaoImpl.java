@@ -131,7 +131,7 @@ public class PublishscheduleDaoImpl  extends JdbcDaoSupport implements Publishsc
                     employeeSchedule.setThrus((String)row.get("thursday"));
                     employeeSchedule.setFri((String)row.get("friday"));
                     employeeSchedule.setSat((String)row.get("saturday"));
-                    employeeSchedule.setSat((String)row.get("sunday"));
+                    employeeSchedule.setSun((String)row.get("sunday"));
                     employeeSchedules.add(employeeSchedule);
 
                 }
