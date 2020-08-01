@@ -84,13 +84,11 @@ public class ShiftSwapController {
 
 
 
-	@GetMapping("/acceptShift/{sid}/{uid}")
-	public String acceptShift(
-			@PathVariable("sid") String sid,
-			@PathVariable("uid") String uid) {
+	@PostMapping("/acceptShift")
+	public String acceptShift(@RequestBody ShiftSwap shift) {
 		int rows;
 		try {
-			rows =	service.acceptShift(sid, uid);
+			rows =	service.acceptShift(shift);
 		}catch (Exception e) {
 			return g.toJson(e.getMessage());
 		}

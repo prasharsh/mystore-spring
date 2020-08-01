@@ -20,5 +20,9 @@ public interface ShiftSwapDao {
 
 	List<ShiftSwap> getOpenSwapsById(String id) throws Exception;
 
+	int updateSwapWithSchedule(ShiftSwap swap) throws Exception;
+
+	int updateSwapRequestorSchedule(ShiftSwap swap) throws Exception;
+
 	
 }
