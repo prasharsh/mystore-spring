@@ -102,7 +102,7 @@ public class ShiftSwapDaoImpl extends JdbcDaoSupport implements ShiftSwapDao {
 		int rows =0;
 		namedSqlParams=new MapSqlParameterSource();
 		namedSqlParams.addValue("sid", sid);
-		namedSqlParams.addValue("uid", sid);
+		namedSqlParams.addValue("uid", uid);
 		try {
 			rows = namedParameterJdbcTemplate.update(properties.getAcceptSwap(), namedSqlParams);	
 		} 
@@ -213,7 +213,7 @@ public class ShiftSwapDaoImpl extends JdbcDaoSupport implements ShiftSwapDao {
 		User user = dao.getUseridById(id);
 
 
-
+		List<ShiftSwap> openSwapReqList = new ArrayList<ShiftSwap>();
 		List<ShiftSwap> swaps = null;
 		namedSqlParams=new MapSqlParameterSource();
 		namedSqlParams.addValue("id", id);
@@ -225,12 +225,13 @@ public class ShiftSwapDaoImpl extends JdbcDaoSupport implements ShiftSwapDao {
 			for (ShiftSwap openShift : swaps) {
 				boolean isAssigned = false;
 				for (ShiftSwap shift : shiftList) {
-					if(!shift.getShiftType().isEmpty() && !shift.getShiftType().isEmpty() && (shift.getSwapDate().equals(openShift.getSwapDate()) )) {
+					if((null !=shift.getShiftType() && !"".equals(shift.getShiftType()) && !" ".equals(shift.getShiftType()) ) && (shift.getSwapDate().equals(openShift.getSwapDate()) )) {
 						isAssigned = true;
 					}
 				}
 				if(!isAssigned) {
 					System.out.println(openShift.toString());
+					openSwapReqList.add(openShift);
 				}
 
 			}
@@ -240,7 +241,41 @@ public class ShiftSwapDaoImpl extends JdbcDaoSupport implements ShiftSwapDao {
 
 		}
 
-		return swaps;
+		return openSwapReqList;
+
+	}
+
+	@Override
+	public int updateSwapWithSchedule(ShiftSwap swap) throws Exception {
+		int rows =0;
+		namedSqlParams=new MapSqlParameterSource();
+		User user = dao.getUseridById(swap.getSwappedWith());
+		try {
+			rows = namedParameterJdbcTemplate.update("UPDATE `mystore`.`schedule_db` SET "+swap.getSwapDate()+" = "+"'"+swap.getShiftType()+"'"+" WHERE `Name` = '"+user.getUsername()+"'", namedSqlParams);	
+		if(rows<1) {
+			int insertRows =  namedParameterJdbcTemplate.update( "INSERT INTO `mystore`.`schedule_db` (`Name`, `"+swap.getSwapDate()+"`) VALUES ('"+user.getUsername() +"' , '"+swap.getShiftType()+"' )", namedSqlParams);
+			rows = insertRows;		
+		}
+		} 
+		catch (Exception e) {
+			throw new Exception("Error in DB, please check with the support team.");
+		}
+		return rows;
+
+	}
+
+	@Override
+	public int updateSwapRequestorSchedule(ShiftSwap swap) throws Exception {
+		int rows =0;
+		namedSqlParams=new MapSqlParameterSource();
+		User user = dao.getUseridById(swap.getSwapRequestor());
+		try {
+			rows = namedParameterJdbcTemplate.update("UPDATE `mystore`.`schedule_db` SET "+swap.getSwapDate()+" = null "+" WHERE `Name` = '"+user.getUsername()+"'", namedSqlParams);	
+		} 
+		catch (Exception e) {
+			throw new Exception("Error in DB, please check with the support team.");
+		}
+		return rows;
 
 	}
 

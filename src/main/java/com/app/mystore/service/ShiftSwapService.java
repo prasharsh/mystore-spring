@@ -7,13 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.mystore.dao.ShiftSwapDao;
+import com.app.mystore.dao.UserDao;
+import com.app.mystore.dto.Notification;
 import com.app.mystore.dto.ShiftSwap;
+import com.app.mystore.dto.User;
 
 @Service("ShiftSwapService")
 public class ShiftSwapService {
 
 	@Autowired
 	private ShiftSwapDao dao;
+	
+	@Autowired
+	private UserDao userDao;
+	
+	@Autowired
+	private NotificationService ns;
 
 	public int createSwapRequest(ShiftSwap swapRequest) throws Exception {
 
@@ -27,9 +36,22 @@ public class ShiftSwapService {
 		return swaps;
 	}
 
-	public int acceptShift(String sid, String uid) throws Exception{
+	public int acceptShift(ShiftSwap swap) throws Exception{
+		//update schedule
 
-		int rows = dao.acceptShift(sid, uid);
+		int swapWithSchedule = dao.updateSwapWithSchedule(swap);
+	
+		int requestorSchedule = dao.updateSwapRequestorSchedule(swap);
+		int rows = dao.acceptShift(swap.getSwapId()+"", swap.getSwappedWith());
+		
+		Notification notification = new Notification();
+		User swappedWith = userDao.getUseridById(swap.getSwappedWith());
+		User swapReq = userDao.getUseridById(swap.getSwapRequestor());
+		notification.setUserId(userDao.getManagerId());
+		notification.setNotification(swappedWith.getFirstName()+" "+swappedWith.getLastName()+" has taken up "+swap.getSwapDate()+" "+swap.getShiftType()+" shift from "+ swapReq.getFirstName()+" "+swapReq.getLastName());
+		notification.setNotificationType("Shift Notification");
+		ns.createNotification(notification);	
+	
 		return rows;
 	}
 
