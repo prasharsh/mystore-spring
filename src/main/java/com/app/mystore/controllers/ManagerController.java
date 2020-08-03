@@ -31,9 +31,10 @@ public class ManagerController {
 	@RequestMapping(value = "/viewEmployee/delete/{id}", method = RequestMethod.DELETE)
     public String deleteEmployee(@PathVariable("id") int id) 
 	{
+		Gson gson =new Gson();
 		String result;
 		result = managerControllerService.DeleteEmployee(id);
-		return result;
+		return gson.toJson(result);
 		
 	}
 	
