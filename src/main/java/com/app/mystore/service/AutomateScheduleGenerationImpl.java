@@ -43,6 +43,7 @@ public class AutomateScheduleGenerationImpl implements AutomateScheduleGeneratio
 
     @Override
     public ArrayList<EmployeeSchedule> requestScheduleFromAlgorithm() {
+        this.deactiveSwapRequest();
         ArrayList<ShiftDetails> shiftDetails = scheduleDaoimpl.getShiftDetails();
         ArrayList<avail> crewAvailList = scheduleDaoimpl.getAllAvailibility();
         System.out.println("size"+crewAvailList.size());
@@ -54,6 +55,16 @@ public class AutomateScheduleGenerationImpl implements AutomateScheduleGeneratio
         return decodeGeneratedSchedule.decodeService(JSONStringResponseFromAlgorithm,encodeCrewAvailibility.crewMappings(),shiftDetails);
 
 
+    }
+
+    @Override
+    public boolean deactiveSwapRequest() {
+        int rowsUpdated = scheduleDaoimpl.updateShiftSwapStatus();
+        System.out.println("Swap Requests deactivated successfully");
+        if (rowsUpdated >=0 ){
+            return true;
+        }
+        return false;
     }
 
     @Override

@@ -168,5 +168,12 @@ public class ScheduleDaoImpl extends JdbcDaoSupport implements ScheduleDao {
 
     }
 
+    @Override
+    public int updateShiftSwapStatus() {
+        namedSqlParams = new MapSqlParameterSource();
+        int rowsUpdated = namedParameterJdbcTemplate.update(scheduleProps.getDeactivateSwapping(),namedSqlParams);
+        return rowsUpdated;
+    }
+
 
 }

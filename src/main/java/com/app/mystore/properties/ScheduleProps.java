@@ -16,6 +16,15 @@ import org.springframework.context.annotation.PropertySource;
 public class ScheduleProps {
     String queryuniquecrews;
 
+    public String getDeactivateSwapping() {
+        return deactivateSwapping;
+    }
+
+    public void setDeactivateSwapping(String deactivateSwapping) {
+        this.deactivateSwapping = deactivateSwapping;
+    }
+
+    String deactivateSwapping;
     public String getGetAllAvailibility() {
         return getAllAvailibility;
     }
