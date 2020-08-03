@@ -11,5 +11,6 @@ import java.util.ArrayList;
 public interface AutomateScheduleGeneration {
 
     ArrayList<EmployeeSchedule> requestScheduleFromAlgorithm();
+    boolean deactiveSwapRequest();
     int returnTotalCrew();
 }

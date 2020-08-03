@@ -13,5 +13,5 @@ public interface ScheduleDao {
     int crewTally();
     ArrayList<avail> getAllAvailibility();
     ArrayList<ShiftDetails> getShiftDetails();
-
+    int updateShiftSwapStatus();
 }

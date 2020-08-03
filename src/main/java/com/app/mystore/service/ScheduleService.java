@@ -74,12 +74,14 @@ public class ScheduleService {
 		availability.setEnd(avail.getSunEnd());
 		availabilities.add(availability);
 
+		rowsUpdated = dao.saveAvail(availabilities,avail.getUsername());
 
 
-		for(Availability availiability :availabilities){
+		/*for(Availability availiability :availabilities){
+
 			record = dao.saveAvail(availiability);
 			rowsUpdated += record;
-		}
+		}*/
 
 		return rowsUpdated;
 	}

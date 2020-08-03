@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import com.app.mystore.dto.Availability;
 import com.app.mystore.properties.AvailProps;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 /**
@@ -51,24 +52,25 @@ public class AvailibilityDaoImpl extends JdbcDaoSupport implements AvailibilityD
 	}
 
 	@Override
-	public int saveAvail(Availability avail) {
+	public int saveAvail(ArrayList<Availability> availibilities,String userId) {
 
-
-		if (rows==0){
-			this.deleteUser(avail.getUserId());
-		}
-
-		namedSqlParams=new MapSqlParameterSource();
-		namedSqlParams.addValue("userid", avail.getUserId());
-		namedSqlParams.addValue("day", avail.getDay());
-		namedSqlParams.addValue("start", avail.getStart());
-		namedSqlParams.addValue("end", avail.getEnd());
+		this.deleteUser(userId);
+		for (Availability availability:availibilities){
+			namedSqlParams=new MapSqlParameterSource();
+			namedSqlParams.addValue("userid", availability.getUserId());
+			namedSqlParams.addValue("day", availability.getDay());
+			namedSqlParams.addValue("start", availability.getStart());
+			namedSqlParams.addValue("end", availability.getEnd());
 
 
 			try {
 				rows = namedParameterJdbcTemplate.update(availProps.getInsert(), namedSqlParams);	} catch (DataAccessException e) {
 				System.out.println(e.getMessage());
 			}
+
+		}
+
+
 
 
 		return rows;

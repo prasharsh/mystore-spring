@@ -2,12 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c23c9a7-9de0-4dd6-a877-855038a2a232" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/remoteAPIFiles/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/remoteAPIFiles/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/remoteAPIFiles/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/ManagerController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/ShiftSwapController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/StoreDetailsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ManagerDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ManagerDaoImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ShiftSwapDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ShiftSwapDaoImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/StoreDetailsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/StoreDetailsDaoImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/Manager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/ShiftSwap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/StoreDetails.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/ManagerProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/ShiftSwapProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/StoreDetailsProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/rowmapper/ManagerRowmapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/rowmapper/ShiftSwapRowMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/rowmapper/StoreDetailsRowMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ManagerControllerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ShiftSwapService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/StoreDetailsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/services/Test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/resources/main/sql/manager_sql.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/resources/main/sql/shiftSwap_sql.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/resources/main/sql/store_details_sql.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.4.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/PublishscheduleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/PublishscheduleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/InitiateAPIRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/scheduleGenerationAPIHandler/InitiateAPIRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/ActionOnResignation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/ActionOnResignation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/LeaveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/LeaveController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/ResignationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/ResignationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/ScheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/controllers/ScheduleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/AvailibilityDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/AvailibilityDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/AvailibilityDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/AvailibilityDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/LeaveDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/LeaveDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/PublishscheduleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/PublishscheduleDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ResignationDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ResignationDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ScheduleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ScheduleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ScheduleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/ScheduleDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dao/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/EmployeeSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/EmployeeSchedule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/Leave.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/Leave.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/MappedTimings.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/MappedTimings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/ResetPassword.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/ResetPassword.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/ShiftDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/ShiftDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/avail.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/dto/avail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/AvailProps.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/AvailProps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/LeaveProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/LeaveProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/PublishSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/PublishSchedule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/ScheduleProps.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/ScheduleProps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/UserProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/properties/UserProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/rowmapper/LeaveHistoryRowmapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/rowmapper/LeaveHistoryRowmapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/rowmapper/LeaveRowmapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/rowmapper/LeaveRowmapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/AutomateScheduleGeneration.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/AutomateScheduleGeneration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/AutomateScheduleGenerationImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/AutomateScheduleGenerationImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/LeaveControllerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/LeaveControllerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/LoginControllerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/LoginControllerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/PublishedScheduleServicesImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/PublishedScheduleServicesImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ResignationControllerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ResignationControllerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ScheduleDecoderServices/DecodeGeneratedScheduleImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ScheduleDecoderServices/DecodeGeneratedScheduleImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ScheduleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ScheduleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ScheduleTimeMappingsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/ScheduleTimeMappingsImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/TimeConversionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/TimeConversionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/scheduleGenerationAPIHandler/EncodeCrewAvailibilityImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/scheduleGenerationAPIHandler/EncodeCrewAvailibilityImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/scheduleGenerationAPIHandler/InitiateAPIRequestImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/service/scheduleGenerationAPIHandler/InitiateAPIRequestImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/utils/MystoreHelper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/utils/MystoreHelper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/utils/MystoreHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/app/mystore/utils/MystoreHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/sql/resignation_sql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/sql/resignation_sql.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/sql/schedule_sql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/sql/schedule_sql.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/AvailibilityDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/ScheduleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/ScheduleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/ScheduleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/dao/ScheduleDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/ScheduleProps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/properties/ScheduleProps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/AutomateScheduleGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/AutomateScheduleGeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/AutomateScheduleGenerationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/AutomateScheduleGenerationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/mystore/service/ScheduleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/schedule_sql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/schedule_sql.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +322,11 @@
       <workItem from="1595549524309" duration="356000" />
       <workItem from="1595559848411" duration="608000" />
       <workItem from="1595599977501" duration="4493000" />
-      <workItem from="1595681644817" duration="11259000" />
+      <workItem from="1595681644817" duration="12828000" />
+      <workItem from="1595718285635" duration="538000" />
+      <workItem from="1596310454810" duration="31000" />
+      <workItem from="1596409296093" duration="1392000" />
+      <workItem from="1596473547979" duration="4828000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;+Availibility module&quot;">
       <created>1595083684863</created>
@@ -311,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595704366107</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="&quot;remote API files(+ containerized microservice)&quot;">
+      <created>1595710198090</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1595710198091</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +424,8 @@
     <MESSAGE value="&quot;Nurse Scheduling Algorithm API output decoded as object for front-end rendering&quot;" />
     <MESSAGE value="&quot;Viewing and publishing schedule accomplished&quot;" />
     <MESSAGE value="&quot;Comments and Credits added&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Comments and Credits added&quot;" />
+    <MESSAGE value="&quot;remote API files(+ containerized microservice)&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;remote API files(+ containerized microservice)&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="210" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1595648646767">
@@ -341,11 +436,11 @@
       <screen x="0" y="23" width="1440" height="834" />
     </state>
     <state x="320" y="103" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.834@0.23.1440.834" timestamp="1595647761418" />
-    <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1595681731637">
+    <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1596474269961">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="533" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1595602803217" />
-    <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1595681731637" />
+    <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1596474269961" />
     <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser/0.23.1440.831@0.23.1440.831" timestamp="1595452442416" />
     <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser/0.23.1440.832@0.23.1440.832" timestamp="1595614740817" />
     <state x="533" y="129" key="#com.intellij.ide.util.MemberChooser/0.23.1440.833@0.23.1440.833" timestamp="1595655632413" />
@@ -359,90 +454,90 @@
     </state>
     <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595436186231" />
     <state x="458" y="191" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.829@0.23.1440.829" timestamp="1595083841332" />
-    <state x="245" y="18" key="CommitChangelistDialog2" timestamp="1595710106641">
+    <state x="245" y="18" key="CommitChangelistDialog2" timestamp="1595710197745">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="245" y="18" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595710106641" />
+    <state x="245" y="18" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1595710197745" />
     <state x="245" y="40" key="CommitChangelistDialog2/0.23.1440.829@0.23.1440.829" timestamp="1595390826758" />
     <state x="245" y="40" key="CommitChangelistDialog2/0.23.1440.830@0.23.1440.830" timestamp="1595690653195" />
     <state x="245" y="40" key="CommitChangelistDialog2/0.23.1440.831@0.23.1440.831" timestamp="1595704365725" />
     <state x="245" y="40" key="CommitChangelistDialog2/0.23.1440.832@0.23.1440.832" timestamp="1595639400701" />
-    <state width="1398" height="278" key="GridCell.Tab.0.bottom" timestamp="1595686741296">
+    <state width="1398" height="243" key="GridCell.Tab.0.bottom" timestamp="1596482735864">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595606114575" />
-    <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1595682152417" />
-    <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1595686741296" />
+    <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595713498044" />
+    <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1596475546024" />
+    <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1596482735864" />
     <state width="1398" height="215" key="GridCell.Tab.0.bottom/0.23.1440.831@0.23.1440.831" timestamp="1594939562344" />
     <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.23.1440.832@0.23.1440.832" timestamp="1595637800769" />
     <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.23.1440.833@0.23.1440.833" timestamp="1595656859119" />
     <state width="1398" height="278" key="GridCell.Tab.0.bottom/0.23.1440.834@0.23.1440.834" timestamp="1595655203188" />
-    <state width="1398" height="278" key="GridCell.Tab.0.center" timestamp="1595686741294">
+    <state width="1398" height="243" key="GridCell.Tab.0.center" timestamp="1596482735862">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="1398" height="278" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595606114573" />
-    <state width="1398" height="278" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1595682152416" />
-    <state width="1398" height="278" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1595686741294" />
+    <state width="1398" height="278" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595713498042" />
+    <state width="1398" height="243" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1596475546023" />
+    <state width="1398" height="243" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1596482735862" />
     <state width="1398" height="215" key="GridCell.Tab.0.center/0.23.1440.831@0.23.1440.831" timestamp="1594939562343" />
     <state width="1398" height="278" key="GridCell.Tab.0.center/0.23.1440.832@0.23.1440.832" timestamp="1595637800768" />
     <state width="1398" height="278" key="GridCell.Tab.0.center/0.23.1440.833@0.23.1440.833" timestamp="1595656859118" />
     <state width="1398" height="278" key="GridCell.Tab.0.center/0.23.1440.834@0.23.1440.834" timestamp="1595655203187" />
-    <state width="1398" height="278" key="GridCell.Tab.0.left" timestamp="1595686741294">
+    <state width="1398" height="243" key="GridCell.Tab.0.left" timestamp="1596482735861">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="1398" height="278" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595606114572" />
-    <state width="1398" height="278" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1595682152416" />
-    <state width="1398" height="278" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1595686741294" />
+    <state width="1398" height="278" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595713498042" />
+    <state width="1398" height="243" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1596475546022" />
+    <state width="1398" height="243" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1596482735861" />
     <state width="1398" height="215" key="GridCell.Tab.0.left/0.23.1440.831@0.23.1440.831" timestamp="1594939562343" />
     <state width="1398" height="278" key="GridCell.Tab.0.left/0.23.1440.832@0.23.1440.832" timestamp="1595637800768" />
     <state width="1398" height="278" key="GridCell.Tab.0.left/0.23.1440.833@0.23.1440.833" timestamp="1595656859117" />
     <state width="1398" height="278" key="GridCell.Tab.0.left/0.23.1440.834@0.23.1440.834" timestamp="1595655203186" />
-    <state width="1398" height="278" key="GridCell.Tab.0.right" timestamp="1595686741295">
+    <state width="1398" height="243" key="GridCell.Tab.0.right" timestamp="1596482735863">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="1398" height="278" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595606114574" />
-    <state width="1398" height="278" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1595682152417" />
-    <state width="1398" height="278" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1595686741295" />
+    <state width="1398" height="278" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595713498043" />
+    <state width="1398" height="243" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1596475546024" />
+    <state width="1398" height="243" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1596482735863" />
     <state width="1398" height="215" key="GridCell.Tab.0.right/0.23.1440.831@0.23.1440.831" timestamp="1594939562344" />
     <state width="1398" height="278" key="GridCell.Tab.0.right/0.23.1440.832@0.23.1440.832" timestamp="1595637800769" />
     <state width="1398" height="278" key="GridCell.Tab.0.right/0.23.1440.833@0.23.1440.833" timestamp="1595656859118" />
     <state width="1398" height="278" key="GridCell.Tab.0.right/0.23.1440.834@0.23.1440.834" timestamp="1595655203187" />
-    <state width="1398" height="278" key="GridCell.Tab.1.bottom" timestamp="1595686741298">
+    <state width="1398" height="243" key="GridCell.Tab.1.bottom" timestamp="1596482735867">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595519384145" />
-    <state width="1398" height="278" key="GridCell.Tab.1.bottom/0.23.1440.829@0.23.1440.829" timestamp="1595682152419" />
-    <state width="1398" height="278" key="GridCell.Tab.1.bottom/0.23.1440.830@0.23.1440.830" timestamp="1595686741298" />
+    <state width="1398" height="278" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595713498047" />
+    <state width="1398" height="243" key="GridCell.Tab.1.bottom/0.23.1440.829@0.23.1440.829" timestamp="1596475546027" />
+    <state width="1398" height="243" key="GridCell.Tab.1.bottom/0.23.1440.830@0.23.1440.830" timestamp="1596482735867" />
     <state width="1398" height="215" key="GridCell.Tab.1.bottom/0.23.1440.831@0.23.1440.831" timestamp="1594939562346" />
     <state width="1398" height="278" key="GridCell.Tab.1.bottom/0.23.1440.832@0.23.1440.832" timestamp="1595637800772" />
     <state width="1398" height="278" key="GridCell.Tab.1.bottom/0.23.1440.833@0.23.1440.833" timestamp="1595656859121" />
     <state width="1398" height="278" key="GridCell.Tab.1.bottom/0.23.1440.834@0.23.1440.834" timestamp="1595655203190" />
-    <state width="1398" height="278" key="GridCell.Tab.1.center" timestamp="1595686741297">
+    <state width="1398" height="243" key="GridCell.Tab.1.center" timestamp="1596482735865">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1595519384143" />
-    <state width="1398" height="278" key="GridCell.Tab.1.center/0.23.1440.829@0.23.1440.829" timestamp="1595682152418" />
-    <state width="1398" height="278" key="GridCell.Tab.1.center/0.23.1440.830@0.23.1440.830" timestamp="1595686741297" />
+    <state width="1398" height="278" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1595713498045" />
+    <state width="1398" height="243" key="GridCell.Tab.1.center/0.23.1440.829@0.23.1440.829" timestamp="1596475546026" />
+    <state width="1398" height="243" key="GridCell.Tab.1.center/0.23.1440.830@0.23.1440.830" timestamp="1596482735865" />
     <state width="1398" height="215" key="GridCell.Tab.1.center/0.23.1440.831@0.23.1440.831" timestamp="1594939562345" />
     <state width="1398" height="278" key="GridCell.Tab.1.center/0.23.1440.832@0.23.1440.832" timestamp="1595637800771" />
     <state width="1398" height="278" key="GridCell.Tab.1.center/0.23.1440.833@0.23.1440.833" timestamp="1595656859120" />
     <state width="1398" height="278" key="GridCell.Tab.1.center/0.23.1440.834@0.23.1440.834" timestamp="1595655203189" />
-    <state width="1398" height="278" key="GridCell.Tab.1.left" timestamp="1595686741296">
+    <state width="1398" height="243" key="GridCell.Tab.1.left" timestamp="1596482735865">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1595519384142" />
-    <state width="1398" height="278" key="GridCell.Tab.1.left/0.23.1440.829@0.23.1440.829" timestamp="1595682152418" />
-    <state width="1398" height="278" key="GridCell.Tab.1.left/0.23.1440.830@0.23.1440.830" timestamp="1595686741296" />
+    <state width="1398" height="278" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1595713498045" />
+    <state width="1398" height="243" key="GridCell.Tab.1.left/0.23.1440.829@0.23.1440.829" timestamp="1596475546025" />
+    <state width="1398" height="243" key="GridCell.Tab.1.left/0.23.1440.830@0.23.1440.830" timestamp="1596482735865" />
     <state width="1398" height="215" key="GridCell.Tab.1.left/0.23.1440.831@0.23.1440.831" timestamp="1594939562345" />
     <state width="1398" height="278" key="GridCell.Tab.1.left/0.23.1440.832@0.23.1440.832" timestamp="1595637800770" />
     <state width="1398" height="278" key="GridCell.Tab.1.left/0.23.1440.833@0.23.1440.833" timestamp="1595656859120" />
     <state width="1398" height="278" key="GridCell.Tab.1.left/0.23.1440.834@0.23.1440.834" timestamp="1595655203188" />
-    <state width="1398" height="278" key="GridCell.Tab.1.right" timestamp="1595686741298">
+    <state width="1398" height="243" key="GridCell.Tab.1.right" timestamp="1596482735866">
       <screen x="0" y="23" width="1440" height="830" />
     </state>
-    <state width="1398" height="244" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1595519384144" />
-    <state width="1398" height="278" key="GridCell.Tab.1.right/0.23.1440.829@0.23.1440.829" timestamp="1595682152419" />
-    <state width="1398" height="278" key="GridCell.Tab.1.right/0.23.1440.830@0.23.1440.830" timestamp="1595686741298" />
+    <state width="1398" height="278" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1595713498046" />
+    <state width="1398" height="243" key="GridCell.Tab.1.right/0.23.1440.829@0.23.1440.829" timestamp="1596475546026" />
+    <state width="1398" height="243" key="GridCell.Tab.1.right/0.23.1440.830@0.23.1440.830" timestamp="1596482735866" />
     <state width="1398" height="215" key="GridCell.Tab.1.right/0.23.1440.831@0.23.1440.831" timestamp="1594939562345" />
     <state width="1398" height="278" key="GridCell.Tab.1.right/0.23.1440.832@0.23.1440.832" timestamp="1595637800771" />
     <state width="1398" height="278" key="GridCell.Tab.1.right/0.23.1440.833@0.23.1440.833" timestamp="1595656859121" />
@@ -459,25 +554,26 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="229" y="76" key="SettingsEditor/0.23.1440.829@0.23.1440.829" timestamp="1595028759049" />
-    <state x="320" y="177" key="Vcs.Push.Dialog.v2" timestamp="1595704384910">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state x="320" y="167" key="Vcs.Push.Dialog.v2" timestamp="1595710222768">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="167" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1595519526056" />
+    <state x="320" y="167" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1595710222768" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1595390845676" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.23.1440.830@0.23.1440.830" timestamp="1595687661833" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.23.1440.831@0.23.1440.831" timestamp="1595704384910" />
     <state x="320" y="177" key="Vcs.Push.Dialog.v2/0.23.1440.832@0.23.1440.832" timestamp="1595639413921" />
-    <state x="399" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1595681646867">
+    <state x="399" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1596473549406">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="399" y="270" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1595601271392" />
-    <state x="399" y="270" key="com.intellij.ide.util.TipDialog/0.23.1440.829@0.23.1440.829" timestamp="1595681646867" />
+    <state x="399" y="270" key="com.intellij.ide.util.TipDialog/0.23.1440.829@0.23.1440.829" timestamp="1596473549406" />
     <state x="399" y="271" key="com.intellij.ide.util.TipDialog/0.23.1440.831@0.23.1440.831" timestamp="1594921114231" />
-    <state x="509" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595710112162">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="399" y="271" key="com.intellij.ide.util.TipDialog/0.23.1440.833@0.23.1440.833" timestamp="1596310460586" />
+    <state x="509" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596473569315">
+      <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="509" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1595710112162" />
-    <state x="509" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.829@0.23.1440.829" timestamp="1595390890493" />
+    <state x="509" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.829@0.23.1440.829" timestamp="1596473569315" />
     <state x="509" y="361" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.830@0.23.1440.830" timestamp="1595687583782" />
     <state x="509" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.831@0.23.1440.831" timestamp="1595704291701" />
     <state x="509" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.832@0.23.1440.832" timestamp="1595639209045" />
@@ -487,6 +583,10 @@
     </state>
     <state x="480" y="178" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1440.900@0.0.1440.900" timestamp="1595428379400" />
     <state x="480" y="187" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.829@0.23.1440.829" timestamp="1595113419531" />
+    <state x="114" y="60" key="new project wizard" timestamp="1596310485963">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state x="114" y="60" key="new project wizard/0.23.1440.833@0.23.1440.833" timestamp="1596310485963" />
     <state x="385" y="176" width="670" height="676" key="search.everywhere.popup" timestamp="1595110649648">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
