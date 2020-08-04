@@ -69,7 +69,7 @@ public class InterviewDaoImpl  extends JdbcDaoSupport implements InterviewDao{
         namedSqlParams=new MapSqlParameterSource();
 
         namedSqlParams.addValue("ApplicationID", interview.getApplicationID());
-        namedSqlParams.addValue("Type", interview.getTime());
+        namedSqlParams.addValue("Type", interview.getType());
         namedSqlParams.addValue("Date", interview.getDate());
         namedSqlParams.addValue("Time", interview.getTime());
         namedSqlParams.addValue("Notify", interview.getNotify());
