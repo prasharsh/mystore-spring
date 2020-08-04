@@ -38,69 +38,106 @@ public class ScheduleTimeMappingsImpl implements ScheduleTimeMappings {
                 String UserId = a.getUsername();
                 mappedTimings.setUserId(UserId);
                 String monStartTime = a.getMonStart();
-                monStartTime = monStartTime.substring(0,5)+":00"+monStartTime.substring(5,7);
-                monStartTime = timeConversionService.convertto24HourFormat(monStartTime);
-                Date startTimings = format.parse(monStartTime);
-                long difference = startTimings.getTime() - referralTimeDate.getTime();
-                difference = difference/(1000*60*60);
-                difference/=6;
-                mappedTimings.setMonShift(difference);
+                if (monStartTime.isEmpty()){
+                    mappedTimings.setMonShift(0);
+                }
+                else {
+                    monStartTime = monStartTime.substring(0,5)+":00"+monStartTime.substring(5,7);
+                    monStartTime = timeConversionService.convertto24HourFormat(monStartTime);
+                    Date startTimings = format.parse(monStartTime);
+                    long difference = startTimings.getTime() - referralTimeDate.getTime();
+                    difference = difference/(1000*60*60);
+                    difference/=6;
+                    mappedTimings.setMonShift(difference);
+                }
+
 
                 String tuesStartTime = a.getTuesStart();
-                tuesStartTime = tuesStartTime.substring(0,5)+":00"+tuesStartTime.substring(5,7);
-                tuesStartTime = timeConversionService.convertto24HourFormat(tuesStartTime);
-                startTimings = format.parse(tuesStartTime);
-                difference = startTimings.getTime() - referralTimeDate.getTime();
-                difference = difference/(1000*60*60);
-                difference/=6;
-                mappedTimings.setTueShift(difference);
+                if (tuesStartTime.isEmpty()){
+                    mappedTimings.setTueShift(0);
+                }
+                else {
+                    tuesStartTime = tuesStartTime.substring(0,5)+":00"+tuesStartTime.substring(5,7);
+                    tuesStartTime = timeConversionService.convertto24HourFormat(tuesStartTime);
+                    Date startTimings = format.parse(tuesStartTime);
+                    long difference = startTimings.getTime() - referralTimeDate.getTime();
+                    difference = difference/(1000*60*60);
+                    difference/=6;
+                    mappedTimings.setTueShift(difference);
+                }
+
 
                 String wedStartTime = a.getWedStart();
-                wedStartTime = wedStartTime.substring(0,5)+":00"+wedStartTime.substring(5,7);
-                wedStartTime = timeConversionService.convertto24HourFormat(wedStartTime);
-                startTimings = format.parse(wedStartTime);
-                difference = startTimings.getTime() - referralTimeDate.getTime();
-                difference = difference/(1000*60*60);
-                difference/=6;
-                mappedTimings.setWedShift(difference);
+                if (wedStartTime.isEmpty()){mappedTimings.setWedShift(0);}
+                else {
+                    wedStartTime = wedStartTime.substring(0,5)+":00"+wedStartTime.substring(5,7);
+                    wedStartTime = timeConversionService.convertto24HourFormat(wedStartTime);
+                    Date startTimings = format.parse(wedStartTime);
+                    long difference = startTimings.getTime() - referralTimeDate.getTime();
+                    difference = difference/(1000*60*60);
+                    difference/=6;
+                    mappedTimings.setWedShift(difference);
+                }
+
 
                 String thrusStartTime = a.getThrusStart();
-                System.out.println("Thrus break :::::"+thrusStartTime);
-                thrusStartTime = thrusStartTime.substring(0,5)+":00"+thrusStartTime.substring(5,7);
-                thrusStartTime = timeConversionService.convertto24HourFormat(thrusStartTime);
-                startTimings = format.parse(thrusStartTime);
-                difference = startTimings.getTime() - referralTimeDate.getTime();
-                difference = difference/(1000*60*60);
-                difference/=6;
-                mappedTimings.setThursShift(difference);
-
+                if ( thrusStartTime .isEmpty()){
+                    mappedTimings.setThursShift(0);
+                }
+                else {
+                    System.out.println("Thrus break :::::"+thrusStartTime);
+                    thrusStartTime = thrusStartTime.substring(0,5)+":00"+thrusStartTime.substring(5,7);
+                    thrusStartTime = timeConversionService.convertto24HourFormat(thrusStartTime);
+                    Date startTimings = format.parse(thrusStartTime);
+                    long difference = startTimings.getTime() - referralTimeDate.getTime();
+                    difference = difference/(1000*60*60);
+                    difference/=6;
+                    mappedTimings.setThursShift(difference);
+                }
                 String friStartTime  = a.getFriStart();
-                friStartTime = friStartTime.substring(0,5)+":00"+friStartTime.substring(5,7);
-                friStartTime = timeConversionService.convertto24HourFormat(friStartTime);
-                startTimings = format.parse(friStartTime);
-                difference = startTimings.getTime() - referralTimeDate.getTime();
-                difference = difference/(1000*60*60);
-                difference/=6;
-                mappedTimings.setFriShift(difference);
+                if (friStartTime.isEmpty()){
+                    mappedTimings.setFriShift(0);
+                }
+                else {
+                    friStartTime = friStartTime.substring(0,5)+":00"+friStartTime.substring(5,7);
+                    friStartTime = timeConversionService.convertto24HourFormat(friStartTime);
+                    Date startTimings = format.parse(friStartTime);
+                    long difference = startTimings.getTime() - referralTimeDate.getTime();
+                    difference = difference/(1000*60*60);
+                    difference/=6;
+                    mappedTimings.setFriShift(difference);
+                }
+
 
                 String satStartTime = a.getSatStart();
-                satStartTime = satStartTime.substring(0,5)+":00"+satStartTime.substring(5,7);
-                satStartTime = timeConversionService.convertto24HourFormat(satStartTime);
-                startTimings = format.parse(satStartTime);
-                difference = startTimings.getTime() - referralTimeDate.getTime();
-                difference = difference/(1000*60*60);
-                difference/=6;
-                mappedTimings.setSatShift(difference);
+                if (satStartTime.isEmpty()){
+                    mappedTimings.setSatShift(0);
+                }
+                else {
+                    satStartTime = satStartTime.substring(0,5)+":00"+satStartTime.substring(5,7);
+                    satStartTime = timeConversionService.convertto24HourFormat(satStartTime);
+                    Date startTimings = format.parse(satStartTime);
+                    long difference = startTimings.getTime() - referralTimeDate.getTime();
+                    difference = difference/(1000*60*60);
+                    difference/=6;
+                    mappedTimings.setSatShift(difference);
+                }
 
                 String sunStartTime = a.getSunStart();
-                sunStartTime = sunStartTime.substring(0,5)+":00"+sunStartTime.substring(5,7);
-                sunStartTime = timeConversionService.convertto24HourFormat(sunStartTime);
-                startTimings = format.parse(sunStartTime);
-                difference = startTimings.getTime() - referralTimeDate.getTime();
-                difference = difference/(1000*60*60);
-                difference/=6;
-                System.out.println("Difference : "+difference);
-                mappedTimings.setSunShift(difference);
+                if (sunStartTime.isEmpty()){
+
+                    mappedTimings.setSunShift(0);
+                }
+                else {
+                    sunStartTime = sunStartTime.substring(0,5)+":00"+sunStartTime.substring(5,7);
+                    sunStartTime = timeConversionService.convertto24HourFormat(sunStartTime);
+                    Date startTimings = format.parse(sunStartTime);
+                    long difference = startTimings.getTime() - referralTimeDate.getTime();
+                    difference = difference/(1000*60*60);
+                    difference/=6;
+                    System.out.println("Difference : "+difference);
+                    mappedTimings.setSunShift(difference);
+                }
                 timings.add(mappedTimings);
             }
         }catch (ParseException e){
